@@ -2,7 +2,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#00b4b0">
-<title>PR Trip · Nov 1–7, 2026</title>
+<title>PR Trip · Nov 6, 2026</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -32,7 +32,7 @@ h1{font-family:"Bebas Neue",Poppins,sans-serif;font-weight:400;font-size:clamp(7
 section{padding:44px 20px;scroll-margin-top:10px}
 h2{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:44px;letter-spacing:1px;color:#ff5e62;line-height:1}
 h2 span{color:#00a6a2}
-.sample{display:inline-block;background:#ffe3d6;color:#c2410c;font-family:Poppins,sans-serif;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px;vertical-align:middle;margin:6px 0 0}
+.sample{display:inline-block;background:#ffe3d6;color:#c2410c;font-family:Poppins,sans-serif;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px;vertical-align:middle}
 .sub{color:#6b7780;margin:8px 0 22px;font-size:16px}
 /* timeline: vertical on phones */
 .timeline{position:relative;display:grid;gap:14px;padding-left:0}
@@ -58,7 +58,7 @@ h2 span{color:#00a6a2}
 .img b{position:absolute;bottom:8px;left:8px;background:#fff;color:#1d2a33;font-size:12px;padding:3px 9px;border-radius:12px}
 .card .c{padding:14px 16px}
 .card h4{font-size:17px;line-height:1.25}.card p{font-size:15px;color:#5b6870;margin-top:4px}
-.g1{background:linear-gradient(135deg,#ffb347,#ff5e62)}.g2{background:linear-gradient(135deg,#00b4b0,#0077b6)}.g3{background:linear-gradient(135deg,#7b2d8b,#ff5e62)}.g4{background:linear-gradient(135deg,#43e97b,#00a6a2)}.g5{background:linear-gradient(135deg,#ffd27a,#ff9a6b)}.g6{background:linear-gradient(135deg,#00c6fb,#005bea)}.g7{background:linear-gradient(135deg,#f093fb,#f5576c)}.g8{background:linear-gradient(135deg,#2c3e50,#00b4b0)}
+.g1{background:linear-gradient(135deg,#ffb347,#ff5e62)}.g2{background:linear-gradient(135deg,#00b4b0,#0077b6)}.g3{background:linear-gradient(135deg,#7b2d8b,#ff5e62)}.g4{background:linear-gradient(135deg,#00b4b0,#00d1c4)}.g5{background:linear-gradient(135deg,#ff9a6b,#ff5e62)}.g6{background:linear-gradient(135deg,#1a73c9,#00b4b0)}.g7{background:linear-gradient(135deg,#7b2d8b,#00b4b0)}.g8{background:linear-gradient(135deg,#00a6a2,#ffb347)}
 /* info */
 .info{display:grid;grid-template-columns:1fr;gap:14px}
 .ib{background:#1d2a33;color:#fff;border-radius:20px;padding:20px}
@@ -66,7 +66,7 @@ h2 span{color:#00a6a2}
 .ib a.call{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;padding:0 18px;border-radius:22px;background:#ff5e62;font-weight:700}
 footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b4b0,#ff5e62);color:#fff;font-size:13px}
 /* bottom nav (phones) */
-.bnav{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 -6px 20px rgba(0,0,0,.08);padding-bottom:env(safe-area-inset-bottom)}
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 -6px 20px rgba(0,0,0,.1)}
 .bnav a{min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#6b7780;gap:2px}
 .bnav a i{font-style:normal;font-size:20px}
 .bnav a.on{color:#ff5e62}
@@ -78,7 +78,7 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 .mapwrap{position:relative;z-index:0;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(0,120,120,.15);border:4px solid #fff;background:#cfeff0}
 #trip-map{height:min(62vh,440px);width:100%}
 .map-lock{position:absolute;inset:0;z-index:500;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(29,42,51,.35));border:0;cursor:pointer}
-.map-lock span{min-height:48px;display:inline-flex;align-items:center;padding:0 20px;border-radius:24px;background:#fff;color:#1d2a33;font:700 15px Poppins,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.map-lock span{min-height:48px;display:inline-flex;align-items:center;padding:0 20px;border-radius:24px;background:#fff;color:#1d2a33;font:700 15px Poppins,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.2)}
 .map-lock.hide{display:none}
 .map-fallback{display:none;padding:24px;text-align:center;color:#4b5860}
 .map-fallback b{display:block;font-size:18px;color:#1d2a33;margin-bottom:6px}
@@ -86,7 +86,7 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 .legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:14px 0 6px;font-size:13px;font-weight:600;color:#4b5860}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 .spots{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
-.spot{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px;background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);text-align:left;border:0;font:inherit;color:inherit;cursor:pointer;width:100%}
+.spot{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px;background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);text-align:left;border:0;font:inherit;color:#1d2a33;cursor:pointer}
 .spot .n{flex:0 0 34px;height:34px;border-radius:50%;color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px}
 .spot b{display:block;font-size:15px;line-height:1.2}
 .spot small{color:#6b7780;font-size:13px}
@@ -181,33 +181,32 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 </style></head><body>
 <header class="hero" id="top"><div class="sun"></div><div class="palm"></div><div class="wave2"></div>
 <nav class="top"><div class="logo">¡Wepa! PR</div><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#map">Map</a></li><li><a href="#options">Options</a></li><li><a href="#packing">Packing</a></li><li><a href="#info">Info</a></li></ul></nav>
-<div class="htxt"><span class="tag">SUN NOV 1 – SAT NOV 7, 2026</span>
+<div class="htxt"><span class="tag">FRI NOV 6 · DEPART 1:40 PM</span>
 <h1>PR TRIP<br>2026</h1><p>San Juan city nights → West coast surf &amp; sunsets. 7 days, 3 friends, zero plans set in stone.</p>
 <div class="crew"><div class="av" style="background:#ff5e62">JR</div><div class="av" style="background:#00a6a2">F2</div><div class="av" style="background:#7b2d8b">F3</div><span>J Rod + Friend 2 + Friend 3</span></div>
 <a class="cta" href="#itinerary">See the route ↓</a></div></header>
 
 <section id="itinerary"><h2>THE <span>ROUTE</span></h2><span class="sample">SAMPLE PLAN · NOTHING BOOKED</span><p class="sub">A draft day-by-day flow — swap anything out.</p>
 <div class="timeline">
-<div class="day"><div class="dot" style="background:#00b4b0">1</div><small>Sun Nov 1</small><h3>Land + Old San Juan</h3><ul><li>Arrive SJU (sample)</li><li>Walk blue cobblestones</li><li>Sunset at El Morro</li></ul><span class="loc sj">San Juan</span></div>
-<div class="day"><div class="dot" style="background:#14b8a6">2</div><small>Mon Nov 2</small><h3>Condado beach day</h3><ul><li>Condado / Ocean Park</li><li>Dinner ideas TBD</li></ul><span class="loc sj">San Juan</span></div>
+<div class="day"><div class="dot" style="background:#00b4b0">1</div><small>Fri Nov 6</small><h3>Depart + Old San Juan</h3><ul><li>Depart at 1:40 PM</li><li>Arrive SJU (sample)</li><li>Walk blue cobblestones</li><li>Sunset and dinner</li></ul><span class="loc sj">San Juan</span></div>
+<div class="day"><div class="dot" style="background:#14b8a6">2</div><small>Mon Nov 2</small><h3>Condado beach day</h3><ul><li>Condado / Ocean Park</li><li>Dinner ideas TBD</li></ul><span class="loc sj">Condado</span></div>
 <div class="day"><div class="dot" style="background:#4cc3a0">3</div><small>Tue Nov 3</small><h3>Piñones + La Placita</h3><ul><li>Piñones kiosks &amp; bike path</li><li>Night out at La Placita</li></ul><span class="loc sj">San Juan</span></div>
-<div class="day"><div class="dot" style="background:#ffb347">4</div><small>Wed Nov 4</small><h3>Drive west</h3><ul><li>~2.5 hr drive (sample)</li><li>Crash Boat Beach stop</li></ul><span class="loc west">→ Aguadilla</span></div>
+<div class="day"><div class="dot" style="background:#ffb347">4</div><small>Wed Nov 4</small><h3>Drive west</h3><ul><li>~2.5 hr drive (sample)</li><li>Crash Boat Beach stop</li></ul><span class="loc west">Aguadilla</span></div>
 <div class="day"><div class="dot" style="background:#ff9a6b">5</div><small>Thu Nov 5</small><h3>Rincón surf day</h3><ul><li>Domes / Sandy Beach</li><li>Lighthouse sunset</li></ul><span class="loc west">Rincón</span></div>
 <div class="day"><div class="dot" style="background:#ff5e62">6</div><small>Fri Nov 6</small><h3>Waterfalls + snorkel</h3><ul><li>Gozalandia (San Sebastián)</li><li>Steps Beach snorkel</li></ul><span class="loc west">West coast</span></div>
-<div class="day"><div class="dot" style="background:#7b2d8b">7</div><small>Sat Nov 7</small><h3>Fly out</h3><ul><li>Last breakfast</li><li>Depart (airport TBD)</li></ul><span class="loc west">Travel</span></div>
+<div class="day"><div class="dot" style="background:#7b2d8b">7</div><small>Sat Nov 7</small><h3>Fly out</h3><ul><li>Last breakfast</li><li>Depart (airport TBD)</li></ul><span class="loc west">Travel home</span></div>
 </div></section>
 
-
 <section class="mapsec" id="map"><h2>THE <span>MAP</span></h2><span class="sample">SAMPLE SPOTS · NOT BOOKINGS</span><p class="sub">Every spot on our draft route. Tap a pin (or a spot below) for directions.</p>
-<div class="areas" id="area-btns"><button class="chip on" data-area="all">All</button><button class="chip" data-area="sj">San Juan</button><button class="chip" data-area="west">West coast</button></div>
-<div class="mapgrid"><div><div class="mapwrap" id="mapwrap"><div id="trip-map" aria-label="Map of trip spots"></div><button class="map-lock" id="map-lock" type="button"><span>👆 Tap to explore map</span></button>
+<div class="areas" id="area-btns"><button class="chip on" data-area="all">All</button><button class="chip" data-area="sj">San Juan</button><button class="chip" data-area="west">West coast</button><button class="chip" data-area="agu">Aguadilla</button><button class="chip" data-area="rin">Rincón</button><button class="chip" data-area="ss">San Sebastián</button></div>
+<div class="mapgrid"><div><div class="mapwrap" id="mapwrap"><div id="trip-map" aria-label="Map of trip spots"></div><button class="map-lock" id="map-lock" type="button"><span>👆 Tap to explore</span></button></div>
 <div class="map-fallback"><b>🗺 Map couldn't load (offline?)</b>Use the spot list — each one opens in Google Maps.</div></div>
-<div class="legend"><span><i style="background:#00a6a2"></i>San Juan · Nov 1–3</span><span><i style="background:#ffb347"></i>Aguadilla</span><span><i style="background:#ff5e62"></i>Rincón</span><span><i style="background:#7b2d8b"></i>San Sebastián</span></div></div>
+<div class="legend"><span><i style="background:#00a6a2"></i>San Juan · Nov 1–3</span><span><i style="background:#ffb347"></i>Aguadilla</span><span><i style="background:#ff5e62"></i>Rincón</span><span><i style="background:#7b2d8b"></i>San Sebastián</span></div>
 <div class="spots" id="spots"></div></div>
 </section>
 
 <section class="opts" id="options"><h2>THINGS <span>TO DO</span></h2><span class="sample">OPTIONS</span><p class="sub">Ideas we could slot in — vote in the group chat.</p>
-<div class="filters" id="opt-filters"><button class="chip on" data-f="all">All</button><button class="chip" data-f="beach">🏖 Beach</button><button class="chip" data-f="food">🍤 Food</button><button class="chip" data-f="adventure">💦 Adventure</button><button class="chip" data-f="nightlife">🎉 Nightlife</button></div>
+<div class="filters" id="opt-filters"><button class="chip on" data-f="all">All</button><button class="chip" data-f="beach">🏖 Beach</button><button class="chip" data-f="food">🍤 Food</button><button class="chip" data-f="nightlife">🎉 Nightlife</button><button class="chip" data-f="adventure">💦 Adventure</button></div>
 <div class="grid">
 <div class="card" data-tags="food nightlife"><div class="img g1"><b>🏰</b></div><div class="c"><h4>Old San Juan &amp; El Morro</h4><p>Forts, colorful streets, bars.</p></div></div>
 <div class="card" data-tags="beach"><div class="img g2"><b>🏖</b></div><div class="c"><h4>Condado &amp; Ocean Park</h4><p>City beach + boardwalk vibes.</p></div></div>
@@ -219,8 +218,7 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 <div class="card" data-tags="beach adventure"><div class="img g8"><b>🌅</b></div><div class="c"><h4>Crash Boat &amp; Survival Beach</h4><p>Pier jumps, wild cliffs, Aguadilla.</p></div></div>
 </div></section>
 
-
-<section class="packsec" id="packing"><h2>PACKING <span>LIST</span></h2><span class="sample">SUGGESTED · EDIT FREELY</span><p class="sub">Checks save on this phone. Shared gear is assigned to one person — tap the badge to reassign.</p>
+<section class="packsec" id="packing"><h2>PACKING <span>LIST</span></h2><span class="sample">SUGGESTED · EDIT FREELY</span><p class="sub">Checks save on this phone. Shared gear is assigned to one person.</p>
 <div class="who" id="who"><span class="lbl">Packing as:</span><button data-p="JR" style="background:#ff5e62">JR</button><button data-p="F2" style="background:#00a6a2">F2</button><button data-p="F3" style="background:#7b2d8b">F3</button></div>
 <div class="prog"><div class="row"><b id="prog-txt">0 of 0 packed</b><span id="prog-pct">0%</span></div><div class="pbar"><i id="prog-bar"></i></div></div>
 <div class="cats" id="cats"></div>
@@ -244,7 +242,7 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 /* ---------- MAP ---------- */
 const AREA={sj:{c:'#00a6a2',n:'San Juan'},agu:{c:'#ffb347',n:'Aguadilla'},rin:{c:'#ff5e62',n:'Rincón'},ss:{c:'#7b2d8b',n:'San Sebastián'}};
 const SPOTS=[
- {n:'Old San Juan & El Morro',a:'sj',d:'Day 1 · Sun Nov 1 (sample)',t:'Forts, blue cobblestones, sunset',ll:[18.47083,-66.12389]},
+ {n:'Old San Juan & El Morro',a:'sj',d:'Day 1 · Fri Nov 6 (sample)',t:'Forts, blue cobblestones, sunset',ll:[18.47083,-66.12389]},
  {n:'Condado Beach',a:'sj',d:'Day 2 · Mon Nov 2 (sample)',t:'City beach day',ll:[18.45970,-66.07660]},
  {n:'Piñones (Boca de Cangrejos)',a:'sj',d:'Day 3 · Tue Nov 3 (sample)',t:'Kiosks + boardwalk bike path',ll:[18.45828,-65.99294]},
  {n:'La Placita de Santurce',a:'sj',d:'Day 3 · Tue Nov 3 night (sample)',t:'Street party, salsa',ll:[18.45040,-66.07020]},
@@ -279,7 +277,7 @@ function initMap(){
  let errs=0,oks=0;const te=()=>{if(++errs>8&&oks===0)document.getElementById('mapwrap').classList.add('no-map');};
  map.on('tileerror',te);map.on('tileload',()=>oks++);
  SPOTS.forEach(s=>{const icon=L.divIcon({className:'',html:`<div class="pin" style="background:${AREA[s.a].c}"><span>${s.i}</span></div>`,iconSize:[34,34],iconAnchor:[17,34],popupAnchor:[0,-32]});
-  s.m=L.marker(s.ll,{icon,title:s.n}).addTo(map).bindPopup(`<div class="pop"><b>${s.n}</b><small>${s.d} · ${AREA[s.a].n}</small><p>${s.t}</p><a href="${gmaps(s.ll)}" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>`,{autoPanPaddingTopLeft:[60,70],autoPanPaddingBottomRight:[20,20],maxWidth:240});markers.push(s.m);});
+  s.m=L.marker(s.ll,{icon,title:s.n}).addTo(map).bindPopup(`<div class="pop"><b>${s.n}</b><small>${s.d} · ${AREA[s.a].n}</small><p>${s.t}</p><a href="${gmaps(s.ll)}" target="_blank" rel="noopener noreferrer">Open map</a></div>`);});
  fitArea('all');
  const lock=document.getElementById('map-lock'); if(!touch)lock.classList.add('hide'); lock.onclick=unlock;
  map.on('click',()=>map.scrollWheelZoom.enable());
@@ -297,10 +295,10 @@ document.querySelectorAll('#opt-filters .chip').forEach(b=>b.onclick=()=>{const 
 const PCOL={JR:'#ff5e62',F2:'#00a6a2',F3:'#7b2d8b'};
 const CATS=[['beach','🏖 Beach'],['clothes','👕 Clothes'],['toiletries','🧴 Toiletries'],['docs','📱 Docs & Tech'],['adventure','💦 Adventure']];
 const BASE=[
- ['beach','Swimsuits ×2','all'],['beach','Reef-safe sunscreen','all','Protects the Steps Beach reef'],['beach','Sunglasses + hat','all'],['beach','Quick-dry towel','all'],['beach','Beach speaker (shared)','F2'],['beach','Cooler bag (shared)','F3'],
+ ['beach','Swimsuits ×2','all'],['beach','Reef-safe sunscreen','all','Protects the Steps Beach reef'],['beach','Sunglasses + hat','all'],['beach','Quick-dry towel','all'],['beach','Beach speaker (shared)','F2'],
  ['clothes','Light tees / tanks','all'],['clothes','Going-out fit (La Placita)','all'],['clothes','Light rain jacket','all','Nov can be showery'],['clothes','Sandals / flip-flops','all'],
  ['toiletries','Toothbrush & toiletries','all'],['toiletries','Bug spray','all'],['toiletries','Aloe / after-sun (shared)','JR'],['toiletries','Meds + basic first aid (shared)','F3'],
- ['docs','ID / driver\'s license','all','Needed for the rental car'],['docs','Phone charger + power bank','all'],['docs','Cash for kiosks & parking','all','Gozalandia parking is cash'],['docs','Offline Google Map downloaded','all','Weak signal near the falls'],['docs','Car phone mount (shared)','JR'],
+ ['docs','ID / driver\'s license','all','Needed for the rental car'],['docs','Phone charger + power bank','all'],['docs','Cash for kiosks & parking','all','Gozalandia parking is cash'],['docs','Hotel / Airbnb confirmation','all'],
  ['adventure','Water shoes','all','For Gozalandia rocks'],['adventure','Snorkel mask','all','Steps Beach'],['adventure','Dry bag (shared)','F2'],['adventure','GoPro / waterproof case (shared)','JR']
 ];
 const KEY='prtrip2026.packing.v1';
@@ -327,13 +325,12 @@ function render(){
    const ob=document.createElement('button');ob.type='button';ob.className='own'+(o==='all'?' all':'');ob.textContent=o==='all'?'All':o;if(o!=='all')ob.style.background=PCOL[o];
    ob.title='Tap to reassign';ob.onclick=e=>{e.preventDefault();const seq=['all','JR','F2','F3'];st.assign[it.id]=seq[(seq.indexOf(o)+1)%4];save();render();};
    row.append(ck,t,ob);
-   if(it.id.startsWith('c')){const d=document.createElement('button');d.type='button';d.className='del';d.textContent='×';d.title='Remove';d.onclick=e=>{e.preventDefault();st.custom=st.custom.filter(c=>c.id!==it.id);save();render();};row.append(d);}
+   if(it.id.startsWith('c')){const d=document.createElement('button');d.type='button';d.className='del';d.textContent='×';d.title='Remove';d.onclick=e=>{e.preventDefault();st.custom=st.custom.filter(x=>x.id!==it.id);delete st.assign[it.id];save();render();};row.appendChild(d);}
    box.appendChild(row);});
   wrap.appendChild(box);});
  const pct=tot?Math.round(done/tot*100):0;
  document.getElementById('prog-txt').textContent=`${me}: ${done} of ${tot} packed`;document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('prog-bar').style.width=pct+'%';
 }
-function isShared(it){return ownerOf(it)!=='all';}
 document.querySelectorAll('#who button').forEach(b=>b.onclick=()=>{st.me=b.dataset.p;save();render();});
 document.getElementById('addform').onsubmit=e=>{e.preventDefault();const n=document.getElementById('add-name');if(!n.value.trim())return;
  st.custom.push({id:'c'+Date.now(),cat:catSel.value,name:n.value.trim(),own:document.getElementById('add-own').value});n.value='';save();render();};
