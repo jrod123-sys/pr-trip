@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#00b4b0">
+<title>PR Trip · Nov 1–7, 2026</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;background:#fff8f0;color:#1d2a33;overflow-x:hidden;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+a{color:inherit;text-decoration:none}
+/* HERO (mobile first) */
+.hero{position:relative;min-height:600px;background:linear-gradient(160deg,#00b4b0 0%,#19c3b0 25%,#ff9a6b 62%,#ff5e62 82%,#7b2d8b 100%);overflow:hidden;color:#fff;padding:20px 20px 120px}
+.sun{position:absolute;right:-40px;top:70px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,#ffe29a,#ffb347 70%);box-shadow:0 0 90px #ffd27a}
+.palm{position:absolute;right:70px;bottom:70px;width:12px;height:190px;background:#3b1f47;border-radius:8px;transform:rotate(8deg);opacity:.9}
+.palm:before,.palm:after{content:"";position:absolute;top:-16px;left:-70px;width:150px;height:50px;border-radius:50% 50% 0 0;border-top:14px solid #3b1f47}
+.palm:after{transform:rotate(35deg);left:-45px}
+.wave2{position:absolute;left:-20%;right:-20%;bottom:-70px;height:130px;border-radius:50%;background:#fff8f0}
+nav.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;min-height:44px}
+.logo{font-family:Pacifico,cursive;font-size:24px}
+nav.top ul{display:none;gap:8px;list-style:none;font-weight:600;font-size:15px}
+nav.top ul a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:22px}
+nav.top ul a:hover{background:rgba(255,255,255,.2)}
+.htxt{position:relative;z-index:2;margin-top:40px;max-width:620px}
+.tag{display:inline-block;background:rgba(255,255,255,.22);padding:6px 14px;border-radius:30px;font-size:13px;font-weight:600;letter-spacing:.5px}
+h1{font-family:"Bebas Neue",Poppins,sans-serif;font-weight:400;font-size:clamp(76px,22vw,128px);line-height:.9;margin:16px 0 10px;text-shadow:0 6px 30px rgba(0,0,0,.15)}
+.htxt p{font-size:17px;opacity:.95;max-width:30ch}
+.crew{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;align-items:center;font-weight:600;font-size:14px}
+.av{width:44px;height:44px;border-radius:50%;border:3px solid #fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:22px;padding:0 24px;border-radius:26px;background:#fff;color:#ff5e62;font-weight:700}
+/* SECTIONS */
+section{padding:44px 20px;scroll-margin-top:10px}
+h2{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:44px;letter-spacing:1px;color:#ff5e62;line-height:1}
+h2 span{color:#00a6a2}
+.sample{display:inline-block;background:#ffe3d6;color:#c2410c;font-family:Poppins,sans-serif;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px;vertical-align:middle;margin:6px 0 0}
+.sub{color:#6b7780;margin:8px 0 22px;font-size:16px}
+/* timeline: vertical on phones */
+.timeline{position:relative;display:grid;gap:14px;padding-left:0}
+.timeline:before{content:"";position:absolute;top:10px;bottom:10px;left:21px;width:5px;border-radius:3px;background:linear-gradient(180deg,#00b4b0,#ff9a6b,#ff5e62,#7b2d8b)}
+.day{position:relative;margin-left:58px;background:#fff;border-radius:20px;padding:16px 18px;box-shadow:0 10px 30px rgba(255,94,98,.12)}
+.dot{position:absolute;top:14px;left:-58px;width:46px;height:46px;border-radius:50%;color:#fff;font-weight:800;display:grid;place-items:center;font-size:17px;border:4px solid #fff8f0}
+.day small{font-weight:700;color:#00a6a2;font-size:13px;text-transform:uppercase}
+.day h3{font-size:18px;margin:2px 0 6px;line-height:1.25}
+.day ul{list-style:none}
+.day li{font-size:15px;color:#4b5860;margin:4px 0}
+.day li:before{content:"● ";color:#ff9a6b}
+.loc{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;padding:4px 10px;border-radius:12px}
+.sj{background:#d7f6f4;color:#00807c}.west{background:#ffe3d6;color:#c2410c}
+/* options */
+.opts{background:linear-gradient(180deg,#fff8f0,#e9fbf9)}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin:-6px 0 18px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;min-height:44px;padding:0 18px;border-radius:22px;border:2px solid #ffd2c0;background:#fff;font:600 15px Poppins,sans-serif;color:#1d2a33}
+.chip.on{background:#ff5e62;border-color:#ff5e62;color:#fff}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+.card{border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.07);display:flex}
+.img{flex:0 0 110px;min-height:110px;position:relative}
+.img b{position:absolute;bottom:8px;left:8px;background:#fff;color:#1d2a33;font-size:12px;padding:3px 9px;border-radius:12px}
+.card .c{padding:14px 16px}
+.card h4{font-size:17px;line-height:1.25}.card p{font-size:15px;color:#5b6870;margin-top:4px}
+.g1{background:linear-gradient(135deg,#ffb347,#ff5e62)}.g2{background:linear-gradient(135deg,#00b4b0,#0077b6)}.g3{background:linear-gradient(135deg,#7b2d8b,#ff5e62)}.g4{background:linear-gradient(135deg,#43e97b,#00a6a2)}.g5{background:linear-gradient(135deg,#ffd27a,#ff9a6b)}.g6{background:linear-gradient(135deg,#00c6fb,#005bea)}.g7{background:linear-gradient(135deg,#f093fb,#f5576c)}.g8{background:linear-gradient(135deg,#2c3e50,#00b4b0)}
+/* info */
+.info{display:grid;grid-template-columns:1fr;gap:14px}
+.ib{background:#1d2a33;color:#fff;border-radius:20px;padding:20px}
+.ib h4{color:#ffb347;font-size:18px;margin-bottom:6px}.ib p{font-size:16px;opacity:.9;line-height:1.6}
+.ib a.call{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;padding:0 18px;border-radius:22px;background:#ff5e62;font-weight:700}
+footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b4b0,#ff5e62);color:#fff;font-size:13px}
+/* bottom nav (phones) */
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 -6px 20px rgba(0,0,0,.08);padding-bottom:env(safe-area-inset-bottom)}
+.bnav a{min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#6b7780;gap:2px}
+.bnav a i{font-style:normal;font-size:20px}
+.bnav a.on{color:#ff5e62}
+
+/* MAP */
+.mapsec{background:linear-gradient(180deg,#fff8f0,#fff1e6)}
+.areas{display:flex;gap:8px;overflow-x:auto;margin:-6px 0 14px;scrollbar-width:none}
+.areas::-webkit-scrollbar{display:none}
+.mapwrap{position:relative;z-index:0;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(0,120,120,.15);border:4px solid #fff;background:#cfeff0}
+#trip-map{height:min(62vh,440px);width:100%}
+.map-lock{position:absolute;inset:0;z-index:500;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(29,42,51,.35));border:0;cursor:pointer}
+.map-lock span{min-height:48px;display:inline-flex;align-items:center;padding:0 20px;border-radius:24px;background:#fff;color:#1d2a33;font:700 15px Poppins,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.map-lock.hide{display:none}
+.map-fallback{display:none;padding:24px;text-align:center;color:#4b5860}
+.map-fallback b{display:block;font-size:18px;color:#1d2a33;margin-bottom:6px}
+.no-map #trip-map,.no-map .map-lock{display:none}.no-map .map-fallback{display:block}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:14px 0 6px;font-size:13px;font-weight:600;color:#4b5860}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.spots{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
+.spot{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px;background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);text-align:left;border:0;font:inherit;color:inherit;cursor:pointer;width:100%}
+.spot .n{flex:0 0 34px;height:34px;border-radius:50%;color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px}
+.spot b{display:block;font-size:15px;line-height:1.2}
+.spot small{color:#6b7780;font-size:13px}
+.spot .go{margin-left:auto;color:#ff5e62;font-weight:700;font-size:20px}
+.pin{width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.3);display:grid;place-items:center}
+.pin span{transform:rotate(45deg);color:#fff;font:800 13px Poppins,sans-serif}
+.leaflet-popup-content-wrapper{border-radius:16px}
+.leaflet-popup-content{margin:14px 16px;font-family:Poppins,sans-serif}
+.pop b{display:block;font-size:16px;color:#1d2a33}
+.pop small{display:block;color:#00a6a2;font-weight:700;margin:2px 0 4px}
+.pop p{margin:0 0 10px;color:#5b6870;font-size:13px}
+.pop a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:22px;background:#ff5e62;color:#fff!important;font-weight:700;font-size:14px}
+.leaflet-control-zoom a{width:44px!important;height:44px!important;line-height:44px!important;font-size:22px!important}
+/* PACKING */
+.packsec{background:#fff}
+.who{display:flex;gap:8px;flex-wrap:wrap;margin:-6px 0 16px;align-items:center}
+.who .lbl{font-weight:700;font-size:14px;color:#6b7780;margin-right:4px}
+.who button{min-height:44px;min-width:56px;padding:0 14px;border-radius:22px;border:3px solid transparent;font:700 15px Poppins,sans-serif;color:#fff;cursor:pointer;opacity:.55}
+.who button.on{opacity:1;border-color:#1d2a33}
+.prog{background:#fff8f0;border-radius:20px;padding:16px 18px;margin-bottom:16px}
+.prog .row{display:flex;justify-content:space-between;align-items:baseline;font-weight:700}
+.prog .row span{color:#6b7780;font-weight:600;font-size:14px}
+.pbar{height:14px;border-radius:8px;background:#ffe3d6;overflow:hidden;margin-top:10px}
+.pbar i{display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,#00b4b0,#ff9a6b,#ff5e62);transition:width .3s}
+.cats{display:grid;grid-template-columns:1fr;gap:14px}
+.cat{background:#fff;border:2px solid #ffe3d6;border-radius:20px;padding:6px 14px 10px}
+.cat h3{display:flex;justify-content:space-between;align-items:center;font-size:17px;min-height:44px}
+.cat h3 span{font-size:13px;color:#00a6a2}
+.it{display:flex;align-items:center;gap:12px;min-height:48px;border-top:1px solid #fff1e6;cursor:pointer}
+.it input{appearance:none;-webkit-appearance:none;flex:0 0 26px;height:26px;border-radius:8px;border:2px solid #ffb59a;display:grid;place-items:center;margin:0;cursor:pointer}
+.it input:checked{background:#00b4b0;border-color:#00b4b0}
+.it input:checked:after{content:"✓";color:#fff;font-weight:800;font-size:15px}
+.it .t{flex:1;font-size:16px;line-height:1.3}
+.it input:checked+.t{text-decoration:line-through;color:#9aa5ad}
+.it .tip{display:block;font-size:12px;color:#c2410c}
+.own{flex:0 0 auto;min-height:44px;min-width:48px;padding:0 10px;border-radius:22px;border:0;font:700 12px Poppins,sans-serif;color:#fff;cursor:pointer}
+.own.all{background:#e6edf0;color:#4b5860}
+.del{border:0;background:none;color:#b0bac1;font-size:20px;min-width:44px;min-height:44px;cursor:pointer}
+.addform{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px;background:#fff8f0;border-radius:20px;padding:16px}
+.addform h4{font-size:16px}
+.addform input,.addform select{min-height:48px;border-radius:14px;border:2px solid #ffd2c0;padding:0 14px;font:16px Poppins,sans-serif;background:#fff;color:#1d2a33;width:100%}
+.addform .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.addform button{min-height:48px;border-radius:24px;border:0;background:#ff5e62;color:#fff;font:700 16px Poppins,sans-serif;cursor:pointer}
+.reset{margin-top:12px;min-height:44px;border:0;background:none;color:#6b7780;text-decoration:underline;font:600 14px Poppins,sans-serif;cursor:pointer}
+.card.hidden{display:none}
+.bnav{z-index:1000}
+#trip-map .leaflet-control-layers{border:0;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);font:600 14px/1 Poppins,sans-serif;padding:4px}
+#trip-map .leaflet-control-layers-base{display:flex;gap:2px}
+#trip-map .leaflet-control-layers-base label{margin:0}
+#trip-map .leaflet-control-layers-selector+span{display:flex;align-items:center;min-height:44px;padding:0 10px;border-radius:10px;cursor:pointer;white-space:nowrap}
+#trip-map .leaflet-control-layers-selector{position:absolute;opacity:0;pointer-events:none}
+#trip-map .leaflet-control-layers-selector:checked+span{background:#ff5e62;color:#fff}
+#trip-map .leaflet-control-layers-separator,#trip-map .leaflet-control-layers-overlays{display:none}
+#trip-map section.leaflet-control-layers-list{padding:0;margin:0;max-width:none;width:auto;background:none;border:0}
+/* TABLET */
+@media (min-width:768px){
+ body{padding-bottom:0}
+ .bnav{display:none}
+ nav.top ul{display:flex}
+ .hero{min-height:620px;padding:32px 48px 140px}
+ .sun{right:120px;top:110px;width:240px;height:240px}
+ .palm{right:auto;left:58%;bottom:110px;height:250px}
+ .wave2{left:-10%;right:-10%;bottom:-90px;height:170px}
+ .htxt{margin-top:70px}
+ section{padding:56px 48px}
+ h2{font-size:54px}
+ .sample{margin:0 0 0 10px}
+ .timeline{grid-template-columns:repeat(2,1fr)}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .info{grid-template-columns:repeat(3,1fr)}
+ .spots{grid-template-columns:repeat(2,1fr)}
+ #trip-map{height:480px}
+ .cats{grid-template-columns:repeat(2,1fr)}
+ .addform{grid-template-columns:2fr 1fr 1fr auto;align-items:end}.addform h4{grid-column:1/-1}.addform .two{display:contents}
+}
+/* DESKTOP */
+@media (min-width:1100px){
+ .hero,section{padding-left:64px;padding-right:64px}
+ .timeline{grid-template-columns:repeat(7,1fr)}
+ .timeline:before{top:32px;bottom:auto;left:4%;right:4%;width:auto;height:6px;background:linear-gradient(90deg,#00b4b0,#ff9a6b,#ff5e62)}
+ .day{margin-left:0;padding:72px 14px 18px}
+ .dot{top:12px;left:14px}
+ .day h3{font-size:16px}.day li{font-size:13px}
+ .grid{grid-template-columns:repeat(4,1fr)}
+ .card{display:block}.img{min-height:130px}
+ .card p{font-size:14px}
+ .mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;align-items:start}
+ .spots{grid-template-columns:1fr;margin-top:0;max-height:520px;overflow:auto;padding:2px}
+ #trip-map{height:520px}
+ .cats{grid-template-columns:repeat(3,1fr)}
+}
+</style></head><body>
+<header class="hero" id="top"><div class="sun"></div><div class="palm"></div><div class="wave2"></div>
+<nav class="top"><div class="logo">¡Wepa! PR</div><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#map">Map</a></li><li><a href="#options">Options</a></li><li><a href="#packing">Packing</a></li><li><a href="#info">Info</a></li></ul></nav>
+<div class="htxt"><span class="tag">SUN NOV 1 – SAT NOV 7, 2026</span>
+<h1>PR TRIP<br>2026</h1><p>San Juan city nights → West coast surf &amp; sunsets. 7 days, 3 friends, zero plans set in stone.</p>
+<div class="crew"><div class="av" style="background:#ff5e62">JR</div><div class="av" style="background:#00a6a2">F2</div><div class="av" style="background:#7b2d8b">F3</div><span>J Rod + Friend 2 + Friend 3</span></div>
+<a class="cta" href="#itinerary">See the route ↓</a></div></header>
+
+<section id="itinerary"><h2>THE <span>ROUTE</span></h2><span class="sample">SAMPLE PLAN · NOTHING BOOKED</span><p class="sub">A draft day-by-day flow — swap anything out.</p>
+<div class="timeline">
+<div class="day"><div class="dot" style="background:#00b4b0">1</div><small>Sun Nov 1</small><h3>Land + Old San Juan</h3><ul><li>Arrive SJU (sample)</li><li>Walk blue cobblestones</li><li>Sunset at El Morro</li></ul><span class="loc sj">San Juan</span></div>
+<div class="day"><div class="dot" style="background:#14b8a6">2</div><small>Mon Nov 2</small><h3>Condado beach day</h3><ul><li>Condado / Ocean Park</li><li>Dinner ideas TBD</li></ul><span class="loc sj">San Juan</span></div>
+<div class="day"><div class="dot" style="background:#4cc3a0">3</div><small>Tue Nov 3</small><h3>Piñones + La Placita</h3><ul><li>Piñones kiosks &amp; bike path</li><li>Night out at La Placita</li></ul><span class="loc sj">San Juan</span></div>
+<div class="day"><div class="dot" style="background:#ffb347">4</div><small>Wed Nov 4</small><h3>Drive west</h3><ul><li>~2.5 hr drive (sample)</li><li>Crash Boat Beach stop</li></ul><span class="loc west">→ Aguadilla</span></div>
+<div class="day"><div class="dot" style="background:#ff9a6b">5</div><small>Thu Nov 5</small><h3>Rincón surf day</h3><ul><li>Domes / Sandy Beach</li><li>Lighthouse sunset</li></ul><span class="loc west">Rincón</span></div>
+<div class="day"><div class="dot" style="background:#ff5e62">6</div><small>Fri Nov 6</small><h3>Waterfalls + snorkel</h3><ul><li>Gozalandia (San Sebastián)</li><li>Steps Beach snorkel</li></ul><span class="loc west">West coast</span></div>
+<div class="day"><div class="dot" style="background:#7b2d8b">7</div><small>Sat Nov 7</small><h3>Fly out</h3><ul><li>Last breakfast</li><li>Depart (airport TBD)</li></ul><span class="loc west">Travel</span></div>
+</div></section>
+
+
+<section class="mapsec" id="map"><h2>THE <span>MAP</span></h2><span class="sample">SAMPLE SPOTS · NOT BOOKINGS</span><p class="sub">Every spot on our draft route. Tap a pin (or a spot below) for directions.</p>
+<div class="areas" id="area-btns"><button class="chip on" data-area="all">All</button><button class="chip" data-area="sj">San Juan</button><button class="chip" data-area="west">West coast</button></div>
+<div class="mapgrid"><div><div class="mapwrap" id="mapwrap"><div id="trip-map" aria-label="Map of trip spots"></div><button class="map-lock" id="map-lock" type="button"><span>👆 Tap to explore map</span></button>
+<div class="map-fallback"><b>🗺 Map couldn't load (offline?)</b>Use the spot list — each one opens in Google Maps.</div></div>
+<div class="legend"><span><i style="background:#00a6a2"></i>San Juan · Nov 1–3</span><span><i style="background:#ffb347"></i>Aguadilla</span><span><i style="background:#ff5e62"></i>Rincón</span><span><i style="background:#7b2d8b"></i>San Sebastián</span></div></div>
+<div class="spots" id="spots"></div></div>
+</section>
+
+<section class="opts" id="options"><h2>THINGS <span>TO DO</span></h2><span class="sample">OPTIONS</span><p class="sub">Ideas we could slot in — vote in the group chat.</p>
+<div class="filters" id="opt-filters"><button class="chip on" data-f="all">All</button><button class="chip" data-f="beach">🏖 Beach</button><button class="chip" data-f="food">🍤 Food</button><button class="chip" data-f="adventure">💦 Adventure</button><button class="chip" data-f="nightlife">🎉 Nightlife</button></div>
+<div class="grid">
+<div class="card" data-tags="food nightlife"><div class="img g1"><b>🏰</b></div><div class="c"><h4>Old San Juan &amp; El Morro</h4><p>Forts, colorful streets, bars.</p></div></div>
+<div class="card" data-tags="beach"><div class="img g2"><b>🏖</b></div><div class="c"><h4>Condado &amp; Ocean Park</h4><p>City beach + boardwalk vibes.</p></div></div>
+<div class="card" data-tags="nightlife food"><div class="img g3"><b>🎉</b></div><div class="c"><h4>La Placita de Santurce</h4><p>Street party, salsa, late nights.</p></div></div>
+<div class="card" data-tags="food beach"><div class="img g5"><b>🍤</b></div><div class="c"><h4>Piñones kiosks</h4><p>Alcapurrias &amp; bacalaítos by the sea.</p></div></div>
+<div class="card" data-tags="beach adventure"><div class="img g6"><b>🏄</b></div><div class="c"><h4>Domes &amp; Sandy Beach</h4><p>Rincón surf + epic sunsets.</p></div></div>
+<div class="card" data-tags="beach adventure"><div class="img g4"><b>🤿</b></div><div class="c"><h4>Steps Beach</h4><p>Reef snorkeling (Tres Palmas).</p></div></div>
+<div class="card" data-tags="adventure"><div class="img g7"><b>💦</b></div><div class="c"><h4>Gozalandia Falls</h4><p>Swim &amp; jump, San Sebastián.</p></div></div>
+<div class="card" data-tags="beach adventure"><div class="img g8"><b>🌅</b></div><div class="c"><h4>Crash Boat &amp; Survival Beach</h4><p>Pier jumps, wild cliffs, Aguadilla.</p></div></div>
+</div></section>
+
+
+<section class="packsec" id="packing"><h2>PACKING <span>LIST</span></h2><span class="sample">SUGGESTED · EDIT FREELY</span><p class="sub">Checks save on this phone. Shared gear is assigned to one person — tap the badge to reassign.</p>
+<div class="who" id="who"><span class="lbl">Packing as:</span><button data-p="JR" style="background:#ff5e62">JR</button><button data-p="F2" style="background:#00a6a2">F2</button><button data-p="F3" style="background:#7b2d8b">F3</button></div>
+<div class="prog"><div class="row"><b id="prog-txt">0 of 0 packed</b><span id="prog-pct">0%</span></div><div class="pbar"><i id="prog-bar"></i></div></div>
+<div class="cats" id="cats"></div>
+<form class="addform" id="addform"><h4>➕ Add an item</h4><input id="add-name" placeholder="e.g. Portable fan" maxlength="60" required aria-label="Item name">
+<div class="two"><select id="add-cat" aria-label="Category"></select><select id="add-own" aria-label="Who brings it"><option value="all">Everyone</option><option value="JR">JR</option><option value="F2">F2</option><option value="F3">F3</option></select></div>
+<button type="submit">Add</button></form>
+<button class="reset" id="reset" type="button">Reset my checks</button>
+</section>
+
+<section id="info"><h2>NEED <span>TO KNOW</span></h2><span class="sample">PLACEHOLDERS</span><p class="sub">Fill in once booked.</p>
+<div class="info">
+<div class="ib"><h4>🏠 Where we're staying</h4><p>Nov 1–4: San Juan stay — TBD<br>Nov 4–7: Rincón / Aguadilla stay — TBD</p></div>
+<div class="ib"><h4>🚗 Getting around</h4><p>Rental car: TBD (needed for west coast)<br>San Juan: walk / rideshare<br>Flights: TBD</p></div>
+<div class="ib"><h4>🚨 Emergency</h4><p>Emergency: 911<br>Group contacts: [add]<br>Stay host #: [add]</p><a class="call" href="tel:911">📞 Call 911</a></div>
+</div></section>
+<footer>PR Trip 2026 · Design mockup 1 — Tropical Bold · All itinerary content is sample/placeholder</footer>
+<nav class="bnav"><a href="#itinerary" class="on"><i>🗓</i>Itinerary</a><a href="#map"><i>🗺</i>Map</a><a href="#options"><i>🌴</i>Options</a><a href="#packing"><i>🎒</i>Packing</a><a href="#info"><i>ℹ️</i>Info</a></nav>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+/* ---------- MAP ---------- */
+const AREA={sj:{c:'#00a6a2',n:'San Juan'},agu:{c:'#ffb347',n:'Aguadilla'},rin:{c:'#ff5e62',n:'Rincón'},ss:{c:'#7b2d8b',n:'San Sebastián'}};
+const SPOTS=[
+ {n:'Old San Juan & El Morro',a:'sj',d:'Day 1 · Sun Nov 1 (sample)',t:'Forts, blue cobblestones, sunset',ll:[18.47083,-66.12389]},
+ {n:'Condado Beach',a:'sj',d:'Day 2 · Mon Nov 2 (sample)',t:'City beach day',ll:[18.45970,-66.07660]},
+ {n:'Piñones (Boca de Cangrejos)',a:'sj',d:'Day 3 · Tue Nov 3 (sample)',t:'Kiosks + boardwalk bike path',ll:[18.45828,-65.99294]},
+ {n:'La Placita de Santurce',a:'sj',d:'Day 3 · Tue Nov 3 night (sample)',t:'Street party, salsa',ll:[18.45040,-66.07020]},
+ {n:'Crash Boat Beach',a:'agu',d:'Day 4 · Wed Nov 4 (sample)',t:'Pier jumps, clear water',ll:[18.45873,-67.16402]},
+ {n:'Survival Beach',a:'agu',d:'Option · Nov 4–6',t:'Wild cliffs — hike in, no lifeguards',ll:[18.50790,-67.13613]},
+ {n:'Domes Beach',a:'rin',d:'Day 5 · Thu Nov 5 (sample)',t:'Surf break by the old dome',ll:[18.36477,-67.26963]},
+ {n:'Sandy Beach',a:'rin',d:'Day 5 · Thu Nov 5 (sample)',t:'Beginner surf, bars nearby',ll:[18.37150,-67.25434]},
+ {n:'Rincón Lighthouse (Punta Higüero)',a:'rin',d:'Day 5 · Thu Nov 5 sunset (sample)',t:'Sunset spot',ll:[18.36193,-67.27056]},
+ {n:'Steps Beach (Tres Palmas)',a:'rin',d:'Day 6 · Fri Nov 6 (sample)',t:'Reef snorkeling on calm days',ll:[18.34986,-67.26437]},
+ {n:'Gozalandia Waterfalls',a:'ss',d:'Day 6 · Fri Nov 6 (sample)',t:'Swim + jump · $10 cash parking',ll:[18.36288,-66.98424]}
+];
+const gmaps=ll=>`https://www.google.com/maps/search/?api=1&query=${ll[0]},${ll[1]}`;
+const spotsEl=document.getElementById('spots');
+SPOTS.forEach((s,i)=>{s.i=i+1;const b=document.createElement('button');b.className='spot';b.type='button';
+ b.innerHTML=`<span class="n" style="background:${AREA[s.a].c}">${s.i}</span><span><b>${s.n}</b><small>${s.d}</small></span><span class="go">›</span>`;
+ b.onclick=()=>focusSpot(s);spotsEl.appendChild(b);});
+let map=null,markers=[];
+function focusSpot(s){ if(!map){window.open(gmaps(s.ll),'_blank');return;}
+ document.getElementById('map').scrollIntoView({behavior:'smooth'}); unlock(); map.flyTo(s.ll,14,{duration:.8}); setTimeout(()=>s.m.openPopup(),850);}
+function unlock(){ if(!map)return; document.getElementById('map-lock').classList.add('hide'); map.dragging.enable(); map.touchZoom.enable(); map.scrollWheelZoom.enable();}
+function initMap(){
+ if(typeof L==='undefined'){document.getElementById('mapwrap').classList.add('no-map');return;}
+ const touch=matchMedia('(pointer:coarse)').matches;
+ map=L.map('trip-map',{zoomControl:true,scrollWheelZoom:false,dragging:!touch,touchZoom:!touch,tap:true});
+ const ESRI='https://server.arcgisonline.com/ArcGIS/rest/services/', tOpt={maxZoom:19,maxNativeZoom:18,referrerPolicy:'strict-origin-when-cross-origin',crossOrigin:false};
+ const street=L.tileLayer(ESRI+'World_Street_Map/MapServer/tile/{z}/{y}/{x}',{...tOpt,attribution:'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, USGS, NGA, OpenStreetMap contributors'});
+ const sat=L.layerGroup([
+  L.tileLayer(ESRI+'World_Imagery/MapServer/tile/{z}/{y}/{x}',{...tOpt,attribution:'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, GIS User Community'}),
+  L.tileLayer(ESRI+'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',tOpt)]);
+ street.addTo(map);
+ L.control.layers({'🗺️ Street':street,'🛰️ Satellite':sat},null,{collapsed:false,position:'topright'}).addTo(map);
+ let errs=0,oks=0;const te=()=>{if(++errs>8&&oks===0)document.getElementById('mapwrap').classList.add('no-map');};
+ map.on('tileerror',te);map.on('tileload',()=>oks++);
+ SPOTS.forEach(s=>{const icon=L.divIcon({className:'',html:`<div class="pin" style="background:${AREA[s.a].c}"><span>${s.i}</span></div>`,iconSize:[34,34],iconAnchor:[17,34],popupAnchor:[0,-32]});
+  s.m=L.marker(s.ll,{icon,title:s.n}).addTo(map).bindPopup(`<div class="pop"><b>${s.n}</b><small>${s.d} · ${AREA[s.a].n}</small><p>${s.t}</p><a href="${gmaps(s.ll)}" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>`,{autoPanPaddingTopLeft:[60,70],autoPanPaddingBottomRight:[20,20],maxWidth:240});markers.push(s.m);});
+ fitArea('all');
+ const lock=document.getElementById('map-lock'); if(!touch)lock.classList.add('hide'); lock.onclick=unlock;
+ map.on('click',()=>map.scrollWheelZoom.enable());
+}
+function fitArea(a){ if(!map)return; const pts=SPOTS.filter(s=>a==='all'||(a==='sj'?s.a==='sj':s.a!=='sj')).map(s=>s.ll); map.fitBounds(pts,{padding:[30,30],maxZoom:14});}
+document.querySelectorAll('#area-btns .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#area-btns .chip').forEach(x=>x.classList.toggle('on',x===b));fitArea(b.dataset.area);});
+initMap();
+
+/* ---------- OPTIONS FILTER ---------- */
+document.querySelectorAll('#opt-filters .chip').forEach(b=>b.onclick=()=>{const f=b.dataset.f;
+ document.querySelectorAll('#opt-filters .chip').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.grid .card').forEach(c=>c.classList.toggle('hidden',f!=='all'&&!c.dataset.tags.split(' ').includes(f)));});
+
+/* ---------- PACKING ---------- */
+const PCOL={JR:'#ff5e62',F2:'#00a6a2',F3:'#7b2d8b'};
+const CATS=[['beach','🏖 Beach'],['clothes','👕 Clothes'],['toiletries','🧴 Toiletries'],['docs','📱 Docs & Tech'],['adventure','💦 Adventure']];
+const BASE=[
+ ['beach','Swimsuits ×2','all'],['beach','Reef-safe sunscreen','all','Protects the Steps Beach reef'],['beach','Sunglasses + hat','all'],['beach','Quick-dry towel','all'],['beach','Beach speaker (shared)','F2'],['beach','Cooler bag (shared)','F3'],
+ ['clothes','Light tees / tanks','all'],['clothes','Going-out fit (La Placita)','all'],['clothes','Light rain jacket','all','Nov can be showery'],['clothes','Sandals / flip-flops','all'],
+ ['toiletries','Toothbrush & toiletries','all'],['toiletries','Bug spray','all'],['toiletries','Aloe / after-sun (shared)','JR'],['toiletries','Meds + basic first aid (shared)','F3'],
+ ['docs','ID / driver\'s license','all','Needed for the rental car'],['docs','Phone charger + power bank','all'],['docs','Cash for kiosks & parking','all','Gozalandia parking is cash'],['docs','Offline Google Map downloaded','all','Weak signal near the falls'],['docs','Car phone mount (shared)','JR'],
+ ['adventure','Water shoes','all','For Gozalandia rocks'],['adventure','Snorkel mask','all','Steps Beach'],['adventure','Dry bag (shared)','F2'],['adventure','GoPro / waterproof case (shared)','JR']
+];
+const KEY='prtrip2026.packing.v1';
+let st=JSON.parse(localStorage.getItem(KEY)||'null')||{me:'JR',checks:{},custom:[],assign:{}};
+const save=()=>localStorage.setItem(KEY,JSON.stringify(st));
+const allItems=()=>[...BASE.map((b,i)=>({id:'b'+i,cat:b[0],name:b[1],own:b[2],tip:b[3]||''})),...st.custom];
+const ownerOf=it=>st.assign[it.id]||it.own;
+const catSel=document.getElementById('add-cat'); CATS.forEach(([k,l])=>catSel.add(new Option(l,k)));
+function render(){
+ document.querySelectorAll('#who button').forEach(b=>b.classList.toggle('on',b.dataset.p===st.me));
+ const me=st.me, vis=allItems();
+ const wrap=document.getElementById('cats'); wrap.innerHTML=''; let tot=0,done=0;
+ CATS.forEach(([k,l])=>{const items=vis.filter(i=>i.cat===k); if(!items.length)return;
+  const box=document.createElement('div');box.className='cat';
+  const mine=items.filter(i=>{const o=ownerOf(i);return o==='all'||o===me;});
+  const md=mine.filter(i=>st.checks[me+':'+i.id]).length; tot+=mine.length; done+=md;
+  box.innerHTML=`<h3>${l}<span>${md}/${mine.length}</span></h3>`;
+  items.forEach(it=>{const o=ownerOf(it), mineIt=o==='all'||o===me;
+   const row=document.createElement('label');row.className='it';
+   const ck=document.createElement('input');ck.type='checkbox';ck.checked=!!st.checks[(mineIt?me:o)+':'+it.id];ck.disabled=!mineIt;
+   ck.onchange=()=>{st.checks[me+':'+it.id]=ck.checked;save();render();};
+   const t=document.createElement('span');t.className='t';t.textContent=it.name;if(it.tip){const tp=document.createElement('span');tp.className='tip';tp.textContent=it.tip;t.appendChild(tp);}
+   if(!mineIt){t.style.opacity=.6;const tp=document.createElement('span');tp.className='tip';tp.style.color='#6b7780';tp.textContent=o+' is bringing this';t.appendChild(tp);}
+   const ob=document.createElement('button');ob.type='button';ob.className='own'+(o==='all'?' all':'');ob.textContent=o==='all'?'All':o;if(o!=='all')ob.style.background=PCOL[o];
+   ob.title='Tap to reassign';ob.onclick=e=>{e.preventDefault();const seq=['all','JR','F2','F3'];st.assign[it.id]=seq[(seq.indexOf(o)+1)%4];save();render();};
+   row.append(ck,t,ob);
+   if(it.id.startsWith('c')){const d=document.createElement('button');d.type='button';d.className='del';d.textContent='×';d.title='Remove';d.onclick=e=>{e.preventDefault();st.custom=st.custom.filter(c=>c.id!==it.id);save();render();};row.append(d);}
+   box.appendChild(row);});
+  wrap.appendChild(box);});
+ const pct=tot?Math.round(done/tot*100):0;
+ document.getElementById('prog-txt').textContent=`${me}: ${done} of ${tot} packed`;document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('prog-bar').style.width=pct+'%';
+}
+function isShared(it){return ownerOf(it)!=='all';}
+document.querySelectorAll('#who button').forEach(b=>b.onclick=()=>{st.me=b.dataset.p;save();render();});
+document.getElementById('addform').onsubmit=e=>{e.preventDefault();const n=document.getElementById('add-name');if(!n.value.trim())return;
+ st.custom.push({id:'c'+Date.now(),cat:catSel.value,name:n.value.trim(),own:document.getElementById('add-own').value});n.value='';save();render();};
+document.getElementById('reset').onclick=()=>{Object.keys(st.checks).forEach(k=>{if(k.startsWith(st.me+':'))delete st.checks[k];});save();render();};
+render();
+
+/* ---------- NAV highlight ---------- */
+const navLinks=[...document.querySelectorAll('.bnav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}),{rootMargin:'-40% 0px -55% 0px'});
+['itinerary','map','options','packing','info'].forEach(id=>io.observe(document.getElementById(id)));
+</script>
+</body></html>
