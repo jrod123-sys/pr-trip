@@ -455,7 +455,7 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 
 <section class="opts" id="things"><h2>THINGS <span>TO DO</span></h2><span class="sample">Suggestions - familair with several, many just plugged by AI, just ideas</span><p class="sub">Beaches, bars, clubs, casinos &amp; late-night eats first — sightseeing less priority unless yall want (im down for wtv). Checked Oct 2026, but hours change, so double-check day-of.</p>
 <div class="vhelp"><b>Vote:</b> 👍 or 👎 anything. Votes are anonymous and everyone sees the counts. Tap your vote again to take it back. Use <b>🔥 Most liked</b> below to see the crew's picks.<div class="vstat" id="vstat">⏳ loading votes…</div></div>
-<div class="fwrap" id="things-f"><div class="fbar areas2" role="group" aria-label="Area"><button class="chip on" type="button" data-fa="all">All</button><button class="chip" type="button" data-fa="sj">San Juan</button><button class="chip" type="button" data-fa="rin">Rincón</button><button class="chip" type="button" data-fa="agu">Aguadilla / Isabela</button></div><div class="fbar cats2" role="group" aria-label="Category"><button class="chip on" type="button" data-fc="all">All types</button><button class="chip" type="button" data-fc="bar">🍹 Bars &amp; Clubs</button><button class="chip" type="button" data-fc="act">🏖 Beach &amp; Activities</button><button class="chip" type="button" data-fc="eat">🍽️ Eats</button><button class="chip" type="button" data-fc="see">📸 Sights (if we feel like it)</button></div><div class="fbar votes2" role="group" aria-label="Votes"><button class="chip on" type="button" data-fv="all">Any votes</button><button class="chip" type="button" data-fv="voted">🗳 Voted on</button><button class="chip" type="button" data-fv="top">🔥 Most liked</button><button class="chip" type="button" data-fv="nodown">🙈 Hide 👎</button><button class="chip sortc" type="button" data-fs aria-pressed="false">↕ Sort by votes</button></div></div>
+<div class="fwrap" id="things-f"><div class="fbar areas2" role="group" aria-label="Area"><button class="chip on" type="button" data-fa="all">All</button><button class="chip" type="button" data-fa="sj">San Juan</button><button class="chip" type="button" data-fa="rin">Rincón</button><button class="chip" type="button" data-fa="agu">Aguadilla / Isabela</button></div><div class="fbar cats2" role="group" aria-label="Category"><button class="chip on" type="button" data-fc="all">All types</button><button class="chip" type="button" data-fc="bar">🍹 Bars &amp; Clubs</button><button class="chip" type="button" data-fc="act">🏖 Beach &amp; Activities</button><button class="chip" type="button" data-fc="eat">🍽️ Eats</button><button class="chip" type="button" data-fc="see">📸 Sights (if we feel like it)</button></div><div class="fbar votes2" role="group" aria-label="Votes"><button class="chip on" type="button" data-fv="all">Any votes</button><button class="chip" type="button" data-fv="voted">🗳 Voted on</button><button class="chip" type="button" data-fv="top">🔥 Most liked</button><button class="chip" type="button" data-fh="1" aria-pressed="false">🙈 Hide 👎</button><button class="chip sortc" type="button" data-fs aria-pressed="false">↕ Sort by votes</button></div></div>
 <p class="tcount" id="tcount"></p><p class="tempty" id="tempty" hidden>Nothing here yet. Tap 👍 on spots you're into and they'll show up.</p><div class="tgrid" id="tgrid"></div></section>
 
 
@@ -598,7 +598,7 @@ document.querySelectorAll('.tl[data-t]').forEach(b=>b.onclick=()=>{const d=b.clo
 ROUTES.forEach(r=>{const g=RG[r.k];r.mi=g.mi;r.min=g.min;r.g=g.g;});
 
 let map=null;
-const F={a:'all',c:'all',v:'all',s:false};
+const F={a:'all',c:'all',v:'all',s:false,h:false};
 /* ---------- MAP KEY: day picker + layer toggles ---------- */
 SPOTS.forEach((s,i)=>s.id=['house','sju','marina','rin'][i]);
 const SBYID={};SPOTS.forEach(s=>SBYID[s.id]=s);
@@ -770,22 +770,24 @@ function vUps(id){const T=VT&&VT[id];return T?T.up:0;}
 function vAny(id){const T=VT&&VT[id];return !!T&&(T.up+T.down)>0;}
 /* Things to Do card filters (cards only; the map follows the map key) */
 const vis=x=>(F.a==='all'||F.a===x.a)&&(F.c==='all'||F.c===x.c);
-const vF=x=>F.v==='voted'?vAny(x.id):F.v==='top'?vNet(x.id)>0:F.v==='nodown'?vNet(x.id)>=0:true;
-const VFL={voted:'voted on',top:'most liked',nodown:'hiding 👎'};
+const vF=x=>(F.v==='voted'?vAny(x.id):F.v==='top'?vNet(x.id)>0:true)&&(!F.h||vNet(x.id)>=0);
+const VFL={voted:'voted on',top:'most liked'};
 function applyF(){
  document.querySelectorAll('[data-fa]').forEach(b=>b.classList.toggle('on',b.dataset.fa===F.a));
  document.querySelectorAll('[data-fc]').forEach(b=>b.classList.toggle('on',b.dataset.fc===F.c));
  document.querySelectorAll('[data-fv]').forEach(b=>b.classList.toggle('on',b.dataset.fv===F.v));
+ {const hb=document.querySelector('[data-fh]');if(hb){hb.classList.toggle('on',F.h);hb.setAttribute('aria-pressed',F.h);}}
  const sorted=F.s||F.v==='top';const sc=document.querySelector('[data-fs]');if(sc){sc.classList.toggle('on',sorted);sc.setAttribute('aria-pressed',sorted);}
  const ord=sorted?[...THINGS].sort((a,b)=>vNet(b.id)-vNet(a.id)||vUps(b.id)-vUps(a.id)||THINGS.indexOf(a)-THINGS.indexOf(b)):THINGS;
  const want=ord.map(x=>x.card);if(!sorted)want.splice(THINGS.findIndex(x=>x.c==='see'),0,tsec);
  const cur=[...tgrid.children];if(want.some((el,i)=>cur[i]!==el)){want.forEach(el=>el&&tgrid.appendChild(el));if(sorted&&tsec.parentNode)tsec.remove();}
- let n=0,ns=0;THINGS.forEach(x=>{const v=vis(x)&&vF(x);if(v){n++;if(x.c==='see')ns++;}if(x.card)x.card.classList.toggle('hidden',!v);
+ let n=0,ns=0,nh=0;THINGS.forEach(x=>{if(F.h&&vis(x)&&vNet(x.id)<0)nh++;const v=vis(x)&&vF(x);if(v){n++;if(x.c==='see')ns++;}if(x.card)x.card.classList.toggle('hidden',!v);
   const nb=x.card&&x.card.querySelector('.tnet');if(nb){const k=vNet(x.id);nb.textContent=k>0?'🔥 +'+k:'';}});
  tsec.style.display=!sorted&&ns&&F.c!=='see'?'':'none';
  const te=document.getElementById('tempty');if(te)te.hidden=!!n;
- const tc=document.getElementById('tcount');if(tc)tc.textContent=n+' spot'+(n===1?'':'s')+(F.a!=='all'?' · '+TAREA[F.a]:'')+(F.c!=='all'?' · '+CAT[F.c].n:'')+(F.v!=='all'?' · '+VFL[F.v]:'')+(sorted?' · sorted by votes':'');}
+ const tc=document.getElementById('tcount');if(tc)tc.textContent=n+' spot'+(n===1?'':'s')+(F.a!=='all'?' · '+TAREA[F.a]:'')+(F.c!=='all'?' · '+CAT[F.c].n:'')+(F.v!=='all'?' · '+VFL[F.v]:'')+(F.h?' · '+nh+' 👎 hidden':'')+(sorted?' · sorted by votes':'');}
 document.querySelectorAll('[data-fv]').forEach(b=>b.onclick=()=>{F.v=b.dataset.fv;applyF();});
+{const hb=document.querySelector('[data-fh]');if(hb)hb.onclick=()=>{F.h=!F.h;applyF();};}
 {const sb=document.querySelector('[data-fs]');if(sb)sb.onclick=()=>{F.s=!(F.s||F.v==='top');if(!F.s&&F.v==='top')F.v='all';applyF();};}
 document.querySelectorAll('[data-fa]').forEach(b=>b.onclick=()=>{F.a=b.dataset.fa;applyF();});
 document.querySelectorAll('[data-fc]').forEach(b=>b.onclick=()=>{F.c=b.dataset.fc;applyF();});
