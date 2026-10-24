@@ -29,7 +29,6 @@ nav.top ul a:hover{background:rgba(255,255,255,.2)}
 h1{font-family:"Bebas Neue",Poppins,sans-serif;font-weight:400;font-size:clamp(76px,22vw,128px);line-height:.9;margin:16px 0 10px;text-shadow:0 6px 30px rgba(0,0,0,.15)}
 .htxt p{font-size:17px;opacity:.95;max-width:30ch}
 .crew{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;align-items:center;font-weight:600;font-size:14px}
-.av{width:44px;height:44px;border-radius:50%;border:3px solid #fff;display:grid;place-items:center;font-weight:700;font-size:14px}
 .cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:22px;padding:0 24px;border-radius:26px;background:#fff;color:#ff5e62;font-weight:700}
 /* SECTIONS */
 section{padding:44px 20px;scroll-margin-top:10px}
@@ -125,7 +124,7 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 .wxmini:empty{display:none}
 .meta{font-size:14px;color:#4b5860;margin:0 0 10px}
 .otabs{display:flex;gap:6px;margin:4px 0 10px}
-.otabs button{flex:1;min-height:44px;border-radius:14px;border:2px solid #ffd2c0;background:#fff;font:700 14px Poppins,sans-serif;color:#1d2a33;cursor:pointer}
+.otabs button{flex:1;min-width:0;white-space:nowrap;padding:0 6px;min-height:44px;border-radius:14px;border:2px solid #ffd2c0;background:#fff;font:700 14px Poppins,sans-serif;color:#1d2a33;cursor:pointer}
 .otabs button.on{background:#1d2a33;border-color:#1d2a33;color:#fff}
 .panes{display:grid;gap:10px}
 .pane{display:none;background:#fff8f0;border-radius:16px;padding:12px 14px;border-top:5px solid #00b4b0;min-width:0}
@@ -312,7 +311,6 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 .vhelp{background:#1d2a33;color:#fff;border-radius:18px;padding:12px 16px;font-size:14px;line-height:1.45;margin:-8px 0 16px}
 .vhelp>b{color:#ffb347}
 .vstat{margin-top:6px;font-size:13px;color:#cfe9e7}.vstat.off{color:#ffd08a}.vstat b{color:#fff}
-.vname-btn{border:0;background:none;color:#ffb347;font:700 13px Poppins,sans-serif;text-decoration:underline;cursor:pointer;padding:4px 2px;min-height:32px}
 .tfoot{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
 .tc .tfoot .sm{margin-top:0}
 .vb{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -320,9 +318,6 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 .vbt b{font-size:14px;min-width:8px}
 .vbt[data-v="up"].on{background:#00b4b0;border-color:#00b4b0;color:#fff}
 .vbt[data-v="down"].on{background:#ff5e62;border-color:#ff5e62;color:#fff}
-.vbt[data-v="star"].on{background:#ffb347;border-color:#ffb347;color:#1d2a33}
-.vwho{flex-basis:100%;font-size:12px;color:#6b7780;line-height:1.35}
-.vwho:empty{display:none}
 .pane .vb{margin-top:10px}
 .pane .vbt{min-height:40px;font-size:14px}
 .gauge{margin-top:8px;font-weight:700;color:#7b2d8b;background:#f3e8f6;border-radius:12px;padding:10px 12px}
@@ -330,20 +325,21 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 .tsec span{font-family:Poppins,sans-serif;font-size:14px;font-weight:600;color:#6b7780;letter-spacing:0}
 .tc[data-c="see"]{box-shadow:0 3px 10px rgba(0,0,0,.05)}
 .tc[data-c="see"] h4{font-size:16px}
-.vsheet{position:fixed;inset:0;z-index:3000;background:rgba(29,42,51,.55);display:flex;align-items:flex-end;justify-content:center;padding:16px}
-.vsheet form{background:#fff;border-radius:22px;padding:18px;width:100%;max-width:420px;display:grid;gap:10px;margin-bottom:env(safe-area-inset-bottom)}
-.vsheet b{font-size:18px}.vsheet span{font-size:13px;color:#6b7780}
-.vsheet input{min-height:48px;border-radius:14px;border:2px solid #ffd2c0;padding:0 14px;font:16px Poppins,sans-serif}
-.vsheet div{display:flex;gap:10px;justify-content:flex-end}
-.vsheet button{min-height:46px;padding:0 20px;border-radius:23px;border:0;font:700 15px Poppins,sans-serif;cursor:pointer;background:#ff5e62;color:#fff}
-.vsheet button.skip{background:#eef2f4;color:#1d2a33}
-@media(min-width:768px){.vsheet{align-items:center}}
+.tnet{display:inline-block;margin-left:6px;font:800 12px Poppins,sans-serif;color:#fff;background:#00b4b0;border-radius:10px;padding:1px 7px;vertical-align:2px}
+.tnet:empty{display:none}
+.fbar.votes2 .chip.on{background:#00b4b0;border-color:#00b4b0;color:#fff}
+.fbar.votes2 .chip.sortc{border-style:dashed}.fbar.votes2 .chip.sortc.on{border-style:solid;background:#1d2a33;border-color:#1d2a33}
+.tempty{background:#fff;border:2px dashed #ffd2c0;border-radius:18px;padding:18px;text-align:center;font-weight:600;color:#6b7780}
+.otv{font-size:12px;font-weight:800;opacity:.9}
+.pane.lead{box-shadow:0 0 0 3px #00b4b0 inset}
+.pane.lead .ol::after{content:" · 🔥 crew favorite";color:#00a6a2}
+.mk-c.mk-liked{border-style:dashed}
 </style></head><body>
 <header class="hero" id="top"><div class="sun"></div><div class="palm"></div><div class="wave2"></div>
 <nav class="top"><div class="logo">Big coconuts 🔜🚀</div><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#weather">Weather</a></li><li><a href="#map">Map</a></li><li><a href="#things">Things to Do</a></li><li><a href="#info">Info</a></li></ul></nav>
 <div class="htxt"><span class="tag">SUN NOV 1 – FRI NOV 6, 2026</span>
 <h1>PR TRIP<br>2026</h1><p>San Juan → boat day → Rincón → back to San Juan. 6 days, 3 dudes, every plan tentative.</p>
-<div class="crew"><div class="av" style="background:#ff5e62">JR</div><div class="av" style="background:#00a6a2">W</div><div class="av" style="background:#7b2d8b">F</div><span>Rod + Wan + Fab</span></div>
+<div class="crew"><span>Rod + Wan + Fab</span></div>
 <a class="cta" href="#itinerary">See the plan ↓</a></div></header>
 
 <section id="itinerary"><h2>THE <span>PLAN</span></h2><span class="sample tent">TENTATIVE · NOTHING BOOKED</span><p class="sub">Each day has Option A / B (C on day 5). Add-ons work with any option. We decide day-of based on weather &amp; vibes.</p>
@@ -432,9 +428,9 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 </section>
 
 <section class="opts" id="things"><h2>THINGS <span>TO DO</span></h2><span class="sample">SPRING-BREAK MODE</span><p class="sub">Beach bars, day drinking, bars, clubs, casinos &amp; late-night eats first — sights at the bottom if we feel like it. Checked Oct 2026, but hours change, so double-check day-of.</p>
-<div class="vhelp"><b>Vote:</b> 👍 / 👎 / ⭐ on anything — everyone who opens the site sees the counts &amp; names. Tap your own vote again to take it back.<div class="vstat" id="vstat">⏳ loading votes…</div></div>
-<div class="fwrap" id="things-f"><div class="fbar areas2" role="group" aria-label="Area"><button class="chip on" type="button" data-fa="all">All</button><button class="chip" type="button" data-fa="sj">San Juan</button><button class="chip" type="button" data-fa="rin">Rincón</button><button class="chip" type="button" data-fa="agu">Aguadilla / Isabela</button></div><div class="fbar cats2" role="group" aria-label="Category"><button class="chip on" type="button" data-fc="all">All types</button><button class="chip" type="button" data-fc="bar">🍹 Bars &amp; Clubs</button><button class="chip" type="button" data-fc="act">🏖 Beach &amp; Activities</button><button class="chip" type="button" data-fc="eat">🍽️ Eats</button><button class="chip" type="button" data-fc="see">📸 Sights (if we feel like it)</button></div></div>
-<p class="tcount" id="tcount"></p><div class="tgrid" id="tgrid"></div></section>
+<div class="vhelp"><b>Vote:</b> 👍 or 👎 anything. Votes are anonymous and everyone sees the counts. Tap your vote again to take it back. Use <b>🔥 Most liked</b> below to see the crew's picks.<div class="vstat" id="vstat">⏳ loading votes…</div></div>
+<div class="fwrap" id="things-f"><div class="fbar areas2" role="group" aria-label="Area"><button class="chip on" type="button" data-fa="all">All</button><button class="chip" type="button" data-fa="sj">San Juan</button><button class="chip" type="button" data-fa="rin">Rincón</button><button class="chip" type="button" data-fa="agu">Aguadilla / Isabela</button></div><div class="fbar cats2" role="group" aria-label="Category"><button class="chip on" type="button" data-fc="all">All types</button><button class="chip" type="button" data-fc="bar">🍹 Bars &amp; Clubs</button><button class="chip" type="button" data-fc="act">🏖 Beach &amp; Activities</button><button class="chip" type="button" data-fc="eat">🍽️ Eats</button><button class="chip" type="button" data-fc="see">📸 Sights (if we feel like it)</button></div><div class="fbar votes2" role="group" aria-label="Votes"><button class="chip on" type="button" data-fv="all">Any votes</button><button class="chip" type="button" data-fv="voted">🗳 Voted on</button><button class="chip" type="button" data-fv="top">🔥 Most liked</button><button class="chip" type="button" data-fv="nodown">🙈 Hide 👎</button><button class="chip sortc" type="button" data-fs aria-pressed="false">↕ Sort by votes</button></div></div>
+<p class="tcount" id="tcount"></p><p class="tempty" id="tempty" hidden>Nothing here yet. Tap 👍 on spots you're into and they'll show up.</p><div class="tgrid" id="tgrid"></div></section>
 
 
 <section id="info"><h2>NEED <span>TO KNOW</span></h2>
@@ -448,7 +444,7 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 /* ---------- ITINERARY tabs (phones) ---------- */
 document.querySelectorAll('.day .panes .pane[data-k]').forEach(pa=>{const d=pa.closest('.day');pa.insertAdjacentHTML('beforeend',vbar('opt-'+d.id+'-'+pa.dataset.k));});
 document.querySelectorAll('.panes').forEach(p=>{const panes=[...p.querySelectorAll('.pane')];const t=document.createElement('div');t.className='otabs';t.setAttribute('role','tablist');
- panes.forEach((pa,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent='Option '+pa.dataset.k;if(i===0)b.classList.add('on');
+ panes.forEach((pa,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent='Option '+pa.dataset.k;b.dataset.k=pa.dataset.k;if(i===0)b.classList.add('on');
   b.onclick=()=>{panes.forEach((x,j)=>x.classList.toggle('on',j===i));t.querySelectorAll('button').forEach((x,j)=>x.classList.toggle('on',j===i));};t.appendChild(b);});
  p.before(t);});
 
@@ -546,7 +542,7 @@ const tgrid=document.getElementById('tgrid');
 THINGS.sort((a,b)=>CORD[a.c]-CORD[b.c]);
 const tsec=document.createElement('div');tsec.className='tsec';tsec.innerHTML='📸 Sights <span>— if we feel like it</span>';
 THINGS.forEach(x=>{if(x.c==='see'&&!tsec.parentNode)tgrid.appendChild(tsec);const el=document.createElement('article');el.className='tc';el.style.setProperty('--cc',CAT[x.c].c);el.dataset.a=x.a;el.dataset.c=x.c;el.id='t-'+x.id;
- el.innerHTML=`<div class="th"><span class="te">${CAT[x.c].e}</span><div><h4>${esc(x.n)}</h4><div class="tm"><b>${TAREA[x.a]}</b> · ${esc(x.town)} · ${CAT[x.c].n}${x.p?`<span class="pr">${esc(x.p)}</span>`:''}</div></div></div><p>${esc(x.d)}</p><p class="tp">💡 ${esc(x.t)}</p><div class="tfoot"><button class="sm" type="button">📍 Show on map</button>${vbar(x.id)}</div>`;
+ el.innerHTML=`<div class="th"><span class="te">${CAT[x.c].e}</span><div><h4>${esc(x.n)}<span class="tnet"></span></h4><div class="tm"><b>${TAREA[x.a]}</b> · ${esc(x.town)} · ${CAT[x.c].n}${x.p?`<span class="pr">${esc(x.p)}</span>`:''}</div></div></div><p>${esc(x.d)}</p><p class="tp">💡 ${esc(x.t)}</p><div class="tfoot"><button class="sm" type="button">📍 Show on map</button>${vbar(x.id)}</div>`;
  el.querySelector('.sm').onclick=()=>showThing(x.id);x.card=el;tgrid.appendChild(el);});
 document.querySelectorAll('.tl[data-t]').forEach(b=>b.onclick=()=>{const d=b.closest('.day');showThing(b.dataset.t,d?+d.id.replace('day',''):0);});
 
@@ -554,7 +550,7 @@ document.querySelectorAll('.tl[data-t]').forEach(b=>b.onclick=()=>{const d=b.clo
 ROUTES.forEach(r=>{const g=RG[r.k];r.mi=g.mi;r.min=g.min;r.g=g.g;});
 
 let map=null;
-const F={a:'all',c:'all'};
+const F={a:'all',c:'all',v:'all',s:false};
 /* ---------- MAP KEY: day picker + layer toggles ---------- */
 SPOTS.forEach((s,i)=>s.id=['house','sju','marina','rin'][i]);
 const SBYID={};SPOTS.forEach(s=>SBYID[s.id]=s);
@@ -590,7 +586,7 @@ function kVis(){const all=K.day===0,s=all?K.all:K.d,days=all?DAYS:[DAYS[K.day-1]
  const plan=all?(s.plan?planMap(days,{A:1,B:1,C:1,add:1}):new Map()):planMap(days,s);
  const stays=s.st?[...new Set(days.flatMap(D=>D.st))].filter(id=>!plan.has(id)).map(id=>SBYID[id]):[];
  const ar=all?null:days[0].ar;
- const things=s.t?THINGS.filter(x=>K.cats[x.c]&&(!ar||ar.includes(x.a))&&!plan.has(x.id)):[];
+ const things=s.t?THINGS.filter(x=>K.cats[x.c]&&(!ar||ar.includes(x.a))&&!plan.has(x.id)&&(!K.liked||vNet(x.id)>0)):[];
  return {routes,plan,stays,things};}
 
 /* key UI */
@@ -613,7 +609,7 @@ function renderKey(){
   h+=tgl('r',s.r,'#1d2a33',`<span style="display:flex;flex-direction:column;gap:2px">${[ROUTES[0],ROUTES[2],ROUTES[4]].map(rsw).join('')}</span>`,'All routes',`${ROUTES.length} drive lines, colored by day`);
   h+=tgl('plan',s.plan,'#00b4b0',`<span class="mk-lt" style="background:#00b4b0">A</span>`,'Plan spots','Every day\'s A/B picks + add-ons');
   h+=tgl('st',s.st,'#1d2a33','🏠','Stays &amp; airport','Frailes house, Stella (Rincón), SJU');
-  h+=tgl('t',s.t,'#ff5e62','🌴','Things to Do',`${THINGS.filter(x=>K.cats[x.c]&&!(s.plan&&v.plan.has(x.id))).length} spots island-wide`,true);
+  h+=tgl('t',s.t,'#ff5e62','🌴','Things to Do',`${THINGS.filter(x=>K.cats[x.c]&&!(s.plan&&v.plan.has(x.id))&&(!K.liked||vNet(x.id)>0)).length} ${K.liked?'liked ':''}spots island-wide`,true);
  }else{
   const rs=D.r.map(k=>RBYK[k]);
   h+=tgl('r',s.r,D.c,`<span style="display:flex;flex-direction:column;gap:2px">${rs.map(rsw).join('')}</span>`,rs.length>1?'Routes':'Route',rs.length>1?'Drive lines':`${rs[0].mi} mi · ${fmtMin(rs[0].min)}`);
@@ -621,11 +617,11 @@ function renderKey(){
   if(D.add.length)h+=tgl('add',s.add,OPTC['+'],`<span class="mk-lt" style="background:#1d2a33">+</span>`,'Add-ons',`Extras &amp; nights out · ${D.add.length}`);
   const sts=D.st.map(id=>SBYID[id]);
   h+=tgl('st',s.st,'#1d2a33',sts.map(x=>x.e).join(''),sts.some(x=>x.id==='sju')?'Stays &amp; airport':'Stays',sts.map(x=>x.sh||x.n.replace(' (approx.)','').replace(' Airport','')).join(' · '));
-  const pm=planMap([D],s);const nt=THINGS.filter(x=>K.cats[x.c]&&D.ar.includes(x.a)&&!pm.has(x.id)).length;
+  const pm=planMap([D],s);const nt=THINGS.filter(x=>K.cats[x.c]&&D.ar.includes(x.a)&&!pm.has(x.id)&&(!K.liked||vNet(x.id)>0)).length;
   h+=tgl('t',s.t,'#ff5e62','🌴','Things to Do nearby',`${nt} more spot${nt===1?'':'s'} in ${D.ar.map(a=>TAREA[a]).join(' + ')}`,true);
   if(!['A','B','C'].some(k=>(D.o[k]||[]).length)&&!D.add.length)h+=`<p class="mk-none">No option spots this day, just the plan above.</p>`;
  }
- if(s.t)h+=`<div class="mk-cats" role="group" aria-label="Things to Do types">${Object.keys(CAT).map(c=>`<button type="button" class="mk-c" data-cat="${c}" aria-pressed="${K.cats[c]}" style="--cc:${CAT[c].c}">${CAT[c].e} ${CAT[c].n}</button>`).join('')}</div>`;
+ if(s.t)h+=`<div class="mk-cats" role="group" aria-label="Things to Do types">${Object.keys(CAT).map(c=>`<button type="button" class="mk-c" data-cat="${c}" aria-pressed="${K.cats[c]}" style="--cc:${CAT[c].c}">${CAT[c].e} ${CAT[c].n}</button>`).join('')}<button type="button" class="mk-c mk-liked" data-liked aria-pressed="${!!K.liked}" style="--cc:#00b4b0">👍 Liked only</button></div>`;
  h+='</div>';
  const sc=mk.querySelector('.mk-days');const sl=sc?sc.scrollLeft:0;
  mk.innerHTML=h;
@@ -636,6 +632,7 @@ mk.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!mk.co
  if(b.dataset.day!==undefined){K.day=+b.dataset.day;setKey(true);}
  else if(b.dataset.tg){const s=K.day===0?K.all:K.d;s[b.dataset.tg]=!s[b.dataset.tg];setKey(true);}
  else if(b.dataset.cat){K.cats[b.dataset.cat]=!K.cats[b.dataset.cat];setKey(true);}
+ else if(b.hasAttribute('data-liked')){K.liked=!K.liked;setKey(true);}
  else if(b.hasAttribute('data-mk-open')){K.open=!K.open;renderKey();}
 });
 function setKey(fit){if(map)map.closePopup();renderKey();renderMap(fit);}
@@ -720,13 +717,28 @@ function initMap(){
  const lock=document.getElementById('map-lock'); if(!touch)lock.classList.add('hide'); lock.onclick=unlock;
  map.on('click',()=>map.scrollWheelZoom.enable());
 }
+var VT={};function vNet(id){const T=VT&&VT[id];return T?T.up-T.down:0;}
+function vUps(id){const T=VT&&VT[id];return T?T.up:0;}
+function vAny(id){const T=VT&&VT[id];return !!T&&(T.up+T.down)>0;}
 /* Things to Do card filters (cards only; the map follows the map key) */
 const vis=x=>(F.a==='all'||F.a===x.a)&&(F.c==='all'||F.c===x.c);
+const vF=x=>F.v==='voted'?vAny(x.id):F.v==='top'?vNet(x.id)>0:F.v==='nodown'?vNet(x.id)>=0:true;
+const VFL={voted:'voted on',top:'most liked',nodown:'hiding 👎'};
 function applyF(){
  document.querySelectorAll('[data-fa]').forEach(b=>b.classList.toggle('on',b.dataset.fa===F.a));
  document.querySelectorAll('[data-fc]').forEach(b=>b.classList.toggle('on',b.dataset.fc===F.c));
- let n=0,ns=0;THINGS.forEach(x=>{const v=vis(x);if(v){n++;if(x.c==='see')ns++;}if(x.card)x.card.classList.toggle('hidden',!v);});tsec.style.display=ns&&F.c!=='see'?'':'none';
- const tc=document.getElementById('tcount');if(tc)tc.textContent=n+' spot'+(n===1?'':'s')+(F.a!=='all'?' · '+TAREA[F.a]:'')+(F.c!=='all'?' · '+CAT[F.c].n:'');}
+ document.querySelectorAll('[data-fv]').forEach(b=>b.classList.toggle('on',b.dataset.fv===F.v));
+ const sorted=F.s||F.v==='top';const sc=document.querySelector('[data-fs]');if(sc){sc.classList.toggle('on',sorted);sc.setAttribute('aria-pressed',sorted);}
+ const ord=sorted?[...THINGS].sort((a,b)=>vNet(b.id)-vNet(a.id)||vUps(b.id)-vUps(a.id)||THINGS.indexOf(a)-THINGS.indexOf(b)):THINGS;
+ const want=ord.map(x=>x.card);if(!sorted)want.splice(THINGS.findIndex(x=>x.c==='see'),0,tsec);
+ const cur=[...tgrid.children];if(want.some((el,i)=>cur[i]!==el)){want.forEach(el=>el&&tgrid.appendChild(el));if(sorted&&tsec.parentNode)tsec.remove();}
+ let n=0,ns=0;THINGS.forEach(x=>{const v=vis(x)&&vF(x);if(v){n++;if(x.c==='see')ns++;}if(x.card)x.card.classList.toggle('hidden',!v);
+  const nb=x.card&&x.card.querySelector('.tnet');if(nb){const k=vNet(x.id);nb.textContent=k>0?'🔥 +'+k:'';}});
+ tsec.style.display=!sorted&&ns&&F.c!=='see'?'':'none';
+ const te=document.getElementById('tempty');if(te)te.hidden=!!n;
+ const tc=document.getElementById('tcount');if(tc)tc.textContent=n+' spot'+(n===1?'':'s')+(F.a!=='all'?' · '+TAREA[F.a]:'')+(F.c!=='all'?' · '+CAT[F.c].n:'')+(F.v!=='all'?' · '+VFL[F.v]:'')+(sorted?' · sorted by votes':'');}
+document.querySelectorAll('[data-fv]').forEach(b=>b.onclick=()=>{F.v=b.dataset.fv;applyF();});
+{const sb=document.querySelector('[data-fs]');if(sb)sb.onclick=()=>{F.s=!(F.s||F.v==='top');if(!F.s&&F.v==='top')F.v='all';applyF();};}
 document.querySelectorAll('[data-fa]').forEach(b=>b.onclick=()=>{F.a=b.dataset.fa;applyF();});
 document.querySelectorAll('[data-fc]').forEach(b=>b.onclick=()=>{F.c=b.dataset.fc;applyF();});
 applyF();
@@ -795,10 +807,10 @@ async function fetchWx(){
 fetchWx();
 
 
-/* ---------- SHARED VOTES 👍 👎 ⭐ ----------
-   Backend: textdb.dev (free, no account, no key). Every viewer gets a random id (localStorage)
-   and writes ONLY their own doc: <ns>-u-<uid> = {name,votes:{itemId:{t:'up'|'down'|'',s:0|1}},ts}.
-   <ns>-idx = {u:[uid,...]} lists who has voted. Readers merge all docs. No secrets live here. */
+/* ---------- SHARED VOTES 👍 👎 (anonymous) ----------
+   Backend: textdb.dev (free, no account, no key). Every device gets a random id (localStorage, never shown)
+   and writes ONLY its own doc: <ns>-u-<uid> = {votes:{itemId:{t:'up'|'down'}},ts}. No names are stored.
+   <ns>-idx = {u:[uid,...]} lists devices that voted. Readers merge all docs and show counts only. */
 const VQ=new URLSearchParams(location.search).get('votens');
 const VNS='prtrip26-q7m3k9x2'+(VQ?'-t-'+VQ.replace(/[^a-z0-9-]/gi,'').slice(0,32):'');
 const VAPI='https://textdb.dev/api/data/';
@@ -806,10 +818,13 @@ const VK='prtrip2026.votes.v1'+(VQ?'.'+VQ:'');
 const VUID=/^[a-z0-9]{8,24}$/;
 let VS={};try{VS=JSON.parse(localStorage.getItem(VK)||'{}')||{};}catch(e){VS={};}
 if(!VUID.test(VS.uid||''))VS.uid=(Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-5)).replace(/[^a-z0-9]/g,'x');
-VS.me=VS.me||{};VS.others=VS.others||{};if(typeof VS.name!=='string')VS.name='';
+const vClean=v=>{const o={};if(v&&typeof v==='object')Object.keys(v).slice(0,400).forEach(k=>{if(!/^[a-z0-9-]{1,40}$/i.test(k))return;const e=v[k]||{};if(e.t==='up'||e.t==='down')o[k]={t:e.t};});return o;};
+const hadOld=('name' in VS)||('asked' in VS)||Object.values(VS.me||{}).some(e=>e&&('s' in e));
+delete VS.name;delete VS.asked;VS.me=vClean(VS.me);VS.others=VS.others||{};
+Object.keys(VS.others).forEach(u=>{VS.others[u]={v:vClean((VS.others[u]||{}).v)};});
+if(hadOld&&VS.joined)VS.dirty=1; /* rewrite my old doc without name/star */
 const vSave=()=>{try{localStorage.setItem(VK,JSON.stringify(VS));}catch(e){}};vSave();
-let vOnline=null,vBusy=false,vTimer=null;
-const vClean=v=>{const o={};if(v&&typeof v==='object')Object.keys(v).slice(0,400).forEach(k=>{if(!/^[a-z0-9-]{1,40}$/i.test(k))return;const e=v[k]||{};const t=e.t==='up'||e.t==='down'?e.t:'';const st=e.s?1:0;if(t||st)o[k]={t,s:st};});return o;};
+let vOnline=null,vBusy=false,vTimer=null;VT={};
 async function vReq(id,body){const c=new AbortController();const to=setTimeout(()=>c.abort(),10000);
  try{const r=await fetch(VAPI+VNS+'-'+id,body===undefined?{cache:'no-store',signal:c.signal}:{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(body),signal:c.signal});
   if(!r.ok)throw new Error('HTTP '+r.status);if(body!==undefined)return true;const t=await r.text();if(!t.trim())return null;try{return JSON.parse(t);}catch(e){return null;}}
@@ -820,49 +835,48 @@ async function vJoin(){for(let i=0;i<4;i++){const cur=vIdx(await vReq('idx'));if
   const chk=vIdx(await vReq('idx'));if(chk.includes(VS.uid)){VS.joined=1;return chk;}}
  throw new Error('join failed');}
 async function vPush(){VS.dirty=1;vSave();
- await vReq('u-'+VS.uid,{name:VS.name.slice(0,20),votes:vClean(VS.me),ts:Date.now()});VS.dirty=0;vSave();}
+ await vReq('u-'+VS.uid,{votes:vClean(VS.me),ts:Date.now()});VS.dirty=0;vSave();}
 async function vSync(){if(vBusy)return;vBusy=true;
  try{if(VS.dirty)await vPush();
   let users=vIdx(await vReq('idx'));
-  const has=Object.keys(vClean(VS.me)).length>0;
+  const has=Object.keys(VS.me).length>0;
   if(has&&!users.includes(VS.uid))users=await vJoin();
   const others=users.filter(u=>u!==VS.uid).slice(-100);
   const docs=await Promise.all(others.map(u=>vReq('u-'+u).catch(()=>undefined)));
-  const o={};others.forEach((u,i)=>{const d=docs[i];if(d===undefined){if(VS.others[u])o[u]=VS.others[u];}else if(d&&typeof d==='object')o[u]={n:String(d.name||'').slice(0,20),v:vClean(d.votes)};});
+  const o={};others.forEach((u,i)=>{const d=docs[i];if(d===undefined){if(VS.others[u])o[u]=VS.others[u];}else if(d&&typeof d==='object')o[u]={v:vClean(d.votes)};});
   VS.others=o;VS.last=Date.now();vOnline=true;}
  catch(e){vOnline=false;}
- vBusy=false;vSave();vRender();}
-function vQueue(){clearTimeout(vTimer);vTimer=setTimeout(async()=>{try{await vPush();if(!VS.joined)await vJoin();vOnline=true;}catch(e){vOnline=false;}vSave();vRender();},500);}
-function vbar(id){return `<div class="vb" data-vid="${id}"><button type="button" class="vbt" data-v="up" aria-pressed="false" aria-label="Thumbs up">👍<b>0</b></button><button type="button" class="vbt" data-v="down" aria-pressed="false" aria-label="Thumbs down">👎<b>0</b></button><button type="button" class="vbt" data-v="star" aria-pressed="false" aria-label="Star">⭐<b>0</b></button><span class="vwho"></span></div>`;}
-function vRender(){
- const tally={};const add=(id,who,e,self)=>{const T=tally[id]||(tally[id]={up:[],down:[],star:[]});if(e.t)T[e.t].push({who,self});if(e.s)T.star.push({who,self});};
- Object.values(VS.others).forEach(u=>Object.entries(u.v||{}).forEach(([id,e])=>add(id,u.n||'Someone',e,false)));
- const mine=vClean(VS.me);Object.entries(mine).forEach(([id,e])=>add(id,VS.name||'You',e,true));
- document.querySelectorAll('.vb[data-vid]').forEach(b=>{const id=b.dataset.vid,T=tally[id]||{up:[],down:[],star:[]},m=mine[id]||{};
-  b.querySelectorAll('.vbt').forEach(btn=>{const k=btn.dataset.v;btn.querySelector('b').textContent=T[k].length;
-   const on=k==='star'?!!m.s:m.t===k;btn.setAttribute('aria-pressed',on);btn.classList.toggle('on',on);});
-  const nm=a=>a.map(p=>esc(p.self?(VS.name?VS.name+' (you)':'you'):p.who)).join(', ');
-  const parts=[];if(T.up.length)parts.push('👍 '+nm(T.up));if(T.down.length)parts.push('👎 '+nm(T.down));if(T.star.length)parts.push('⭐ '+nm(T.star));
-  b.querySelector('.vwho').innerHTML=parts.join(' · ');});
+ vBusy=false;vSave();vRender(true);}
+function vQueue(){clearTimeout(vTimer);vTimer=setTimeout(async()=>{try{await vPush();if(!VS.joined)await vJoin();vOnline=true;}catch(e){vOnline=false;}vSave();vRender(false);},500);}
+function vbar(id){return `<div class="vb" data-vid="${id}"><button type="button" class="vbt" data-v="up" aria-pressed="false" aria-label="Thumbs up">👍<b>0</b></button><button type="button" class="vbt" data-v="down" aria-pressed="false" aria-label="Thumbs down">👎<b>0</b></button></div>`;}
+function vRender(refilter){
+ const T={};const add=v=>Object.entries(v||{}).forEach(([id,e])=>{const x=T[id]||(T[id]={up:0,down:0});x[e.t]++;});
+ Object.values(VS.others).forEach(u=>add(u.v));add(VS.me);VT=T;
+ document.querySelectorAll('.vb[data-vid]').forEach(b=>{const id=b.dataset.vid,x=T[id]||{up:0,down:0},m=VS.me[id]||{};
+  b.querySelectorAll('.vbt').forEach(btn=>{const k=btn.dataset.v;btn.querySelector('b').textContent=x[k];
+   const on=m.t===k;btn.setAttribute('aria-pressed',on);btn.classList.toggle('on',on);});});
+ /* itinerary: 👍 badge on option tabs + 🔥 on the day's leading option */
+ document.querySelectorAll('.panes').forEach(p=>{const panes=[...p.querySelectorAll('.pane[data-k]')],tabs=p.parentNode.querySelectorAll('.otabs button');
+  const nets=panes.map(pa=>vNet(pa.querySelector('.vb').dataset.vid)),mx=Math.max(...nets),lead=mx>0&&nets.filter(n=>n===mx).length===1;
+  panes.forEach((pa,i)=>{const id=pa.querySelector('.vb').dataset.vid,up=(T[id]||{}).up||0,isL=lead&&nets[i]===mx;pa.classList.toggle('lead',isL);
+   const tb=[...tabs].find(t=>t.dataset.k===pa.dataset.k);if(tb)tb.innerHTML=(up?'Opt ':'Option ')+pa.dataset.k+(up?` <span class="otv">${isL?'🔥':'👍'}${up}</span>`:'');});});
  const st=document.getElementById('vstat');if(st){
-  const who=`Voting as <b>${esc(VS.name||'anonymous')}</b> <button type="button" class="vname-btn">${VS.name?'change name':'add your name'}</button>`;
+  const n=Object.values(VS.others).filter(u=>Object.keys(u.v||{}).length).length+(Object.keys(VS.me).length?1:0);
   st.className='vstat'+(vOnline===false?' off':'');
-  st.innerHTML=(vOnline===false?`⚠️ <b>Votes offline</b> — showing saved votes + yours; they'll sync when the connection's back. `:vOnline?`🟢 Live · ${(()=>{const n=Object.values(VS.others).filter(u=>Object.keys(u.v||{}).length).length+(Object.keys(vClean(VS.me)).length?1:0);return n?n+(n===1?' person':' people')+' voted · ':'';})()}`:'⏳ Loading votes… ')+who;}
+  st.innerHTML=vOnline===false?`⚠️ <b>Votes offline</b> — showing saved votes + yours; they'll sync when the connection's back.`:vOnline?`🟢 Live · ${n?n+(n===1?' person has':' people have')+' voted':'no votes yet'} · all anonymous`:'⏳ Loading votes…';}
+ if(refilter!==false&&typeof applyF==='function'){applyF();}
+ if(typeof K!=='undefined'&&K.liked&&typeof setKey==='function'&&refilter!==false)setKey(false);
 }
-function vAsk(force){if(!force&&(VS.name||VS.asked))return;VS.asked=1;vSave();
- const d=document.createElement('div');d.className='vsheet';d.innerHTML=`<form><b>Who's voting? 🍻</b><span>First name so the crew knows whose 👍 it is (shows on the public site). Optional.</span><input name="n" maxlength="20" autocomplete="given-name" placeholder="First name" value="${esc(VS.name)}"><div><button type="button" class="skip">Skip</button><button type="submit">Save</button></div></form>`;
- document.body.appendChild(d);const f=d.querySelector('form');setTimeout(()=>f.n.focus(),50);
- f.onsubmit=e=>{e.preventDefault();VS.name=f.n.value.replace(/[<>]/g,'').trim().slice(0,20);vSave();d.remove();vRender();vQueue();};
- d.querySelector('.skip').onclick=()=>{d.remove();};}
-document.addEventListener('click',e=>{const nb=e.target.closest('.vname-btn');if(nb){vAsk(true);return;}
- const btn=e.target.closest('.vbt');if(!btn)return;const id=btn.closest('.vb').dataset.vid,k=btn.dataset.v;
- const m=VS.me[id]||{t:'',s:0};if(k==='star')m.s=m.s?0:1;else m.t=m.t===k?'':k;
- if(m.t||m.s)VS.me[id]=m;else delete VS.me[id];vSave();vRender();vQueue();vAsk(false);});
-vRender();vSync();
+document.addEventListener('click',e=>{const btn=e.target.closest('.vbt');if(!btn)return;const id=btn.closest('.vb').dataset.vid,k=btn.dataset.v;
+ const m=VS.me[id]||{t:''};m.t=m.t===k?'':k;
+ if(m.t)VS.me[id]=m;else delete VS.me[id];vSave();vRender(false);vQueue();
+ clearTimeout(window.__vRf);window.__vRf=setTimeout(()=>vRender(true),900);});
+vRender(true);vSync();
 setInterval(()=>{if(document.visibilityState==='visible')vSync();},20000);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')vSync();});
 window.addEventListener('focus',()=>vSync());
-window.__votes={sync:vSync,state:()=>VS,ns:VNS};
+window.__votes={sync:vSync,state:()=>VS,ns:VNS,tally:()=>VT};
+
 
 /* ---------- NAV highlight ---------- */
 const navLinks=[...document.querySelectorAll('.bnav a')];
