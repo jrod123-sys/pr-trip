@@ -5,6 +5,7 @@
 <title>PR Trip · Nov 1–6, 2026</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style>
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;background:#fff8f0;color:#1d2a33;overflow-x:hidden;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
@@ -141,6 +142,78 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 #trip-map .leaflet-control-layers-selector:checked+span{background:#ff5e62;color:#fff}
 #trip-map .leaflet-control-layers-separator,#trip-map .leaflet-control-layers-overlays{display:none}
 #trip-map section.leaflet-control-layers-list{padding:0;margin:0;max-width:none;width:auto;background:none;border:0}
+
+/* ITINERARY v2 */
+.tent{background:#ffb347;color:#3b1f47}
+.day{min-width:0}
+.dh{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.tpill{font-size:11px;font-weight:700;color:#c2410c;background:#ffe3d6;padding:2px 8px;border-radius:10px}
+.wxmini{margin-left:auto;font-size:13px;font-weight:700;color:#00807c;background:#e9fbf9;padding:2px 10px;border-radius:12px;min-height:24px;display:inline-flex;align-items:center}
+.wxmini:empty{display:none}
+.meta{font-size:14px;color:#4b5860;margin:0 0 10px}
+.otabs{display:flex;gap:6px;margin:4px 0 10px}
+.otabs button{flex:1;min-height:44px;border-radius:14px;border:2px solid #ffd2c0;background:#fff;font:700 14px Poppins,sans-serif;color:#1d2a33;cursor:pointer}
+.otabs button.on{background:#1d2a33;border-color:#1d2a33;color:#fff}
+.panes{display:grid;gap:10px}
+.pane{display:none;background:#fff8f0;border-radius:16px;padding:12px 14px;border-top:5px solid #00b4b0;min-width:0}
+.pane.on{display:block}
+.pane[data-k="B"]{border-top-color:#ff5e62}.pane[data-k="C"]{border-top-color:#7b2d8b}
+.pane .ol{display:block;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#00a6a2}
+.pane[data-k="B"] .ol{color:#ff5e62}.pane[data-k="C"] .ol{color:#7b2d8b}
+.pane h4{font-size:17px;line-height:1.25;margin:2px 0 4px}
+.pane p{font-size:15px;color:#4b5860}
+.pane ul{margin-top:6px}
+.pane .idea{display:inline-block;font-size:11px;font-weight:700;background:#e6edf0;color:#4b5860;padding:2px 8px;border-radius:10px;margin:6px 0 2px}
+.stops{list-style:none;margin-top:8px;display:grid;gap:8px}
+.day .stops li:before{content:none}
+.stops li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#4b5860;margin:0}
+.stops li .sb{flex:0 0 auto;margin-top:2px}
+.stops b{color:#1d2a33}
+.addons{margin-top:10px;font-size:14px;color:#4b5860;background:#e9fbf9;border-radius:12px;padding:8px 12px}
+.addons b{color:#00807c}
+.solo{display:block}
+.optlink{display:inline-flex;align-items:center;min-height:44px;margin-top:16px;padding:0 18px;border-radius:22px;background:#fff;border:2px solid #ffd2c0;font-weight:700;color:#ff5e62}
+/* badges */
+.rbadge{width:30px;height:30px;letter-spacing:-.3px;border-radius:50%;border:3px solid #fff;color:#fff;font:800 13px/24px Poppins,sans-serif;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.sb{display:inline-grid;place-items:center;min-width:30px;height:24px;padding:0 6px;border-radius:8px;background:#1d2a33;color:#ffb347;font:800 12px Poppins,sans-serif;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+/* routes list */
+.routes{display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px}
+.rt{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;min-height:56px;background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:0;border-left:6px solid #ccc;font:inherit;color:#1d2a33;text-align:left;cursor:pointer;width:100%}
+.rt .rbadge{flex:0 0 30px;margin-top:2px}
+.rt b{display:block;font-size:15px;line-height:1.25}
+.rt small{display:block;color:#6b7780;font-size:13px;line-height:1.4}
+.rt .hw{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.rt .hw i{font-style:normal;font-size:11px;font-weight:800;background:#1d2a33;color:#fff;padding:1px 7px;border-radius:6px}
+.rnote{font-size:12px;color:#6b7780;margin-top:8px}
+h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
+/* WEATHER */
+.wxsec{background:linear-gradient(180deg,#e9fbf9,#fff8f0)}
+.wxstat{font-size:13px;color:#4b5860;margin:-12px 0 16px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.wxstat b{color:#1d2a33}
+.wxstat button{min-height:40px;padding:0 14px;border-radius:20px;border:2px solid #00b4b0;background:#fff;color:#00807c;font:700 13px Poppins,sans-serif;cursor:pointer}
+.wxgrid{display:grid;grid-template-columns:1fr;gap:14px}
+.wxday{background:#fff;border-radius:20px;padding:14px;box-shadow:0 8px 24px rgba(0,120,120,.10);min-width:0}
+.wxday .wh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}
+.wxday .wh b{font-size:16px}.wxday .wh small{font-size:12px;color:#6b7780;font-weight:600;text-align:right}
+.wxmain{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.reg{border-radius:14px;padding:10px;background:#e9fbf9;min-width:0;position:relative}
+.reg.w{background:#fff1e6}
+.reg.here{box-shadow:inset 0 0 0 3px #ff5e62}
+.reg .rn{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:#00807c}
+.reg.w .rn{color:#c2410c}
+.reg .rs{display:block;font-size:11px;color:#6b7780;font-weight:600;text-transform:none;letter-spacing:0}
+.reg .row1{display:flex;align-items:center;gap:6px;margin-top:4px}
+.reg .ic{font-size:30px;line-height:1}
+.reg .hi{font-size:22px;font-weight:800;line-height:1}.reg .lo{font-size:14px;color:#6b7780;font-weight:600}
+.reg .ds{font-size:12px;color:#4b5860;margin-top:2px}
+.reg .st{font-size:12px;color:#4b5860;margin-top:4px;display:flex;flex-wrap:wrap;gap:2px 8px}
+.reg .na,.east .na{font-size:12px;color:#6b7780;font-style:italic;margin-top:4px;display:block}
+.reg .herel{position:absolute;top:6px;right:8px;font-size:10px;font-weight:800;color:#ff5e62}
+.east{margin-top:8px;font-size:13px;background:#f1f5f9;border-radius:12px;padding:6px 10px;color:#4b5860}
+.east b{color:#1d2a33}
+.east .wv{display:block;margin-top:2px;font-weight:700;color:#1a73c9}
+.lr{display:inline-block;font-size:10px;font-weight:800;color:#7b2d8b;background:#f3e8f7;padding:1px 6px;border-radius:8px;margin-left:4px;vertical-align:1px}
+.wxfoot{font-size:12px;color:#6b7780;margin-top:14px}
 /* TABLET */
 @media (min-width:768px){
  body{padding-bottom:0}
@@ -154,22 +227,25 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
  section{padding:56px 48px}
  h2{font-size:54px}
  .sample{margin:0 0 0 10px}
- .timeline{grid-template-columns:repeat(2,1fr)}
  .grid{grid-template-columns:repeat(2,1fr)}
  .info{grid-template-columns:repeat(3,1fr)}
  .spots{grid-template-columns:repeat(2,1fr)}
+ .routes{grid-template-columns:repeat(2,1fr)}
  #trip-map{height:480px}
  .cats{grid-template-columns:repeat(2,1fr)}
  .addform{grid-template-columns:2fr 1fr 1fr auto;align-items:end}.addform h4{grid-column:1/-1}.addform .two{display:contents}
+ .wxgrid{grid-template-columns:repeat(2,1fr)}
+ .otabs{display:none}
+ .pane{display:block}
+ .panes.n2{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .panes.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .day{margin-left:70px;padding:18px 22px}
+ .dot{left:-70px;width:52px;height:52px;font-size:19px}
+ .timeline:before{left:24px}
 }
 /* DESKTOP */
 @media (min-width:1100px){
  .hero,section{padding-left:64px;padding-right:64px}
- .timeline{grid-template-columns:repeat(6,1fr)}
- .timeline:before{top:32px;bottom:auto;left:4%;right:4%;width:auto;height:6px;background:linear-gradient(90deg,#00b4b0,#ff9a6b,#ff5e62)}
- .day{margin-left:0;padding:72px 14px 18px}
- .dot{top:12px;left:14px}
- .day h3{font-size:16px}.day li{font-size:13px}
  .grid{grid-template-columns:repeat(4,1fr)}
  .card{display:block}.img{min-height:130px}
  .card p{font-size:14px}
@@ -177,44 +253,121 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
  .spots{grid-template-columns:1fr;margin-top:0;max-height:520px;overflow:auto;padding:2px}
  #trip-map{height:520px}
  .cats{grid-template-columns:repeat(3,1fr)}
+ .wxgrid{grid-template-columns:repeat(3,1fr)}
+ .routes{grid-template-columns:repeat(2,1fr)}
+ #itinerary .timeline,#weather .wxgrid{max-width:1280px}
 }
 </style></head><body>
 <header class="hero" id="top"><div class="sun"></div><div class="palm"></div><div class="wave2"></div>
-<nav class="top"><div class="logo">¡Wepa! PR</div><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#map">Map</a></li><li><a href="#options">Options</a></li><li><a href="#packing">Packing</a></li><li><a href="#info">Info</a></li></ul></nav>
+<nav class="top"><div class="logo">¡Wepa! PR</div><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#weather">Weather</a></li><li><a href="#map">Map</a></li><li><a href="#options">Options</a></li><li><a href="#packing">Packing</a></li><li><a href="#info">Info</a></li></ul></nav>
 <div class="htxt"><span class="tag">SUN NOV 1 – FRI NOV 6, 2026</span>
-<h1>PR TRIP<br>2026</h1><p>San Juan city nights → West coast surf &amp; sunsets. 7 days, 3 friends, zero plans set in stone.</p>
+<h1>PR TRIP<br>2026</h1><p>San Juan → boat day → Rincón → back to San Juan. 6 days, 3 friends, every plan tentative.</p>
 <div class="crew"><div class="av" style="background:#ff5e62">JR</div><div class="av" style="background:#00a6a2">F2</div><div class="av" style="background:#7b2d8b">F3</div><span>J Rod + Friend 2 + Friend 3</span></div>
-<a class="cta" href="#itinerary">See the route ↓</a></div></header>
+<a class="cta" href="#itinerary">See the plan ↓</a></div></header>
 
-<section id="itinerary"><h2>THE <span>ROUTE</span></h2><span class="sample">SAMPLE PLAN · NOTHING BOOKED</span><p class="sub">A draft day-by-day flow — swap anything out.</p>
+<section id="itinerary"><h2>THE <span>PLAN</span></h2><span class="sample tent">TENTATIVE · NOTHING BOOKED</span><p class="sub">Each day has Option A / B (C on day 5). Add-ons work with any option. We decide day-of based on weather &amp; vibes.</p>
 <div class="timeline">
-<div class="day"><div class="dot" style="background:#00b4b0">1</div><small>Sun Nov 1</small><h3>Land in San Juan</h3><ul><li>Flight lands at SJU · 8:45 PM</li><li>Grab the rental / ride to the stay</li><li>Late bite + settle in</li></ul><span class="loc sj">San Juan</span></div>
-<div class="day"><div class="dot" style="background:#14b8a6">2</div><small>Mon Nov 2</small><h3>Old San Juan + Condado</h3><ul><li>Blue cobblestones &amp; El Morro</li><li>Condado beach afternoon</li><li>Dinner ideas TBD</li></ul><span class="loc sj">San Juan</span></div>
-<div class="day"><div class="dot" style="background:#4cc3a0">3</div><small>Tue Nov 3</small><h3>Piñones + La Placita</h3><ul><li>Piñones kiosks &amp; bike path</li><li>Night out at La Placita</li></ul><span class="loc sj">San Juan</span></div>
-<div class="day"><div class="dot" style="background:#ffb347">4</div><small>Wed Nov 4</small><h3>Drive west</h3><ul><li>~2.5 hr drive (sample)</li><li>Crash Boat Beach stop</li></ul><span class="loc west">Aguadilla</span></div>
-<div class="day"><div class="dot" style="background:#ff9a6b">5</div><small>Thu Nov 5</small><h3>Rincón day</h3><ul><li>Domes / Sandy Beach surf</li><li>Steps Beach snorkel</li><li>Lighthouse sunset</li></ul><span class="loc west">Rincón</span></div>
-<div class="day"><div class="dot" style="background:#7b2d8b">6</div><small>Fri Nov 6</small><h3>Fly home</h3><ul><li>Takeoff from SJU · 1:40 PM</li><li>Leave the west coast by ~9 AM (~2.5 hr drive)</li><li>Return rental car</li></ul><span class="loc west">Travel home</span></div>
-</div></section>
 
-<section class="mapsec" id="map"><h2>THE <span>MAP</span></h2><span class="sample">SAMPLE SPOTS · NOT BOOKINGS</span><p class="sub">Every spot on our draft route. Tap a pin (or a spot below) for directions.</p>
-<div class="areas" id="area-btns"><button class="chip on" data-area="all">All</button><button class="chip" data-area="sj">San Juan</button><button class="chip" data-area="west">West coast</button><button class="chip" data-area="agu">Aguadilla</button><button class="chip" data-area="rin">Rincón</button><button class="chip" data-area="ss">San Sebastián</button></div>
-<div class="mapgrid"><div><div class="mapwrap" id="mapwrap"><div id="trip-map" aria-label="Map of trip spots"></div><button class="map-lock" id="map-lock" type="button"><span>👆 Tap to explore</span></button></div>
-<div class="map-fallback"><b>🗺 Map couldn't load (offline?)</b>Use the spot list — each one opens in Google Maps.</div></div>
-<div class="legend"><span><i style="background:#00a6a2"></i>San Juan · Nov 1–3</span><span><i style="background:#ffb347"></i>Aguadilla</span><span><i style="background:#ff5e62"></i>Rincón</span><span><i style="background:#7b2d8b"></i>San Sebastián</span></div>
+<div class="day" id="day1"><div class="dot" style="background:#00b4b0">1</div>
+<div class="dh"><small>Sun Nov 1 · Day 1</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-01" data-r="N"></span></div>
+<h3>Land in San Juan</h3>
+<p class="meta">✈️ Land at SJU 8:45 PM · 🚗 ~12 min to the house (Route 1)</p>
+<div class="panes n2">
+<div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Drop bags &amp; maybe go out</h4><p>Drop off bags at the house, then maybe head out — it's a Sunday night, so it could be low-key.</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B</span><h4>Eat &amp; sleep early</h4><p>Grab food, then get to bed early so we're up for the boat.</p></div>
+</div>
+<p class="addons"><b>Add-ons:</b> quick grocery / water run for the house.</p>
+<span class="loc sj">🏠 San Juan house</span></div>
+
+<div class="day" id="day2"><div class="dot" style="background:#1a73c9">2</div>
+<div class="dh"><small>Mon Nov 2 · Day 2</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-02" data-r="E"></span></div>
+<h3>Boat day (weather permitting)</h3>
+<p class="meta">⛵ Puerto del Rey marina, Fajardo · 🚗 ~1 hr each way (Route 2) · check East-coast waves in <a href="#weather" style="color:#1a73c9;font-weight:700">Weather</a></p>
+<div class="panes n2">
+<div class="pane on" data-k="A"><span class="ol">Option A</span><h4>All-day boat trip ⛵</h4><p>All-day boat trip from Puerto del Rey marina (Fajardo, east coast) if the weather permits, then back to the San Juan house.</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B · if it rains</span><h4>Rain plan — TBD</h4><span class="idea">IDEAS ONLY · NOT PLANNED</span><ul><li>Casa Bacardí distillery tour (Cataño, across the bay)</li><li>Museo de Arte de Puerto Rico (Santurce)</li><li>Plaza Las Américas mall (Hato Rey) — food court, shopping, movies</li></ul></div>
+</div>
+<p class="addons"><b>Add-ons:</b> dinner near the house either way.</p>
+<span class="loc sj">🏠 San Juan house</span></div>
+
+<div class="day" id="day3"><div class="dot" style="background:#ff9a6b">3</div>
+<div class="dh"><small>Tue Nov 3 · Day 3</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-03" data-r="W"></span></div>
+<h3>Drive early to Rincón</h3>
+<p class="meta">🚗 ~2 hr 11 min, PR-22 → PR-2 → PR-115 (Route 3)</p>
+<div class="panes n2">
+<div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Beach day 🏖</h4><p>Beach day in Rincón (Sandy Beach, Domes, Steps — see Options).</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B · if it rains</span><h4>Explore Rincón town &amp; bars</h4><p>Wander town, food, and bar-hop.</p></div>
+</div>
+<p class="addons"><b>Add-ons:</b> sunset at the Rincón lighthouse (Punta Higüero) if skies clear.</p>
+<span class="loc west">🏠 Rincón stay</span></div>
+
+<div class="day" id="day4"><div class="dot" style="background:#ffb347">4</div>
+<div class="dh"><small>Wed Nov 4 · Day 4</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-04" data-r="W"></span></div>
+<h3>Crash Boat or more Rincón</h3>
+<p class="meta">🚗 Crash Boat is ~28 min from Rincón (Route 4)</p>
+<div class="panes n2">
+<div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Crash Boat Beach 🌊</h4><p>Crash Boat Beach in Aguadilla — pier jumps &amp; clear water.</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B</span><h4>More Rincón + going out</h4><p>Another Rincón day, then go out at night.</p></div>
+</div>
+<p class="addons"><b>Add-ons:</b> Survival Beach (near Crash Boat) or Gozalandia Falls (San Sebastián) — see Options.</p>
+<span class="loc west">🏠 Rincón stay</span></div>
+
+<div class="day" id="day5"><div class="dot" style="background:#ff5e62">5</div>
+<div class="dh"><small>Thu Nov 5 · Day 5</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-05" data-r="W"></span></div>
+<h3>Back to San Juan</h3>
+<p class="meta">🚗 ~2 hr 11 min direct, PR-115 → PR-2 → PR-22 (Route 5) · Option C via stops: ~3 hr 23 min of driving + stop time</p>
+<div class="panes n3">
+<div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Beach morning, then SJ night</h4><p>Beach morning, pack &amp; clean, drive to San Juan arriving by 3–4 PM. Then chill at the house or go out: Old San Juan / Condado / casino.</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B</span><h4>Leave earlier, same SJ plan</h4><p>Leave Rincón earlier, then the same San Juan options: chill at the house or go out (Old San Juan / Condado / casino).</p></div>
+<div class="pane" data-k="C"><span class="ol">Option C</span><h4>Road-trip stops, quiet night</h4><p>Clean &amp; leave early, make stops along the drive back, get home late and don't go out. Pick 2–3 (west → east):</p>
+<ul class="stops" id="stoplist"></ul></div>
+</div>
+<p class="addons"><b>Add-ons:</b> gas + snacks for the drive; double-check the packing list before leaving Rincón.</p>
+<span class="loc west">Rincón</span> <span class="loc sj">→ 🏠 San Juan house</span></div>
+
+<div class="day" id="day6"><div class="dot" style="background:#7b2d8b">6</div>
+<div class="dh"><small>Fri Nov 6 · Day 6</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-06" data-r="N"></span></div>
+<h3>Breakfast &amp; airport</h3>
+<p class="meta">🛫 Takeoff from SJU 1:40 PM · 🚗 ~13 min to SJU (Route 6)</p>
+<div class="pane solo" data-k="A"><span class="ol">The plan</span><h4>Breakfast, then SJU</h4><p>Breakfast and head to the airport. Nothing else planned.</p></div>
+<span class="loc sj">✈️ Fly home</span></div>
+
+</div>
+<a class="optlink" href="#options">🌴 See all the options ↓</a>
+</section>
+
+<section class="wxsec" id="weather"><h2>THE <span>FORECAST</span></h2><span class="sample">LIVE · OPEN-METEO</span><p class="sub">Daily forecast for each trip day. West &amp; North first (where we'll be); East (Fajardo) for boat day.</p>
+<div class="wxstat" id="wx-stat"><span>Loading forecast…</span></div>
+<div class="wxgrid" id="wx-grid"></div>
+<p class="wxfoot">🔴 outline = where we'll be that day. Forecasts more than ~7 days out (<span class="lr">LONG-RANGE</span>) are low-confidence and will change. Saved on this phone so it still shows with spotty signal. Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener" style="text-decoration:underline">Open-Meteo.com</a> (CC BY 4.0).</p>
+</section>
+
+<section class="mapsec" id="map"><h2>THE <span>MAP</span></h2><span class="sample tent">TENTATIVE · NOT BOOKINGS</span><p class="sub">Main drives + every spot. Tap a route below to zoom to it, or a pin for directions.</p>
+<div class="areas" id="area-btns"><button class="chip on" data-area="all">All</button><button class="chip" data-area="sj">San Juan</button><button class="chip" data-area="east">Fajardo</button><button class="chip" data-area="west">West coast</button><button class="chip" data-area="agu">Aguadilla</button><button class="chip" data-area="rin">Rincón</button><button class="chip" data-area="ss">San Sebastián</button></div>
+<div class="mapgrid"><div><div class="mapwrap" id="mapwrap"><div id="trip-map" aria-label="Map of trip routes and spots"></div><button class="map-lock" id="map-lock" type="button"><span>👆 Tap to explore</span></button></div>
+<div class="map-fallback"><b>🗺 Map couldn't load (offline?)</b>Use the spot list — each one opens in Google Maps.</div>
+<div class="legend"><span><i style="background:#00a6a2"></i>San Juan</span><span><i style="background:#1a73c9"></i>Fajardo</span><span><i style="background:#ffb347"></i>Aguadilla</span><span><i style="background:#ff5e62"></i>Rincón</span><span><i style="background:#7b2d8b"></i>San Sebastián</span><span><span class="sb" style="margin-right:6px">C1</span>Day 5 Option C stops</span></div>
+<h3 class="mh">🚗 Main drives</h3>
+<div class="routes" id="routes"></div>
+<p class="rnote">Distances &amp; drive times are approximate (OSRM routing on OpenStreetMap data, no traffic). Highway numbers come from the route's road refs. Allow extra time for traffic.</p>
+</div>
 <div class="spots" id="spots"></div></div>
 </section>
 
 <section class="opts" id="options"><h2>THINGS <span>TO DO</span></h2><span class="sample">OPTIONS</span><p class="sub">Ideas we could slot in — vote in the group chat.</p>
 <div class="filters" id="opt-filters"><button class="chip on" data-f="all">All</button><button class="chip" data-f="beach">🏖 Beach</button><button class="chip" data-f="food">🍤 Food</button><button class="chip" data-f="nightlife">🎉 Nightlife</button><button class="chip" data-f="adventure">💦 Adventure</button></div>
 <div class="grid">
-<div class="card" data-tags="food nightlife"><div class="img g1"><b>🏰</b></div><div class="c"><h4>Old San Juan &amp; El Morro</h4><p>Forts, colorful streets, bars.</p></div></div>
-<div class="card" data-tags="beach"><div class="img g2"><b>🏖</b></div><div class="c"><h4>Condado &amp; Ocean Park</h4><p>City beach + boardwalk vibes.</p></div></div>
+<div class="card" data-tags="adventure beach"><div class="img g6"><b>⛵</b></div><div class="c"><h4>Boat trip · Puerto del Rey</h4><p>Day 2 Option A — all day out of Fajardo, weather permitting.</p></div></div>
+<div class="card" data-tags="food nightlife"><div class="img g1"><b>🏰</b></div><div class="c"><h4>Old San Juan &amp; El Morro</h4><p>Forts, colorful streets, bars. Day 5 night option.</p></div></div>
+<div class="card" data-tags="beach nightlife"><div class="img g2"><b>🏖</b></div><div class="c"><h4>Condado &amp; Ocean Park</h4><p>City beach, boardwalk, casino nights. Day 5 night option.</p></div></div>
 <div class="card" data-tags="nightlife food"><div class="img g3"><b>🎉</b></div><div class="c"><h4>La Placita de Santurce</h4><p>Street party, salsa, late nights.</p></div></div>
 <div class="card" data-tags="food beach"><div class="img g5"><b>🍤</b></div><div class="c"><h4>Piñones kiosks</h4><p>Alcapurrias &amp; bacalaítos by the sea.</p></div></div>
 <div class="card" data-tags="beach adventure"><div class="img g6"><b>🏄</b></div><div class="c"><h4>Domes &amp; Sandy Beach</h4><p>Rincón surf + epic sunsets.</p></div></div>
 <div class="card" data-tags="beach adventure"><div class="img g4"><b>🤿</b></div><div class="c"><h4>Steps Beach</h4><p>Reef snorkeling (Tres Palmas).</p></div></div>
+<div class="card" data-tags="beach adventure"><div class="img g8"><b>🌅</b></div><div class="c"><h4>Crash Boat &amp; Survival Beach</h4><p>Pier jumps, wild cliffs, Aguadilla. Crash Boat = Day 4 Option A.</p></div></div>
 <div class="card" data-tags="adventure"><div class="img g7"><b>💦</b></div><div class="c"><h4>Gozalandia Falls</h4><p>Swim &amp; jump, San Sebastián.</p></div></div>
-<div class="card" data-tags="beach adventure"><div class="img g8"><b>🌅</b></div><div class="c"><h4>Crash Boat &amp; Survival Beach</h4><p>Pier jumps, wild cliffs, Aguadilla.</p></div></div>
+<div class="card" data-tags="beach adventure food"><div class="img g5"><b>🛣</b></div><div class="c"><h4>North-coast road-trip stops</h4><p>Jobos, Guajataca lookout, Arecibo lighthouse, Cueva del Indio, Mar Chiquita — Day 5 Option C.</p></div></div>
+<div class="card" data-tags="food"><div class="img g1"><b>🥃</b></div><div class="c"><h4>Rainy-day ideas</h4><p>Casa Bacardí tour, Museo de Arte de PR, Plaza Las Américas.</p></div></div>
 </div></section>
 
 <section class="packsec" id="packing"><h2>PACKING <span>LIST</span></h2><span class="sample">SUGGESTED · EDIT FREELY</span><p class="sub">Checks save on this phone. Shared gear is assigned to one person.</p>
@@ -229,61 +382,183 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 
 <section id="info"><h2>NEED <span>TO KNOW</span></h2><span class="sample">PLACEHOLDERS</span><p class="sub">Fill in once booked.</p>
 <div class="info">
-<div class="ib"><h4>🏠 Where we're staying</h4><p>Nov 1–4: San Juan stay — TBD<br>Nov 4–6: Rincón / Aguadilla stay — TBD</p></div>
-<div class="ib"><h4>🚗 Getting around</h4><p>Rental car: TBD (needed for west coast)<br>San Juan: walk / rideshare<br>Flights: TBD</p></div>
+<div class="ib"><h4>🏠 Where we're staying</h4><p>Nov 1–3: San Juan house (Condado area, approx.) — TBD<br>Nov 3–5: Rincón stay — TBD<br>Nov 5–6: back to the San Juan house — TBD</p></div>
+<div class="ib"><h4>🚗 Getting around</h4><p>Rental car: TBD (needed for Fajardo + Rincón)<br>San Juan: walk / rideshare<br>Flights: land SJU Sun Nov 1 · 8:45 PM<br>Take off SJU Fri Nov 6 · 1:40 PM</p></div>
 <div class="ib"><h4>🚨 Emergency</h4><p>Emergency: 911<br>Group contacts: [add]<br>Stay host #: [add]</p><a class="call" href="tel:911">📞 Call 911</a></div>
 </div></section>
-<footer>PR Trip 2026 · Design mockup 1 — Tropical Bold · All itinerary content is sample/placeholder</footer>
-<nav class="bnav"><a href="#itinerary" class="on"><i>🗓</i>Itinerary</a><a href="#map"><i>🗺</i>Map</a><a href="#options"><i>🌴</i>Options</a><a href="#packing"><i>🎒</i>Packing</a><a href="#info"><i>ℹ️</i>Info</a></nav>
+<footer>PR Trip 2026 · Tropical Bold · All plans tentative · Routes: © OpenStreetMap contributors via OSRM · Weather: Open-Meteo.com</footer>
+<nav class="bnav"><a href="#itinerary" class="on"><i>🗓</i>Plan</a><a href="#weather"><i>🌦</i>Weather</a><a href="#map"><i>🗺</i>Map</a><a href="#packing"><i>🎒</i>Packing</a><a href="#info"><i>ℹ️</i>Info</a></nav>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
-/* ---------- MAP ---------- */
-const AREA={sj:{c:'#00a6a2',n:'San Juan'},agu:{c:'#ffb347',n:'Aguadilla'},rin:{c:'#ff5e62',n:'Rincón'},ss:{c:'#7b2d8b',n:'San Sebastián'}};
+/* ---------- ITINERARY tabs (phones) ---------- */
+document.querySelectorAll('.panes').forEach(p=>{const panes=[...p.querySelectorAll('.pane')];const t=document.createElement('div');t.className='otabs';t.setAttribute('role','tablist');
+ panes.forEach((pa,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent='Option '+pa.dataset.k;if(i===0)b.classList.add('on');
+  b.onclick=()=>{panes.forEach((x,j)=>x.classList.toggle('on',j===i));t.querySelectorAll('button').forEach((x,j)=>x.classList.toggle('on',j===i));};t.appendChild(b);});
+ p.before(t);});
+
+/* ---------- MAP DATA ---------- */
+const AREA={sj:{c:'#00a6a2',n:'San Juan'},east:{c:'#1a73c9',n:'Fajardo'},agu:{c:'#ffb347',n:'Aguadilla'},rin:{c:'#ff5e62',n:'Rincón'},ss:{c:'#7b2d8b',n:'San Sebastián'}};
 const SPOTS=[
- {n:'Old San Juan & El Morro',a:'sj',d:'Day 2 · Mon Nov 2 (sample)',t:'Forts, blue cobblestones, sunset',ll:[18.47083,-66.12389]},
- {n:'Condado Beach',a:'sj',d:'Day 2 · Mon Nov 2 afternoon (sample)',t:'City beach day',ll:[18.45970,-66.07660]},
- {n:'Piñones (Boca de Cangrejos)',a:'sj',d:'Day 3 · Tue Nov 3 (sample)',t:'Kiosks + boardwalk bike path',ll:[18.45828,-65.99294]},
- {n:'La Placita de Santurce',a:'sj',d:'Day 3 · Tue Nov 3 night (sample)',t:'Street party, salsa',ll:[18.45040,-66.07020]},
- {n:'Crash Boat Beach',a:'agu',d:'Day 4 · Wed Nov 4 (sample)',t:'Pier jumps, clear water',ll:[18.45873,-67.16402]},
- {n:'Survival Beach',a:'agu',d:'Option · Nov 4–5',t:'Wild cliffs — hike in, no lifeguards',ll:[18.50790,-67.13613]},
- {n:'Domes Beach',a:'rin',d:'Day 5 · Thu Nov 5 (sample)',t:'Surf break by the old dome',ll:[18.36477,-67.26963]},
- {n:'Sandy Beach',a:'rin',d:'Day 5 · Thu Nov 5 (sample)',t:'Beginner surf, bars nearby',ll:[18.37150,-67.25434]},
- {n:'Rincón Lighthouse (Punta Higüero)',a:'rin',d:'Day 5 · Thu Nov 5 sunset (sample)',t:'Sunset spot',ll:[18.36193,-67.27056]},
- {n:'Steps Beach (Tres Palmas)',a:'rin',d:'Day 5 · Thu Nov 5 (sample)',t:'Reef snorkeling on calm days',ll:[18.34986,-67.26437]},
- {n:'Gozalandia Waterfalls',a:'ss',d:'Option · Nov 4–5',t:'Swim + jump · $10 cash parking',ll:[18.36288,-66.98424]}
+ {n:'San Juan house (approx.)',a:'sj',d:'Base · Nov 1–3 & Nov 5–6',t:'Exact address TBD — generic Condado-area point',ll:[18.4565,-66.0725]},
+ {n:'SJU Airport',a:'sj',d:'Day 1 land 8:45 PM · Day 6 takeoff 1:40 PM',t:'Luis Muñoz Marín International',ll:[18.4380,-66.0040]},
+ {n:'Old San Juan & El Morro',a:'sj',d:'Day 5 night option (A/B)',t:'Forts, blue cobblestones, bars',ll:[18.47083,-66.12389]},
+ {n:'Condado Beach',a:'sj',d:'Day 5 night option (A/B)',t:'City beach, bars, casino nearby',ll:[18.45970,-66.07660]},
+ {n:'La Placita de Santurce',a:'sj',d:'Option · nightlife',t:'Street party, salsa',ll:[18.45040,-66.07020]},
+ {n:'Piñones (Boca de Cangrejos)',a:'sj',d:'Option',t:'Kiosks + boardwalk bike path',ll:[18.45828,-65.99294]},
+ {n:'Puerto del Rey Marina',a:'east',d:'Day 2 · Option A boat trip',t:'Fajardo, east coast — all-day boat if weather permits',ll:[18.2872,-65.6370]},
+ {n:'Rincón stay (approx.)',a:'rin',d:'Base · Nov 3–5',t:'Exact address TBD — generic Rincón town point',ll:[18.3402,-67.2499]},
+ {n:'Crash Boat Beach',a:'agu',d:'Day 4 · Option A',t:'Pier jumps, clear water',ll:[18.45873,-67.16402]},
+ {n:'Survival Beach',a:'agu',d:'Option',t:'Wild cliffs — hike in, no lifeguards',ll:[18.50790,-67.13613]},
+ {n:'Domes Beach',a:'rin',d:'Option · Rincón beach',t:'Surf break by the old dome',ll:[18.36477,-67.26963]},
+ {n:'Sandy Beach',a:'rin',d:'Option · Rincón beach',t:'Beginner surf, bars nearby',ll:[18.37150,-67.25434]},
+ {n:'Rincón Lighthouse (Punta Higüero)',a:'rin',d:'Option · sunset',t:'Sunset spot',ll:[18.36193,-67.27056]},
+ {n:'Steps Beach (Tres Palmas)',a:'rin',d:'Option',t:'Reef snorkeling on calm days',ll:[18.34986,-67.26437]},
+ {n:'Gozalandia Waterfalls',a:'ss',d:'Option',t:'Swim + jump · $10 cash parking',ll:[18.36288,-66.98424]}
 ];
+/* Day 5 Option C stops, west → east (verified Oct 2026) */
+const STOPS=[
+ {n:'Jobos Beach',town:'Isabela',t:'Famous surf beach with beachfront bars & food. Strong currents — swim with care. ~45–60 min. Beach access is free.',ll:[18.5142,-67.0757]},
+ {n:'Mirador de Guajataca',town:'Quebradillas',t:'Cliff-top lookout right on PR-2 (km 103.7) over Guajataca beach & the old train tunnel. ~20–30 min. Free, small free lot.',ll:[18.4889,-66.9514]},
+ {n:'Arecibo Lighthouse & Historical Park',town:'Arecibo',t:'1898 lighthouse + small museum/park on Punta Morrillos. ~1–1.5 hr. Adults $14 + tax, parking $3; weekdays 9 AM–6 PM.',ll:[18.4820,-66.6987]},
+ {n:'Cueva del Indio',town:'Arecibo',t:'Sea cave & arches with Taíno petroglyphs (PR-681 km 7.8). ~1 hr. No admission; private lot ~$10/person cash (≈10–5), or free roadside spots. Closed-toe shoes.',ll:[18.49274,-66.64155]},
+ {n:'Mar Chiquita',town:'Manatí',t:'Oval cove walled in by limestone — swim only if calm. ~1 hr. Free; no rentals or facilities, bring supplies.',ll:[18.4727,-66.4854]}
+];
+const RG={"r1":{"mi":5.3,"min":12,"g":[[18.43789,-66.0045],[18.43885,-66.00551],[18.43657,-66.01189],[18.43584,-66.01711],[18.43664,-66.01941],[18.43613,-66.02073],[18.44099,-66.02481],[18.44423,-66.0298],[18.44622,-66.03648],[18.44756,-66.05478],[18.44834,-66.05889],[18.44864,-66.06359],[18.45339,-66.07326],[18.45604,-66.07165],[18.45655,-66.07266]]},"r2":{"mi":37.6,"min":57,"g":[[18.45655,-66.07266],[18.45687,-66.0745],[18.45582,-66.07371],[18.45308,-66.07376],[18.45231,-66.07129],[18.44849,-66.06351],[18.44818,-66.05876],[18.44743,-66.05478],[18.44606,-66.03638],[18.44403,-66.02967],[18.44246,-66.02691],[18.4403,-66.02426],[18.43373,-66.01952],[18.43243,-66.01771],[18.43136,-66.00866],[18.43169,-66.00664],[18.43156,-65.99985],[18.42879,-65.99076],[18.42716,-65.98954],[18.42245,-65.98862],[18.39884,-65.98081],[18.39317,-65.97808],[18.38862,-65.97885],[18.38352,-65.97596],[18.38224,-65.97562],[18.37441,-65.9772],[18.37221,-65.97685],[18.37071,-65.97505],[18.369,-65.96865],[18.36517,-65.95948],[18.36405,-65.95555],[18.36298,-65.94584],[18.36275,-65.93837],[18.36165,-65.93199],[18.36152,-65.91866],[18.35936,-65.90607],[18.35947,-65.89656],[18.36022,-65.89329],[18.36184,-65.89031],[18.36402,-65.88808],[18.3684,-65.88539],[18.36998,-65.884],[18.37149,-65.88159],[18.37211,-65.87932],[18.37186,-65.8756],[18.3683,-65.86772],[18.36757,-65.86461],[18.36876,-65.83756],[18.3696,-65.83526],[18.37251,-65.83272],[18.37471,-65.82832],[18.37567,-65.82716],[18.37424,-65.81678],[18.37421,-65.81327],[18.3783,-65.79327],[18.37797,-65.79083],[18.37685,-65.78822],[18.37112,-65.78078],[18.37032,-65.77694],[18.37204,-65.7705],[18.37184,-65.76594],[18.37236,-65.76332],[18.37827,-65.75195],[18.37919,-65.74912],[18.37946,-65.74644],[18.37911,-65.74009],[18.38197,-65.72874],[18.3819,-65.72647],[18.38126,-65.72414],[18.38009,-65.72208],[18.37796,-65.71996],[18.36937,-65.71435],[18.35439,-65.6976],[18.35329,-65.69557],[18.35273,-65.69354],[18.35254,-65.6867],[18.3517,-65.68313],[18.34667,-65.67409],[18.34412,-65.67096],[18.33261,-65.66256],[18.3266,-65.657],[18.31554,-65.6509],[18.31031,-65.64997],[18.29841,-65.64952],[18.29808,-65.6461],[18.2943,-65.63974],[18.29221,-65.63782],[18.2899,-65.63747],[18.29004,-65.63716],[18.28731,-65.63726]]},"r3":{"mi":90.6,"min":131,"g":[[18.45655,-66.07266],[18.45689,-66.0745],[18.45582,-66.07371],[18.45164,-66.07403],[18.44379,-66.07857],[18.42424,-66.09646],[18.4184,-66.10015],[18.41742,-66.10289],[18.41731,-66.10433],[18.41787,-66.10731],[18.41866,-66.10842],[18.42123,-66.11033],[18.4221,-66.11237],[18.42277,-66.12457],[18.42262,-66.15061],[18.41889,-66.17805],[18.42,-66.18969],[18.41983,-66.19429],[18.41847,-66.19991],[18.41332,-66.21281],[18.41171,-66.22241],[18.41257,-66.22618],[18.41387,-66.22942],[18.41759,-66.23375],[18.41871,-66.23639],[18.41815,-66.2455],[18.41987,-66.26866],[18.42115,-66.27135],[18.42547,-66.27644],[18.4268,-66.2804],[18.42673,-66.28306],[18.42536,-66.28879],[18.42644,-66.29547],[18.42636,-66.29882],[18.4257,-66.30146],[18.42274,-66.30874],[18.42225,-66.31328],[18.42279,-66.32028],[18.42395,-66.32607],[18.4256,-66.3294],[18.43067,-66.33596],[18.43189,-66.33961],[18.43142,-66.34387],[18.42825,-66.34976],[18.42775,-66.35155],[18.42746,-66.36777],[18.42785,-66.37254],[18.4287,-66.37616],[18.43044,-66.38039],[18.43571,-66.38841],[18.43768,-66.39225],[18.44105,-66.40347],[18.44178,-66.40807],[18.4417,-66.41276],[18.43852,-66.42601],[18.4384,-66.43028],[18.43895,-66.43286],[18.44003,-66.43541],[18.44543,-66.44332],[18.44635,-66.44586],[18.44668,-66.4482],[18.44631,-66.45227],[18.4426,-66.46245],[18.44139,-66.46758],[18.44107,-66.47294],[18.44194,-66.48212],[18.44176,-66.48493],[18.43795,-66.49417],[18.43759,-66.49593],[18.43803,-66.49848],[18.44123,-66.50394],[18.4422,-66.51163],[18.44632,-66.51675],[18.44734,-66.5199],[18.44487,-66.53227],[18.44232,-66.53948],[18.44138,-66.54431],[18.44153,-66.5461],[18.44322,-66.55137],[18.4426,-66.55897],[18.44372,-66.56785],[18.44364,-66.57097],[18.44262,-66.57432],[18.43514,-66.5901],[18.43432,-66.59383],[18.43448,-66.59686],[18.43537,-66.59983],[18.44452,-66.61594],[18.44509,-66.61805],[18.44331,-66.62593],[18.44224,-66.62792],[18.43952,-66.63137],[18.43846,-66.63456],[18.43855,-66.6369],[18.43983,-66.64275],[18.44009,-66.65172],[18.43778,-66.66052],[18.4381,-66.67228],[18.43714,-66.68067],[18.43732,-66.68427],[18.44318,-66.7028],[18.44463,-66.70519],[18.44978,-66.71093],[18.4515,-66.71522],[18.45316,-66.72484],[18.45217,-66.74203],[18.45354,-66.74937],[18.45379,-66.76058],[18.45567,-66.76664],[18.4576,-66.76986],[18.46024,-66.77283],[18.46245,-66.77459],[18.46604,-66.77651],[18.47687,-66.77946],[18.48036,-66.77932],[18.4845,-66.77829],[18.48586,-66.77858],[18.48677,-66.7799],[18.48795,-66.78776],[18.48838,-66.80862],[18.48805,-66.81125],[18.48227,-66.82636],[18.47989,-66.83518],[18.477,-66.84059],[18.47551,-66.84711],[18.47329,-66.85439],[18.47319,-66.85649],[18.47441,-66.86114],[18.47451,-66.86479],[18.47376,-66.86939],[18.47224,-66.875],[18.46763,-66.88412],[18.46393,-66.88924],[18.46063,-66.89525],[18.45964,-66.89899],[18.4576,-66.91183],[18.45764,-66.91352],[18.45921,-66.92134],[18.46099,-66.9247],[18.46455,-66.92774],[18.46996,-66.93347],[18.47153,-66.9344],[18.47611,-66.93578],[18.48747,-66.94421],[18.48893,-66.94671],[18.48907,-66.95039],[18.4885,-66.95204],[18.48717,-66.95378],[18.48306,-66.95734],[18.48233,-66.96068],[18.48236,-66.96292],[18.48037,-66.96591],[18.47876,-66.97725],[18.47691,-66.98305],[18.47676,-66.98731],[18.47393,-66.99389],[18.47202,-67.00866],[18.47285,-67.01572],[18.47242,-67.01827],[18.46943,-67.02671],[18.46853,-67.03113],[18.46247,-67.05076],[18.45081,-67.09989],[18.44563,-67.11456],[18.43972,-67.12735],[18.44008,-67.13802],[18.44116,-67.14029],[18.44442,-67.14347],[18.44474,-67.14512],[18.44439,-67.14651],[18.44349,-67.14754],[18.44242,-67.14798],[18.43437,-67.148],[18.4311,-67.14839],[18.42772,-67.14968],[18.42315,-67.15218],[18.40966,-67.15282],[18.41036,-67.15455],[18.4057,-67.1547],[18.39951,-67.16017],[18.39265,-67.16403],[18.39113,-67.16526],[18.38919,-67.16774],[18.38617,-67.1747],[18.38225,-67.18175],[18.37938,-67.18498],[18.38056,-67.18992],[18.38172,-67.19134],[18.38089,-67.19173],[18.38285,-67.19851],[18.38318,-67.20101],[18.3831,-67.20321],[18.38235,-67.20611],[18.38265,-67.20883],[18.37808,-67.22324],[18.37534,-67.22619],[18.37399,-67.22711],[18.37171,-67.22781],[18.36933,-67.23036],[18.36741,-67.2303],[18.36377,-67.23657],[18.36057,-67.23798],[18.3581,-67.23951],[18.35678,-67.24083],[18.35369,-67.24002],[18.35237,-67.24173],[18.35235,-67.24309],[18.35117,-67.24421],[18.3503,-67.24438],[18.34848,-67.24645],[18.34632,-67.25027],[18.34495,-67.25019],[18.34455,-67.24973],[18.34353,-67.25086],[18.34175,-67.25104],[18.34017,-67.24988]]},"r4":{"mi":14.2,"min":28,"g":[[18.34017,-67.24988],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34632,-67.25027],[18.34848,-67.24645],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37399,-67.22711],[18.37534,-67.22619],[18.37806,-67.22329],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38318,-67.20101],[18.38285,-67.19851],[18.37927,-67.1853],[18.38247,-67.18137],[18.38641,-67.17423],[18.38919,-67.16774],[18.39041,-67.16602],[18.39265,-67.16403],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44222,-67.14784],[18.44401,-67.14679],[18.44736,-67.14879],[18.45043,-67.15232],[18.45189,-67.15342],[18.45357,-67.15382],[18.45918,-67.1536],[18.45702,-67.16184],[18.45535,-67.16176],[18.45708,-67.1626],[18.45862,-67.16244],[18.45872,-67.16403]]},"r5":{"mi":90.4,"min":131,"g":[[18.34017,-67.24988],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34632,-67.25027],[18.34848,-67.24645],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37399,-67.22711],[18.37534,-67.22619],[18.37808,-67.22324],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38318,-67.20101],[18.38285,-67.19851],[18.37927,-67.1853],[18.38225,-67.18175],[18.38617,-67.1747],[18.38919,-67.16774],[18.39113,-67.16526],[18.39265,-67.16403],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44239,-67.14781],[18.44366,-67.14721],[18.44431,-67.14626],[18.44459,-67.14486],[18.44425,-67.14352],[18.44079,-67.14001],[18.44006,-67.13846],[18.43959,-67.1274],[18.44564,-67.11422],[18.45094,-67.09905],[18.4622,-67.05134],[18.46835,-67.03135],[18.4693,-67.02686],[18.47244,-67.01782],[18.47275,-67.01548],[18.47201,-67.01131],[18.47194,-67.00832],[18.47381,-66.99404],[18.47439,-66.99189],[18.47659,-66.98763],[18.47679,-66.983],[18.47875,-66.9769],[18.48029,-66.96588],[18.4822,-66.96316],[18.48223,-66.96064],[18.48297,-66.95734],[18.48687,-66.95396],[18.48838,-66.95208],[18.48897,-66.95027],[18.48884,-66.94668],[18.48741,-66.94429],[18.47578,-66.93568],[18.47147,-66.9345],[18.46968,-66.93344],[18.46451,-66.92785],[18.46092,-66.92475],[18.45909,-66.92132],[18.45754,-66.91331],[18.45949,-66.89912],[18.4604,-66.89563],[18.46335,-66.88994],[18.46777,-66.88361],[18.47142,-66.87657],[18.47286,-66.8726],[18.47424,-66.86662],[18.47446,-66.86354],[18.47425,-66.86073],[18.47307,-66.85656],[18.47318,-66.8543],[18.4752,-66.84769],[18.47674,-66.84093],[18.47981,-66.83507],[18.48212,-66.82639],[18.48794,-66.81122],[18.4883,-66.80862],[18.48773,-66.78658],[18.48686,-66.78202],[18.48586,-66.78024],[18.48479,-66.77926],[18.4834,-66.77893],[18.47913,-66.7796],[18.4762,-66.77951],[18.46597,-66.77677],[18.46326,-66.77541],[18.46008,-66.77305],[18.45783,-66.77062],[18.45569,-66.7673],[18.45403,-66.76301],[18.45338,-66.75937],[18.45328,-66.74946],[18.45187,-66.74143],[18.45288,-66.72472],[18.45111,-66.71475],[18.44947,-66.71096],[18.44447,-66.70543],[18.44299,-66.70305],[18.43774,-66.68721],[18.43699,-66.68381],[18.43691,-66.68013],[18.43781,-66.673],[18.43756,-66.66007],[18.43983,-66.65189],[18.4396,-66.64304],[18.43828,-66.63688],[18.43822,-66.63438],[18.43928,-66.63126],[18.44215,-66.62759],[18.44312,-66.6257],[18.44493,-66.61824],[18.44438,-66.61604],[18.43526,-66.59999],[18.43437,-66.59721],[18.43415,-66.59387],[18.43514,-66.58965],[18.44245,-66.57428],[18.44336,-66.57155],[18.44356,-66.56808],[18.44281,-66.56396],[18.44242,-66.55865],[18.44309,-66.55184],[18.4413,-66.54589],[18.4412,-66.5444],[18.44214,-66.53951],[18.4447,-66.53223],[18.44719,-66.52036],[18.44693,-66.51839],[18.44623,-66.51692],[18.44208,-66.51181],[18.44108,-66.50401],[18.43788,-66.49855],[18.43742,-66.49594],[18.43782,-66.49405],[18.44158,-66.48497],[18.44176,-66.48199],[18.44091,-66.47277],[18.44122,-66.46747],[18.44238,-66.46261],[18.44608,-66.45247],[18.44654,-66.44826],[18.44615,-66.44578],[18.44526,-66.44337],[18.43991,-66.43554],[18.43884,-66.43306],[18.43821,-66.43017],[18.43835,-66.42606],[18.44153,-66.41277],[18.44161,-66.40816],[18.44087,-66.40345],[18.43782,-66.39304],[18.43554,-66.38845],[18.43003,-66.37996],[18.42844,-66.37587],[18.4276,-66.37208],[18.4273,-66.36781],[18.42759,-66.35114],[18.4283,-66.34912],[18.43107,-66.34403],[18.43167,-66.34012],[18.43124,-66.33786],[18.43038,-66.33599],[18.42529,-66.3294],[18.42381,-66.32646],[18.42253,-66.32027],[18.42198,-66.31274],[18.42271,-66.30791],[18.42545,-66.30135],[18.4261,-66.2988],[18.42616,-66.29532],[18.42508,-66.28895],[18.42645,-66.28312],[18.4265,-66.28023],[18.42533,-66.27671],[18.42102,-66.2716],[18.41977,-66.2689],[18.41779,-66.24665],[18.41816,-66.23652],[18.41677,-66.23317],[18.4136,-66.22939],[18.41243,-66.22658],[18.41149,-66.22236],[18.41309,-66.21277],[18.41808,-66.20034],[18.41954,-66.1947],[18.41979,-66.19013],[18.41867,-66.17806],[18.42249,-66.15018],[18.42272,-66.13224],[18.42195,-66.11235],[18.421,-66.11031],[18.4187,-66.10867],[18.41769,-66.10736],[18.41676,-66.10246],[18.41685,-66.101],[18.41898,-66.09897],[18.42186,-66.0981],[18.42424,-66.09632],[18.44348,-66.07859],[18.45117,-66.07423],[18.45342,-66.07351],[18.45604,-66.07165],[18.45655,-66.07266]]},"r6":{"mi":5.7,"min":13,"g":[[18.45655,-66.07266],[18.45687,-66.0745],[18.45582,-66.07371],[18.45308,-66.07376],[18.45231,-66.07129],[18.44849,-66.06351],[18.44818,-66.05876],[18.44743,-66.05478],[18.44606,-66.03638],[18.44403,-66.02967],[18.44172,-66.02587],[18.43954,-66.02355],[18.43479,-66.0204],[18.43426,-66.02039],[18.43409,-66.02083],[18.43469,-66.02112],[18.4353,-66.02021],[18.43616,-66.01567],[18.43671,-66.00942],[18.43636,-66.00462],[18.43789,-66.0045]]},"r5c":{"mi":107.0,"min":203,"g":[[18.34017,-67.24988],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34632,-67.25027],[18.34848,-67.24645],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37399,-67.22711],[18.37534,-67.22619],[18.37806,-67.22329],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38318,-67.20101],[18.38285,-67.19851],[18.37978,-67.18787],[18.37938,-67.18498],[18.38247,-67.18137],[18.38641,-67.17423],[18.38899,-67.1681],[18.39041,-67.16602],[18.39265,-67.16403],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44222,-67.14784],[18.44401,-67.14679],[18.44736,-67.14879],[18.45132,-67.1531],[18.45357,-67.15382],[18.47466,-67.15296],[18.47606,-67.15252],[18.4825,-67.14876],[18.48668,-67.14743],[18.49046,-67.14787],[18.4926,-67.14763],[18.4971,-67.13267],[18.49784,-67.13275],[18.4987,-67.12989],[18.49986,-67.13001],[18.50043,-67.12823],[18.50158,-67.12684],[18.50224,-67.12412],[18.50233,-67.12059],[18.5076,-67.1039],[18.50762,-67.10247],[18.50688,-67.10097],[18.50399,-67.09949],[18.50405,-67.09835],[18.50347,-67.09654],[18.50423,-67.09577],[18.50555,-67.09557],[18.50738,-67.09667],[18.50898,-67.09596],[18.51046,-67.0961],[18.51101,-67.09472],[18.51195,-67.09436],[18.51241,-67.09269],[18.51194,-67.09028],[18.51219,-67.0861],[18.5119,-67.08407],[18.51312,-67.08049],[18.5128,-67.07653],[18.51324,-67.07549],[18.51453,-67.07479],[18.51324,-67.07549],[18.51286,-67.07261],[18.51205,-67.07199],[18.5101,-67.07181],[18.50972,-67.07088],[18.51,-67.06486],[18.51152,-67.06287],[18.51294,-67.06216],[18.51378,-67.05763],[18.51327,-67.05637],[18.51164,-67.05562],[18.51127,-67.05505],[18.51084,-67.04698],[18.51185,-67.04494],[18.5122,-67.04029],[18.51178,-67.0391],[18.51035,-67.03748],[18.50954,-67.03422],[18.5094,-67.03113],[18.50864,-67.02884],[18.5069,-67.02644],[18.50576,-67.02404],[18.50478,-67.02323],[18.50224,-67.02334],[18.50223,-67.0241],[18.5006,-67.02411],[18.5006,-67.02245],[18.49892,-67.01878],[18.48583,-66.99387],[18.48487,-66.98803],[18.48246,-66.98819],[18.47973,-66.98933],[18.47569,-66.98948],[18.47674,-66.9869],[18.47694,-66.98228],[18.47875,-66.9769],[18.48029,-66.96588],[18.4822,-66.96316],[18.48223,-66.96064],[18.48297,-66.95734],[18.48712,-66.95366],[18.48859,-66.9517],[18.4891,-66.94983],[18.48894,-66.95135],[18.48673,-66.95428],[18.48405,-66.95668],[18.48459,-66.95646],[18.48391,-66.95588],[18.48425,-66.95612],[18.48635,-66.9545],[18.48859,-66.9517],[18.48899,-66.94979],[18.48864,-66.94604],[18.48741,-66.94429],[18.47607,-66.93586],[18.47147,-66.9345],[18.46968,-66.93344],[18.46451,-66.92785],[18.46119,-66.92506],[18.45909,-66.92132],[18.45751,-66.9131],[18.45949,-66.89912],[18.4604,-66.89563],[18.46335,-66.88994],[18.46777,-66.88361],[18.47142,-66.87657],[18.47286,-66.8726],[18.47424,-66.86662],[18.47446,-66.86354],[18.47425,-66.86073],[18.47307,-66.85656],[18.47318,-66.8543],[18.4752,-66.84769],[18.47674,-66.84093],[18.47981,-66.83507],[18.48212,-66.82639],[18.48781,-66.81167],[18.48825,-66.80953],[18.48771,-66.78635],[18.48711,-66.78272],[18.4851,-66.77841],[18.48521,-66.77414],[18.47736,-66.75687],[18.47258,-66.74108],[18.47203,-66.73716],[18.47227,-66.72351],[18.4719,-66.72294],[18.47046,-66.72228],[18.46685,-66.71798],[18.46596,-66.71587],[18.46867,-66.70778],[18.46941,-66.70789],[18.47108,-66.70323],[18.4747,-66.69781],[18.47595,-66.6971],[18.47717,-66.69761],[18.47769,-66.69915],[18.47868,-66.69881],[18.47993,-66.69955],[18.48079,-66.69704],[18.48163,-66.6974],[18.48079,-66.69704],[18.47993,-66.69955],[18.47868,-66.69881],[18.47769,-66.69915],[18.47717,-66.69761],[18.47768,-66.69519],[18.47881,-66.69248],[18.48047,-66.68391],[18.48419,-66.67867],[18.48659,-66.67074],[18.48688,-66.66959],[18.48673,-66.66494],[18.48821,-66.65577],[18.48833,-66.64584],[18.48862,-66.64461],[18.49113,-66.64064],[18.4918,-66.64076],[18.49113,-66.64064],[18.49143,-66.63949],[18.4912,-66.63288],[18.49186,-66.6283],[18.49157,-66.62625],[18.49182,-66.62423],[18.49096,-66.61977],[18.49027,-66.61816],[18.49042,-66.61479],[18.48985,-66.60777],[18.48823,-66.60298],[18.4879,-66.59971],[18.48658,-66.59583],[18.48538,-66.59384],[18.48358,-66.58511],[18.48421,-66.57874],[18.48374,-66.57486],[18.48485,-66.57316],[18.48576,-66.56877],[18.4851,-66.56634],[18.4852,-66.56517],[18.48611,-66.56344],[18.48745,-66.56226],[18.48846,-66.55905],[18.48731,-66.55536],[18.48148,-66.55602],[18.47707,-66.55154],[18.4704,-66.55042],[18.46808,-66.54811],[18.46373,-66.54889],[18.4627,-66.5427],[18.45867,-66.54322],[18.45803,-66.54161],[18.45303,-66.54242],[18.45093,-66.54151],[18.45071,-66.53864],[18.44709,-66.5383],[18.44613,-66.53936],[18.44316,-66.54118],[18.44259,-66.54277],[18.43864,-66.54327],[18.43566,-66.54208],[18.4332,-66.53337],[18.43211,-66.53176],[18.42994,-66.52983],[18.42922,-66.52832],[18.42771,-66.51502],[18.42838,-66.49623],[18.43223,-66.48781],[18.43504,-66.48817],[18.43627,-66.48883],[18.43756,-66.4885],[18.43936,-66.48561],[18.44285,-66.48426],[18.44489,-66.48255],[18.44599,-66.48057],[18.44711,-66.47992],[18.44801,-66.48076],[18.44849,-66.4822],[18.45587,-66.48211],[18.45928,-66.48351],[18.46447,-66.48446],[18.46582,-66.48416],[18.46591,-66.48221],[18.47035,-66.48238],[18.4726,-66.48578],[18.47041,-66.48239],[18.46591,-66.48221],[18.46458,-66.47622],[18.46546,-66.47099],[18.46224,-66.47136],[18.46,-66.47033],[18.45985,-66.467],[18.45894,-66.46662],[18.45503,-66.46705],[18.4524,-66.46861],[18.45059,-66.46713],[18.44968,-66.4669],[18.44913,-66.46613],[18.44822,-66.466],[18.44795,-66.46495],[18.44306,-66.46554],[18.44109,-66.46538],[18.44123,-66.46428],[18.44238,-66.46261],[18.44598,-66.45279],[18.44654,-66.4487],[18.44615,-66.44578],[18.44526,-66.44337],[18.43991,-66.43554],[18.43884,-66.43306],[18.43821,-66.43017],[18.43835,-66.42606],[18.44148,-66.41326],[18.44141,-66.40622],[18.43782,-66.39304],[18.43554,-66.38845],[18.43034,-66.38057],[18.42805,-66.37443],[18.42731,-66.36847],[18.42755,-66.3515],[18.42802,-66.3497],[18.43107,-66.34403],[18.43167,-66.34012],[18.43124,-66.33786],[18.43038,-66.33599],[18.42564,-66.32991],[18.42397,-66.32687],[18.423,-66.3234],[18.42218,-66.31691],[18.42198,-66.31274],[18.4223,-66.30954],[18.42545,-66.30135],[18.42613,-66.29858],[18.42616,-66.29532],[18.42508,-66.28895],[18.42645,-66.28312],[18.4265,-66.28023],[18.42533,-66.27671],[18.42102,-66.2716],[18.41977,-66.2689],[18.41779,-66.24665],[18.41816,-66.23652],[18.41677,-66.23317],[18.4136,-66.22939],[18.41243,-66.22658],[18.41149,-66.22236],[18.41309,-66.21277],[18.41808,-66.20034],[18.41954,-66.1947],[18.41979,-66.19013],[18.41867,-66.17806],[18.42249,-66.15018],[18.42272,-66.13224],[18.42195,-66.11235],[18.421,-66.11031],[18.4187,-66.10867],[18.41769,-66.10736],[18.41676,-66.10246],[18.41685,-66.101],[18.41898,-66.09897],[18.42186,-66.0981],[18.42424,-66.09632],[18.44348,-66.07859],[18.45117,-66.07423],[18.45342,-66.07351],[18.45604,-66.07165],[18.45655,-66.07266]]}};
+const ROUTES=[
+ {k:'r1',n:'1',name:'SJU → San Juan house',day:'Day 1 · Sun Nov 1',c:'#00a6a2',hw:['PR-26'],f:.55},
+ {k:'r2',n:'2',name:'San Juan house → Puerto del Rey marina',day:'Day 2 · Mon Nov 2 (boat, Option A)',c:'#1a73c9',hw:['PR-26','PR-66','PR-3'],f:.5},
+ {k:'r3',n:'3',name:'San Juan → Rincón',day:'Day 3 · Tue Nov 3',c:'#ff9a6b',hw:['PR-22','PR-2','PR-115'],f:.3},
+ {k:'r4',n:'4',name:'Rincón → Crash Boat Beach',day:'Day 4 · Wed Nov 4 (Option A)',c:'#ffb347',hw:['PR-115','PR-2','PR-458'],f:.5},
+ {k:'r5',n:'5',name:'Rincón → San Juan',day:'Day 5 · Thu Nov 5 (direct, Options A/B)',c:'#ff5e62',hw:['PR-115','PR-2','PR-22'],f:.72,dash:'12 8'},
+ {k:'r5c',n:'5C',name:'Rincón → San Juan via the Option C stops',day:'Day 5 · Option C (driving only, plus stop time)',c:'#7b2d8b',hw:['PR-115','PR-2','PR-466','PR-681','PR-22'],f:.42,dash:'2 9',w:4},
+ {k:'r6',n:'6',name:'San Juan house → SJU',day:'Day 6 · Fri Nov 6',c:'#334155',hw:['PR-26'],f:.25,dash:'10 7'}
+];
+const rbs=r=>r.n.length>1?'font-size:9px':'font-size:11px';
+const fmtMin=m=>m<60?`~${m} min`:`~${Math.floor(m/60)} hr${m%60?' '+(m%60)+' min':''}`;
 const gmaps=ll=>`https://www.google.com/maps/search/?api=1&query=${ll[0]},${ll[1]}`;
+
+/* stop list in Day 5 Option C */
+const stopUl=document.getElementById('stoplist');
+STOPS.forEach((s,i)=>{s.id='C'+(i+1);const li=document.createElement('li');li.innerHTML=`<span class="sb">${s.id}</span><span><b>${s.n}</b> · ${s.town}<br>${s.t}</span>`;stopUl.appendChild(li);});
+
+/* spot list */
 const spotsEl=document.getElementById('spots');
 SPOTS.forEach((s,i)=>{s.i=i+1;const b=document.createElement('button');b.className='spot';b.type='button';
  b.innerHTML=`<span class="n" style="background:${AREA[s.a].c}">${s.i}</span><span><b>${s.n}</b><small>${s.d}</small></span><span class="go">›</span>`;
  b.onclick=()=>focusSpot(s);spotsEl.appendChild(b);});
-let map=null,markers=[];
+STOPS.forEach(s=>{const b=document.createElement('button');b.className='spot';b.type='button';
+ b.innerHTML=`<span class="sb">${s.id}</span><span><b>${s.n}</b><small>Day 5 Option C stop · ${s.town}</small></span><span class="go">›</span>`;
+ b.onclick=()=>focusSpot(s);spotsEl.appendChild(b);});
+
+/* route list */
+const routesEl=document.getElementById('routes');
+ROUTES.forEach(r=>{const g=RG[r.k];r.mi=g.mi;r.min=g.min;r.g=g.g;const b=document.createElement('button');b.type='button';b.className='rt';b.style.borderLeftColor=r.c;
+ b.innerHTML=`<div class="rbadge" style="background:${r.c};${rbs(r)}">R${r.n}</div><span><b>${r.name}</b><small>${r.day}</small><small>${r.mi} mi · ${fmtMin(r.min)} (approx.)</small><span class="hw">${r.hw.map(h=>`<i>${h}</i>`).join('')}</span></span>`;
+ b.onclick=()=>focusRoute(r);routesEl.appendChild(b);});
+
+let map=null;
 function focusSpot(s){ if(!map){window.open(gmaps(s.ll),'_blank');return;}
- document.getElementById('map').scrollIntoView({behavior:'smooth'}); unlock(); map.flyTo(s.ll,14,{duration:.8}); setTimeout(()=>s.m.openPopup(),850);}
+ document.getElementById('map').scrollIntoView({behavior:'smooth'}); unlock(); map.flyTo(s.ll,14,{duration:.8}); setTimeout(()=>s.m&&s.m.openPopup(),850);}
+function focusRoute(r){ if(!map)return; document.getElementById('map').scrollIntoView({behavior:'smooth'}); unlock();
+ setTimeout(()=>{map.flyToBounds(r.line.getBounds(),{padding:[30,30],duration:.8});setTimeout(()=>r.line.openPopup(r.g[Math.floor(r.g.length*r.f)]),900);},300);}
 function unlock(){ if(!map)return; document.getElementById('map-lock').classList.add('hide'); map.dragging.enable(); map.touchZoom.enable(); map.scrollWheelZoom.enable();}
 function initMap(){
  if(typeof L==='undefined'){document.getElementById('mapwrap').classList.add('no-map');return;}
  const touch=matchMedia('(pointer:coarse)').matches;
- map=L.map('trip-map',{zoomControl:true,scrollWheelZoom:false,dragging:!touch,touchZoom:!touch,tap:true});
+ map=L.map('trip-map',{zoomControl:true,zoomSnap:.25,scrollWheelZoom:false,dragging:!touch,touchZoom:!touch,tap:true});
  const ESRI='https://server.arcgisonline.com/ArcGIS/rest/services/', tOpt={maxZoom:19,maxNativeZoom:18,referrerPolicy:'strict-origin-when-cross-origin',crossOrigin:false};
- const street=L.tileLayer(ESRI+'World_Street_Map/MapServer/tile/{z}/{y}/{x}',{...tOpt,attribution:'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, USGS, NGA, OpenStreetMap contributors'});
+ const street=L.tileLayer(ESRI+'World_Street_Map/MapServer/tile/{z}/{y}/{x}',{...tOpt,attribution:'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, USGS, NGA, OpenStreetMap contributors · Routes &copy; OSM/OSRM'});
  const sat=L.layerGroup([
-  L.tileLayer(ESRI+'World_Imagery/MapServer/tile/{z}/{y}/{x}',{...tOpt,attribution:'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, GIS User Community'}),
+  L.tileLayer(ESRI+'World_Imagery/MapServer/tile/{z}/{y}/{x}',{...tOpt,attribution:'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, GIS User Community · Routes &copy; OSM/OSRM'}),
   L.tileLayer(ESRI+'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',tOpt)]);
  street.addTo(map);
  L.control.layers({'🗺️ Street':street,'🛰️ Satellite':sat},null,{collapsed:false,position:'topright'}).addTo(map);
  let errs=0,oks=0;const te=()=>{if(++errs>8&&oks===0)document.getElementById('mapwrap').classList.add('no-map');};
  map.on('tileerror',te);map.on('tileload',()=>oks++);
+ /* routes: white casing + colored line + numbered badge */
+ ROUTES.forEach(r=>{
+  L.polyline(r.g,{color:'#fff',weight:(r.w||5)+4,opacity:.85,interactive:false}).addTo(map);
+  r.line=L.polyline(r.g,{color:r.c,weight:r.w||5,opacity:.95,dashArray:r.dash||null,lineCap:'round'}).addTo(map)
+   .bindPopup(`<div class="pop"><b>Route ${r.n}: ${r.name}</b><small>${r.day}</small><p>${r.mi} mi · ${fmtMin(r.min)} (approx.) · ${r.hw.join(' → ')}</p></div>`);
+  const p=r.g[Math.floor(r.g.length*r.f)];
+  r.badge=L.marker(p,{icon:L.divIcon({className:'',html:`<div class="rbadge" style="background:${r.c};${rbs(r)}">R${r.n}</div>`,iconSize:[30,30],iconAnchor:[15,15]}),title:'Route '+r.n,zIndexOffset:500}).addTo(map).on('click',()=>r.line.openPopup(p));
+ });
  SPOTS.forEach(s=>{const icon=L.divIcon({className:'',html:`<div class="pin" style="background:${AREA[s.a].c}"><span>${s.i}</span></div>`,iconSize:[34,34],iconAnchor:[17,34],popupAnchor:[0,-32]});
-  s.m=L.marker(s.ll,{icon,title:s.n}).addTo(map).bindPopup(`<div class="pop"><b>${s.n}</b><small>${s.d} · ${AREA[s.a].n}</small><p>${s.t}</p><a href="${gmaps(s.ll)}" target="_blank" rel="noopener noreferrer">Open map</a></div>`);});
+  s.m=L.marker(s.ll,{icon,title:s.n,zIndexOffset:1000}).addTo(map).bindPopup(`<div class="pop"><b>${s.n}</b><small>${s.d} · ${AREA[s.a].n}</small><p>${s.t}</p><a href="${gmaps(s.ll)}" target="_blank" rel="noopener noreferrer">Open map</a></div>`);});
+ STOPS.forEach(s=>{const icon=L.divIcon({className:'',html:`<span class="sb">${s.id}</span>`,iconSize:[34,24],iconAnchor:[17,12],popupAnchor:[0,-12]});
+  s.m=L.marker(s.ll,{icon,title:s.n,zIndexOffset:900}).addTo(map).bindPopup(`<div class="pop"><b>${s.id} · ${s.n}</b><small>Day 5 Option C stop · ${s.town}</small><p>${s.t}</p><a href="${gmaps(s.ll)}" target="_blank" rel="noopener noreferrer">Open map</a></div>`);});
  fitArea('all');
  const lock=document.getElementById('map-lock'); if(!touch)lock.classList.add('hide'); lock.onclick=unlock;
  map.on('click',()=>map.scrollWheelZoom.enable());
 }
-function fitArea(a){ if(!map)return; const pts=SPOTS.filter(s=>a==='all'||(a==='sj'?s.a==='sj':s.a!=='sj')).map(s=>s.ll); map.fitBounds(pts,{padding:[30,30],maxZoom:14});}
+const AREASETS={all:null,sj:['sj'],east:['east'],west:['agu','rin','ss'],agu:['agu'],rin:['rin'],ss:['ss']};
+function fitArea(a){ if(!map)return; const set=AREASETS[a];
+ const pts=SPOTS.filter(s=>!set||set.includes(s.a)).map(s=>s.ll); if(!set)pts.push(...STOPS.map(s=>s.ll));
+ if(pts.length===1)map.flyTo(pts[0],13,{duration:.6}); else map.fitBounds(pts,{padding:[16,16],maxZoom:14});}
 document.querySelectorAll('#area-btns .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#area-btns .chip').forEach(x=>x.classList.toggle('on',x===b));fitArea(b.dataset.area);});
 initMap();
+
+/* ---------- WEATHER (Open-Meteo, live) ---------- */
+const TRIP=[['2026-11-01','Sun Nov 1','Day 1','N'],['2026-11-02','Mon Nov 2','Day 2','NE'],['2026-11-03','Tue Nov 3','Day 3','W'],['2026-11-04','Wed Nov 4','Day 4','W'],['2026-11-05','Thu Nov 5','Day 5','WN'],['2026-11-06','Fri Nov 6','Day 6','N']];
+const WREG=[{k:'W',n:'West',s:'Rincón / Aguadilla',lat:18.36,lon:-67.22},{k:'N',n:'North',s:'San Juan',lat:18.45,lon:-66.07},{k:'E',n:'East',s:'Fajardo / Puerto del Rey',lat:18.29,lon:-65.64}];
+const WX_KEY='prtrip2026.weather.v1', NA='Forecast not available yet — check back closer to the trip';
+const WMO=c=>c==null?['❔','—']:c===0?['☀️','Clear']:c===1?['🌤️','Mostly clear']:c===2?['⛅','Partly cloudy']:c===3?['☁️','Cloudy']:(c===45||c===48)?['🌫️','Fog']:(c>=51&&c<=57)?['🌦️','Drizzle']:(c>=61&&c<=67)?['🌧️','Rain']:(c>=71&&c<=77)?['🌨️','Snow']:(c>=80&&c<=82)?['🌦️','Showers']:(c>=85&&c<=86)?['🌨️','Snow showers']:c>=95?['⛈️','Thunderstorms']:['🌡️','—'];
+const FC_URL='https://api.open-meteo.com/v1/forecast?latitude='+WREG.map(r=>r.lat).join(',')+'&longitude='+WREG.map(r=>r.lon).join(',')+'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&timezone=America%2FPuerto_Rico&temperature_unit=fahrenheit&wind_speed_unit=mph&forecast_days=16&past_days=7';
+const MR_URL='https://marine-api.open-meteo.com/v1/marine?latitude=18.30&longitude=-65.60&daily=wave_height_max&timezone=America%2FPuerto_Rico&length_unit=imperial&forecast_days=16&past_days=7';
+const prTime=t=>new Date(t).toLocaleString('en-US',{timeZone:'America/Puerto_Rico',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' PR time';
+const num=v=>typeof v==='number'&&isFinite(v);
+function dayVals(loc,d){ if(!loc||!loc.daily||!loc.daily.time)return null; const i=loc.daily.time.indexOf(d); if(i<0)return null; const D=loc.daily;
+ const v={code:D.weather_code?.[i],hi:D.temperature_2m_max?.[i],lo:D.temperature_2m_min?.[i],pp:D.precipitation_probability_max?.[i],wind:D.wind_speed_10m_max?.[i]};
+ return (num(v.hi)&&v.code!=null)?v:null;}
+function longRange(d,t){const diff=(new Date(d+'T12:00:00-04:00')-new Date(t))/864e5;return diff>7;}
+function renderWx(data,status){
+ const grid=document.getElementById('wx-grid'); grid.innerHTML='';
+ const locs=data?(Array.isArray(data.fc)?data.fc:[data.fc]):[];
+ let have=[],pend=[];
+ TRIP.forEach(([d,lab,dn,here])=>{
+  const card=document.createElement('div');card.className='wxday';
+  const base=here==='N'?'San Juan':here==='W'?'Rincón':here==='WN'?'Rincón → San Juan':'San Juan · boat in Fajardo';
+  let any=false, lr=data&&longRange(d,data.t);
+  const tile=(r,idx,cls)=>{const v=dayVals(locs[idx],d);if(v)any=true;const [ic,ds]=WMO(v&&v.code);
+   const isHere=here.includes(r.k);
+   return `<div class="reg ${cls}${isHere?' here':''}">${isHere?'<span class="herel">📍 here</span>':''}<span class="rn">${r.n}<span class="rs">${r.s}</span></span>`+
+    (v?`<div class="row1"><span class="ic">${ic}</span><span><span class="hi">${Math.round(v.hi)}°</span> <span class="lo">${num(v.lo)?Math.round(v.lo)+'°':''}</span></span></div><div class="ds">${ds}</div><div class="st"><span>💧 ${num(v.pp)?v.pp+'%':'—'}</span><span>💨 ${num(v.wind)?Math.round(v.wind)+' mph':'—'}</span></div>`:`<span class="na">${NA}</span>`)+`</div>`;};
+  let html=`<div class="wh"><b>${lab}${lr?'<span class="lr">LONG-RANGE</span>':''}</b><small>${dn} · ${base}</small></div><div class="wxmain">${tile(WREG[0],0,'w')}${tile(WREG[1],1,'n')}</div>`;
+  const e=dayVals(locs[2],d); if(e)any=true; const [eic,eds]=WMO(e&&e.code);
+  let wave='';
+  if(d==='2026-11-02'){ let wv=null; const M=data&&data.marine&&data.marine.daily; if(M&&M.time){const i=M.time.indexOf(d); if(i>=0&&num(M.wave_height_max[i]))wv=M.wave_height_max[i];}
+   wave=`<span class="wv">🌊 Boat day waves (offshore Fajardo): ${wv!=null?'max ~'+wv.toFixed(1)+' ft':'not available yet — check back closer to the trip'}</span>`;}
+  html+=`<div class="east" style="${here.includes('E')?'box-shadow:inset 0 0 0 3px #ff5e62':''}"><b>East</b> · Fajardo: `+(e?`${eic} ${Math.round(e.hi)}°/${num(e.lo)?Math.round(e.lo)+'°':'—'} · 💧 ${num(e.pp)?e.pp+'%':'—'} · 💨 ${num(e.wind)?Math.round(e.wind)+' mph':'—'}`:`<span class="na" style="display:inline">${NA}</span>`)+wave+`</div>`;
+  card.innerHTML=html; grid.appendChild(card);
+  (any?have:pend).push(lab);
+  /* mini chip in itinerary */
+  const mini=document.querySelector(`.wxmini[data-d="${d}"]`); if(mini){const rk=mini.dataset.r, idx=WREG.findIndex(r=>r.k===rk), v=dayVals(locs[idx],d);
+   mini.textContent=v?`${WMO(v.code)[0]} ${Math.round(v.hi)}° · 💧${num(v.pp)?v.pp+'%':'—'}`:(data?'🌦 forecast pending':'');}
+ });
+ document.getElementById('wx-stat').innerHTML=status;
+ return {have,pend};
+}
+function loadCache(){try{return JSON.parse(localStorage.getItem(WX_KEY)||'null');}catch(e){return null;}}
+const btn='<button type="button" id="wx-refresh">↻ Refresh</button>';
+async function getJSON(u){const c=new AbortController();const to=setTimeout(()=>c.abort(),12000);try{const r=await fetch(u,{signal:c.signal});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();if(j&&j.error)throw new Error(j.reason||'API error');return j;}finally{clearTimeout(to);}}
+async function fetchWx(){
+ const cache=loadCache();
+ if(cache)renderWx(cache,`<span>Showing saved forecast · updated <b>${prTime(cache.t)}</b> · refreshing…</span>`);
+ else renderWx(null,'<span>Loading live forecast…</span>');
+ const [fc,mr]=await Promise.allSettled([getJSON(FC_URL),getJSON(MR_URL)]);
+ if(fc.status==='fulfilled'){
+  const data={t:Date.now(),fc:fc.value,marine:mr.status==='fulfilled'?mr.value:(cache&&cache.marine)||null};
+  try{localStorage.setItem(WX_KEY,JSON.stringify(data));}catch(e){}
+  renderWx(data,`<span>✅ Live · updated <b>${prTime(data.t)}</b></span>${btn}`);
+ } else if(cache){
+  renderWx(cache,`<span>⚠️ Couldn't refresh (offline?) · showing saved forecast from <b>${prTime(cache.t)}</b></span>${btn}`);
+ } else {
+  renderWx(null,`<span>⚠️ Couldn't load the forecast right now (offline?). Try again in a bit.</span>${btn}`);
+ }
+ const b=document.getElementById('wx-refresh'); if(b)b.onclick=fetchWx;
+}
+fetchWx();
 
 /* ---------- OPTIONS FILTER ---------- */
 document.querySelectorAll('#opt-filters .chip').forEach(b=>b.onclick=()=>{const f=b.dataset.f;
@@ -298,7 +573,8 @@ const BASE=[
  ['clothes','Light tees / tanks','all'],['clothes','Going-out fit (La Placita)','all'],['clothes','Light rain jacket','all','Nov can be showery'],['clothes','Sandals / flip-flops','all'],
  ['toiletries','Toothbrush & toiletries','all'],['toiletries','Bug spray','all'],['toiletries','Aloe / after-sun (shared)','JR'],['toiletries','Meds + basic first aid (shared)','F3'],
  ['docs','ID / driver\'s license','all','Needed for the rental car'],['docs','Phone charger + power bank','all'],['docs','Cash for kiosks & parking','all','Gozalandia parking is cash'],['docs','Hotel / Airbnb confirmation','all'],
- ['adventure','Water shoes','all','For Gozalandia rocks'],['adventure','Snorkel mask','all','Steps Beach'],['adventure','Dry bag (shared)','F2'],['adventure','GoPro / waterproof case (shared)','JR']
+ ['adventure','Water shoes','all','For Gozalandia rocks'],['adventure','Snorkel mask','all','Steps Beach'],['adventure','Dry bag (shared)','F2'],['adventure','GoPro / waterproof case (shared)','JR'],
+ ['toiletries','Motion-sickness meds (boat day)','all','Day 2 boat trip']
 ];
 const KEY='prtrip2026.packing.v1';
 let st=JSON.parse(localStorage.getItem(KEY)||'null')||{me:'JR',checks:{},custom:[],assign:{}};
@@ -336,9 +612,10 @@ document.getElementById('addform').onsubmit=e=>{e.preventDefault();const n=docum
 document.getElementById('reset').onclick=()=>{Object.keys(st.checks).forEach(k=>{if(k.startsWith(st.me+':'))delete st.checks[k];});save();render();};
 render();
 
+
 /* ---------- NAV highlight ---------- */
 const navLinks=[...document.querySelectorAll('.bnav a')];
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}),{rootMargin:'-40% 0px -55% 0px'});
-['itinerary','map','options','packing','info'].forEach(id=>io.observe(document.getElementById(id)));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id==='options'?'map':e.target.id;navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));}}),{rootMargin:'-40% 0px -55% 0px'});
+['itinerary','weather','map','options','packing','info'].forEach(id=>io.observe(document.getElementById(id)));
 </script>
 </body></html>
