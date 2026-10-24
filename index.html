@@ -64,9 +64,11 @@ h2 span{color:#00a6a2}
 .g1{background:linear-gradient(135deg,#ffb347,#ff5e62)}.g2{background:linear-gradient(135deg,#00b4b0,#0077b6)}.g3{background:linear-gradient(135deg,#7b2d8b,#ff5e62)}.g4{background:linear-gradient(135deg,#00b4b0,#00d1c4)}.g5{background:linear-gradient(135deg,#ff9a6b,#ff5e62)}.g6{background:linear-gradient(135deg,#1a73c9,#00b4b0)}.g7{background:linear-gradient(135deg,#7b2d8b,#00b4b0)}.g8{background:linear-gradient(135deg,#00a6a2,#ffb347)}
 /* info */
 .info{display:grid;grid-template-columns:1fr;gap:14px}
-.ib{background:#1d2a33;color:#fff;border-radius:20px;padding:20px}
-.ib h4{color:#ffb347;font-size:18px;margin-bottom:6px}.ib p{font-size:16px;opacity:.9;line-height:1.6}
-.ib a.call{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;padding:0 18px;border-radius:22px;background:#ff5e62;font-weight:700}
+.gc{display:grid;gap:14px;margin-top:18px}
+.gc p{border-radius:22px;padding:22px 22px;color:#fff;font-weight:700;font-size:19px;line-height:1.35;box-shadow:0 10px 26px rgba(0,0,0,.12)}
+.gc1{background:#1d2a33}.gc1 em{font-style:normal;color:#ffb347}
+.gc2{background:linear-gradient(135deg,#ff5e62,#ffb347);font-family:"Bebas Neue",Poppins,sans-serif;font-weight:400!important;font-size:34px!important;letter-spacing:1px;line-height:1.05!important}
+.gc2 b{font-weight:400;color:#1d2a33}
 footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b4b0,#ff5e62);color:#fff;font-size:13px}
 /* bottom nav (phones) */
 .bnav{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 -6px 20px rgba(0,0,0,.1)}
@@ -103,36 +105,6 @@ footer{text-align:center;padding:22px 20px;background:linear-gradient(90deg,#00b
 .pop p{margin:0 0 4px;color:#5b6870;font-size:13px}
 .leaflet-control-zoom a{width:44px!important;height:44px!important;line-height:44px!important;font-size:22px!important}
 /* PACKING */
-.packsec{background:#fff}
-.who{display:flex;gap:8px;flex-wrap:wrap;margin:-6px 0 16px;align-items:center}
-.who .lbl{font-weight:700;font-size:14px;color:#6b7780;margin-right:4px}
-.who button{min-height:44px;min-width:56px;padding:0 14px;border-radius:22px;border:3px solid transparent;font:700 15px Poppins,sans-serif;color:#fff;cursor:pointer;opacity:.55}
-.who button.on{opacity:1;border-color:#1d2a33}
-.prog{background:#fff8f0;border-radius:20px;padding:16px 18px;margin-bottom:16px}
-.prog .row{display:flex;justify-content:space-between;align-items:baseline;font-weight:700}
-.prog .row span{color:#6b7780;font-weight:600;font-size:14px}
-.pbar{height:14px;border-radius:8px;background:#ffe3d6;overflow:hidden;margin-top:10px}
-.pbar i{display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,#00b4b0,#ff9a6b,#ff5e62);transition:width .3s}
-.cats{display:grid;grid-template-columns:1fr;gap:14px}
-.cat{background:#fff;border:2px solid #ffe3d6;border-radius:20px;padding:6px 14px 10px}
-.cat h3{display:flex;justify-content:space-between;align-items:center;font-size:17px;min-height:44px}
-.cat h3 span{font-size:13px;color:#00a6a2}
-.it{display:flex;align-items:center;gap:12px;min-height:48px;border-top:1px solid #fff1e6;cursor:pointer}
-.it input{appearance:none;-webkit-appearance:none;flex:0 0 26px;height:26px;border-radius:8px;border:2px solid #ffb59a;display:grid;place-items:center;margin:0;cursor:pointer}
-.it input:checked{background:#00b4b0;border-color:#00b4b0}
-.it input:checked:after{content:"✓";color:#fff;font-weight:800;font-size:15px}
-.it .t{flex:1;font-size:16px;line-height:1.3}
-.it input:checked+.t{text-decoration:line-through;color:#9aa5ad}
-.it .tip{display:block;font-size:12px;color:#c2410c}
-.own{flex:0 0 auto;min-height:44px;min-width:48px;padding:0 10px;border-radius:22px;border:0;font:700 12px Poppins,sans-serif;color:#fff;cursor:pointer}
-.own.all{background:#e6edf0;color:#4b5860}
-.del{border:0;background:none;color:#b0bac1;font-size:20px;min-width:44px;min-height:44px;cursor:pointer}
-.addform{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px;background:#fff8f0;border-radius:20px;padding:16px}
-.addform h4{font-size:16px}
-.addform input,.addform select{min-height:48px;border-radius:14px;border:2px solid #ffd2c0;padding:0 14px;font:16px Poppins,sans-serif;background:#fff;color:#1d2a33;width:100%}
-.addform .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.addform button{min-height:48px;border-radius:24px;border:0;background:#ff5e62;color:#fff;font:700 16px Poppins,sans-serif;cursor:pointer}
-.reset{margin-top:12px;min-height:44px;border:0;background:none;color:#6b7780;text-decoration:underline;font:600 14px Poppins,sans-serif;cursor:pointer}
 .card.hidden{display:none}
 .bnav{z-index:1000}
 #trip-map .leaflet-control-layers{border:0;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);font:600 14px/1 Poppins,sans-serif;padding:4px}
@@ -220,12 +192,12 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
  h2{font-size:54px}
  .sample{margin:0 0 0 10px}
  .grid{grid-template-columns:repeat(2,1fr)}
- .info{grid-template-columns:repeat(3,1fr)}
+ .gc{grid-template-columns:1fr 1fr;align-items:stretch}
  .spots{grid-template-columns:repeat(2,1fr)}
  .routes{grid-template-columns:repeat(2,1fr)}
  #trip-map{height:480px}
- .cats{grid-template-columns:repeat(2,1fr)}
- .addform{grid-template-columns:2fr 1fr 1fr auto;align-items:end}.addform h4{grid-column:1/-1}.addform .two{display:contents}
+ 
+ 
  .wxgrid{grid-template-columns:repeat(2,1fr)}
  .otabs{display:none}
  .pane{display:block}
@@ -243,7 +215,7 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
  .card p{font-size:14px}
  .spots{grid-template-columns:1fr;margin-top:0;max-height:520px;overflow:auto;padding:2px}
  #trip-map{height:520px}
- .cats{grid-template-columns:repeat(3,1fr)}
+ 
  .wxgrid{grid-template-columns:repeat(3,1fr)}
  .routes{grid-template-columns:repeat(2,1fr)}
  #itinerary .timeline,#weather .wxgrid{max-width:1280px}
@@ -336,9 +308,39 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 }
 @media(min-width:700px){.tgrid{grid-template-columns:1fr 1fr}}
 @media(min-width:1100px){.tgrid{grid-template-columns:1fr 1fr 1fr}}
+/* votes */
+.vhelp{background:#1d2a33;color:#fff;border-radius:18px;padding:12px 16px;font-size:14px;line-height:1.45;margin:-8px 0 16px}
+.vhelp>b{color:#ffb347}
+.vstat{margin-top:6px;font-size:13px;color:#cfe9e7}.vstat.off{color:#ffd08a}.vstat b{color:#fff}
+.vname-btn{border:0;background:none;color:#ffb347;font:700 13px Poppins,sans-serif;text-decoration:underline;cursor:pointer;padding:4px 2px;min-height:32px}
+.tfoot{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.tc .tfoot .sm{margin-top:0}
+.vb{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.vbt{min-width:52px;min-height:44px;padding:0 10px;border-radius:22px;border:2px solid #ffe3d6;background:#fff;font:700 15px Poppins,sans-serif;color:#1d2a33;cursor:pointer;display:inline-flex;align-items:center;gap:5px;-webkit-tap-highlight-color:transparent}
+.vbt b{font-size:14px;min-width:8px}
+.vbt[data-v="up"].on{background:#00b4b0;border-color:#00b4b0;color:#fff}
+.vbt[data-v="down"].on{background:#ff5e62;border-color:#ff5e62;color:#fff}
+.vbt[data-v="star"].on{background:#ffb347;border-color:#ffb347;color:#1d2a33}
+.vwho{flex-basis:100%;font-size:12px;color:#6b7780;line-height:1.35}
+.vwho:empty{display:none}
+.pane .vb{margin-top:10px}
+.pane .vbt{min-height:40px;font-size:14px}
+.gauge{margin-top:8px;font-weight:700;color:#7b2d8b;background:#f3e8f6;border-radius:12px;padding:10px 12px}
+.tsec{grid-column:1/-1;font-family:"Bebas Neue",Poppins,sans-serif;font-size:30px;letter-spacing:1px;color:#1a73c9;margin:14px 0 -2px}
+.tsec span{font-family:Poppins,sans-serif;font-size:14px;font-weight:600;color:#6b7780;letter-spacing:0}
+.tc[data-c="see"]{box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.tc[data-c="see"] h4{font-size:16px}
+.vsheet{position:fixed;inset:0;z-index:3000;background:rgba(29,42,51,.55);display:flex;align-items:flex-end;justify-content:center;padding:16px}
+.vsheet form{background:#fff;border-radius:22px;padding:18px;width:100%;max-width:420px;display:grid;gap:10px;margin-bottom:env(safe-area-inset-bottom)}
+.vsheet b{font-size:18px}.vsheet span{font-size:13px;color:#6b7780}
+.vsheet input{min-height:48px;border-radius:14px;border:2px solid #ffd2c0;padding:0 14px;font:16px Poppins,sans-serif}
+.vsheet div{display:flex;gap:10px;justify-content:flex-end}
+.vsheet button{min-height:46px;padding:0 20px;border-radius:23px;border:0;font:700 15px Poppins,sans-serif;cursor:pointer;background:#ff5e62;color:#fff}
+.vsheet button.skip{background:#eef2f4;color:#1d2a33}
+@media(min-width:768px){.vsheet{align-items:center}}
 </style></head><body>
 <header class="hero" id="top"><div class="sun"></div><div class="palm"></div><div class="wave2"></div>
-<nav class="top"><div class="logo">Big coconuts 🔜🚀</div><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#weather">Weather</a></li><li><a href="#map">Map</a></li><li><a href="#things">Things to Do</a></li><li><a href="#packing">Packing</a></li><li><a href="#info">Info</a></li></ul></nav>
+<nav class="top"><div class="logo">Big coconuts 🔜🚀</div><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#weather">Weather</a></li><li><a href="#map">Map</a></li><li><a href="#things">Things to Do</a></li><li><a href="#info">Info</a></li></ul></nav>
 <div class="htxt"><span class="tag">SUN NOV 1 – FRI NOV 6, 2026</span>
 <h1>PR TRIP<br>2026</h1><p>San Juan → boat day → Rincón → back to San Juan. 6 days, 3 dudes, every plan tentative.</p>
 <div class="crew"><div class="av" style="background:#ff5e62">JR</div><div class="av" style="background:#00a6a2">W</div><div class="av" style="background:#7b2d8b">F</div><span>Rod + Wan + Fab</span></div>
@@ -350,34 +352,34 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 <div class="day" id="day1"><div class="dot" style="background:#00b4b0">1</div>
 <div class="dh"><small>Sun Nov 1 · Day 1</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-01" data-r="N"></span></div>
 <h3>Land in San Juan</h3>
-<p class="meta">✈️ Land at SJU 8:45 PM · 🚗 ~23 min to the house in Bayamón via PR-26 → PR-22</p>
+<p class="meta">✈️ Land at SJU 8:45 PM · 🚗 ~20 min to the house in Frailes (Guaynabo) via PR-17 → PR-1 → PR-177</p>
 <div class="panes n2">
 <div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Drop bags &amp; maybe go out</h4><p>Drop off bags at the house, then maybe head out — it's a Sunday night, so it could be low-key.</p></div>
 <div class="pane" data-k="B"><span class="ol">Option B</span><h4>Eat &amp; sleep early</h4><p>Grab food, then get to bed early so we're up for the boat.</p></div>
 </div>
-<p class="addons"><b>Add-ons:</b> quick grocery / water run for the house. <b>Going out (A)?</b> Sunday is low-key (each ~15–20 min by rideshare from the Bayamón house): drinks around <button class="tl" type="button" data-t="concha">Condado / Casino del Mar</button> (24/7), a look at <button class="tl" type="button" data-t="placita">La Placita</button>, and a late bite at <button class="tl" type="button" data-t="alcapurria">La Alcapurria Quemá</button> (till 12:30 AM Sun).</p>
-<span class="loc sj">🏠 San Juan house · Río Bayamón</span></div>
+<p class="addons"><b>Add-ons:</b> beer + water run for the house 🍺. <b>Going out (A)?</b> Sunday is low-key but not dead (Condado/La Placita ~15–20 min, Old SJ ~20–30 min by rideshare from Frailes): first round at <button class="tl" type="button" data-t="junglebird">Jungle Bird</button> tiki bar (Sun till 1 AM), walk over to <button class="tl" type="button" data-t="placita">La Placita</button>, live salsa at <button class="tl" type="button" data-t="factoria">La Factoría</button> (Sun 10 PM–2 AM, 23+ door policy), or the 24/7 <button class="tl" type="button" data-t="concha">Casino del Mar</button> in Condado. Late bite at <button class="tl" type="button" data-t="alcapurria">La Alcapurria Quemá</button> (till 12:30 AM Sun).</p>
+<span class="loc sj">🏠 San Juan house · Frailes</span></div>
 
 <div class="day" id="day2"><div class="dot" style="background:#1a73c9">2</div>
 <div class="dh"><small>Mon Nov 2 · Day 2</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-02" data-r="E"></span></div>
 <h3>Boat day (weather permitting)</h3>
-<p class="meta">⛵ Puerto del Rey marina, Fajardo · 🚗 ~1 hr 6 min each way via PR-22 → PR-3 → PR-66 · check East-coast waves in <a href="#weather" style="color:#1a73c9;font-weight:700">Weather</a></p>
+<p class="meta">⛵ Puerto del Rey marina, Fajardo · 🚗 ~58 min each way via PR-177 → PR-1 → PR-3 → PR-66 · check East-coast waves in <a href="#weather" style="color:#1a73c9;font-weight:700">Weather</a></p>
 <div class="panes n2">
 <div class="pane on" data-k="A"><span class="ol">Option A</span><h4>All-day boat trip ⛵</h4><p>All-day boat trip from Puerto del Rey marina (Fajardo, east coast) if the weather permits, then back to the San Juan house.</p></div>
 <div class="pane" data-k="B"><span class="ol">Option B · if it rains</span><h4>Rain plan — TBD</h4><span class="idea">IDEAS ONLY · NOT PLANNED</span><ul><li>Casa Bacardí distillery tour (Cataño, across the bay)</li><li>Old San Juan/Condado Bar hop</li><li>Find something day of</li></ul></div>
 </div>
 <p class="addons"><b>Add-ons:</b> dinner at Fajardo or near the house, depends on option.</p>
-<span class="loc sj">🏠 San Juan house · Río Bayamón</span></div>
+<span class="loc sj">🏠 San Juan house · Frailes</span></div>
 
 <div class="day" id="day3"><div class="dot" style="background:#ff9a6b">3</div>
 <div class="dh"><small>Tue Nov 3 · Day 3</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-03" data-r="W"></span></div>
 <h3>Drive early to Rincón</h3>
-<p class="meta">🚗 ~2 hr 3 min, PR-22 → PR-2 → PR-115</p>
+<p class="meta">🚗 ~2 hr 14 min, PR-20 → PR-22 → PR-2 → PR-115</p>
 <div class="panes n2">
 <div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Beach day 🏖</h4><p>Beach day in Rincón (Sandy Beach, Balenario, Steps, other options).</p></div>
-<div class="pane" data-k="B"><span class="ol">Option B · if it rains</span><h4>Explore Rincón town &amp; bars</h4><p>Wander town, food, and bar-hop around the plaza.</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B · if it rains</span><h4>Rincón bar crawl 🍻</h4><p>Rain = bar day. Food in town, then bar-hop around the plaza: <button class="tl" type="button" data-t="rbc">Rincón Beer Co.</button>, <button class="tl" type="button" data-t="marketa">La Marketa</button> (rooftop, pool &amp; darts), <button class="tl" type="button" data-t="billiards">Rincón Billiards</button>, <button class="tl" type="button" data-t="estacion">La Estación</button> (oldest bar in town, live music).</p></div>
 </div>
-<p class="addons"><b>Add-ons:</b> sunset at the <button class="tl" type="button" data-t="lighthouse">Punta Higüero lighthouse</button> if skies clear. <b>Tue night:</b> Taco Tuesday at <button class="tl" type="button" data-t="vatos">Vatos Locos</button> → <button class="tl" type="button" data-t="rbc">Rincón Beer Co.</button> on the plaza → live music at <button class="tl" type="button" data-t="beachhouse">The Beach House</button> (Caddy's is closed Tue).</p>
+<p class="addons"><b>Add-ons:</b> sunset at the <button class="tl" type="button" data-t="lighthouse">Punta Higüero lighthouse</button> if skies clear. <b>Tue night:</b> Taco Tuesday at <button class="tl" type="button" data-t="vatos">Vatos Locos</button> → <button class="tl" type="button" data-t="rbc">Rincón Beer Co.</button> on the plaza → live music at <button class="tl" type="button" data-t="beachhouse">The Beach House</button> or <b>La Estación</b> (Tue till midnight). Day drinks at the beach: <button class="tl" type="button" data-t="titos">Tito's</button> at the Balneario. (Caddy's is closed Tue.)</p>
 <span class="loc west">🏠 Rincón stay · Stella</span></div>
 
 <div class="day" id="day4"><div class="dot" style="background:#ffb347">4</div>
@@ -386,28 +388,27 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 <p class="meta">🚗 Crash Boat is ~31 min from the Stella stay via PR-115 → PR-2 → PR-458</p>
 <div class="panes n2">
 <div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Crash Boat Beach 🌊</h4><p>Crash Boat Beach in Aguadilla — pier jumps &amp; clear water.</p></div>
-<div class="pane" data-k="B"><span class="ol">Option B</span><h4>More Rincón + going out</h4><p>Another Rincón day, then go out at night.</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B</span><h4>More Rincón + going out</h4><p>Another Rincón beach day, then go out at night — <button class="tl" type="button" data-t="marketa">La Marketa</button> and <button class="tl" type="button" data-t="antillano">Antillano</button> are both solid on a Wednesday.</p></div>
 </div>
-<p class="addons"><b>Add-ons:</b> <button class="tl" type="button" data-t="survival">Survival Beach</button> (near Crash Boat), <button class="tl" type="button" data-t="shacks">Shacks Blue Hole</button> if it's flat, or <button class="tl" type="button" data-t="gozalandia">Gozalandia Falls</button>. <b>Wed night:</b> sunset at <button class="tl" type="button" data-t="caddys">Caddy's Calypso</button> or <button class="tl" type="button" data-t="tamboo">Tamboo</button>, then bingo at <button class="tl" type="button" data-t="octopus">Drunken Octopus</button> or karaoke at <button class="tl" type="button" data-t="antillano">Antillano</button> by the plaza.</p>
+<p class="addons"><b>Add-ons:</b> <button class="tl" type="button" data-t="survival">Survival Beach</button> (near Crash Boat), <button class="tl" type="button" data-t="shacks">Shacks Blue Hole</button> if it's flat, or <button class="tl" type="button" data-t="gozalandia">Gozalandia Falls</button>. <b>Beach bars up there (Wed):</b> <button class="tl" type="button" data-t="rompeolas">Rompeolas</button> on the water in Aguadilla (till 11 PM), Camacho craft beer at <button class="tl" type="button" data-t="griferia">La Grifería</button>, or swing up to Playa Jobos for <button class="tl" type="button" data-t="kai">Kai Isabela</button> (DJs/live music) and <button class="tl" type="button" data-t="wagon">El Wagon Bar</button> (Wed 4 PM–midnight). <b>Wed night:</b> sunset at <button class="tl" type="button" data-t="caddys">Caddy's Calypso</button> or <button class="tl" type="button" data-t="tamboo">Tamboo</button>, then bingo at <button class="tl" type="button" data-t="octopus">Drunken Octopus</button> or karaoke at <button class="tl" type="button" data-t="antillano">Antillano</button> by the plaza.</p>
 <span class="loc west">🏠 Rincón stay · Stella</span></div>
 
 <div class="day" id="day5"><div class="dot" style="background:#ff5e62">5</div>
 <div class="dh"><small>Thu Nov 5 · Day 5</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-05" data-r="W"></span></div>
 <h3>Back to San Juan</h3>
-<p class="meta">🚗 ~2 hr 2 min direct, PR-115 → PR-2 → PR-22 · Option C via stops: ~3 hr 14 min of driving + stop time</p>
+<p class="meta">🚗 ~2 hr 13 min direct, PR-115 → PR-2 → PR-22 → PR-20 to Frailes</p>
 <div class="panes n3">
-<div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Beach morning, then SJ night</h4><p>Beach morning, pack &amp; clean, leave for San Juan by 3–4 PM. Then chill at the house or go out: Old San Juan / Condado / casino (~15–25 min by car or rideshare from Bayamón).</p></div>
-<div class="pane" data-k="B"><span class="ol">Option B</span><h4>Leave earlier, same SJ plan</h4><p>Leave Rincón earlier, then the same San Juan options: chill at the house or go out, just more time in SJ (Old San Juan / Condado / casino, ~15–25 min from Bayamón).</p></div>
-<div class="pane" data-k="C"><span class="ol">Option C</span><h4>Road-trip stops, quiet night</h4><p>Clean &amp; leave early, make stops along the drive back (still need to figure out what things are worth it), get home late and don't go out. Pick 2–3 (west → east):</p>
-<ul class="stops" id="stoplist"></ul></div>
+<div class="pane on" data-k="A"><span class="ol">Option A</span><h4>Beach morning, then SJ night</h4><p>Beach morning, pack &amp; clean, leave for San Juan by 3–4 PM. Then chill at the house or go out: Old San Juan / Condado / casino (Condado ~15–20 min, Old SJ ~20–30 min by rideshare from Frailes).</p></div>
+<div class="pane" data-k="B"><span class="ol">Option B</span><h4>Leave earlier, same SJ plan</h4><p>Leave Rincón earlier, then the same San Juan options: chill at the house or go out, just more time in SJ (Old San Juan / Condado / casino, ~15–30 min from Frailes).</p></div>
+<div class="pane" data-k="C"><span class="ol">Option C</span><h4>Road-trip stops, quiet night</h4><p>Clean &amp; leave early, make stops along the drive back (still need to figure out what things are worth it), get home late and don't go out.</p><p class="gauge">🤙 We can gauge what sounds interesting to you guys closer to the day, if anything.</p></div>
 </div>
-<p class="addons"><b>Add-ons:</b> gas + snacks? for the drive; double-check the packing list before leaving Rincón. <b>A/B night (Thursday = best La Placita night):</b> <button class="tl" type="button" data-t="placita">La Placita</button> → <button class="tl" type="button" data-t="787">7eight7</button> (from 11:30 PM), or <button class="tl" type="button" data-t="factoria">La Factoría</button> / <button class="tl" type="button" data-t="batey">El Batey</button> in Old SJ, or a casino (<button class="tl" type="button" data-t="concha">Casino del Mar</button>, <button class="tl" type="button" data-t="metro">Casino Metro</button>). <b>Option C food:</b> <button class="tl" type="button" data-t="salitre">Salitre</button> by Cueva del Indio.</p>
-<span class="loc west">Rincón</span> <span class="loc sj">→ 🏠 San Juan house · Río Bayamón</span></div>
+<p class="addons"><b>Add-ons:</b> gas + snacks? for the drive. <b>A/B night — Thursday is the big one:</b> pregame at <button class="tl" type="button" data-t="junglebird">Jungle Bird</button> or <button class="tl" type="button" data-t="penultima">La Penúltima</button>, then <button class="tl" type="button" data-t="placita">La Placita</button> (best night of the week) → <button class="tl" type="button" data-t="787">7eight7</button> (from 11:30 PM). Other moves: beach drinks at <button class="tl" type="button" data-t="sandbox">Sandbox</button> (Condado, feet in the sand, till 11 PM), DJs at <button class="tl" type="button" data-t="monostereo">Monostereo</button> / <button class="tl" type="button" data-t="factoria">La Factoría</button> / <button class="tl" type="button" data-t="batey">El Batey</button> in Old SJ, <button class="tl" type="button" data-t="brava">Club Brava</button> in Isla Verde (Thu 10 PM–5 AM, dress code), or a casino (<button class="tl" type="button" data-t="concha">Casino del Mar</button>, <button class="tl" type="button" data-t="metro">Casino Metro</button>).</p>
+<span class="loc west">Rincón</span> <span class="loc sj">→ 🏠 San Juan house · Frailes</span></div>
 
 <div class="day" id="day6"><div class="dot" style="background:#7b2d8b">6</div>
 <div class="dh"><small>Fri Nov 6 · Day 6</small><span class="tpill">Tentative</span><span class="wxmini" data-d="2026-11-06" data-r="N"></span></div>
 <h3>Breakfast &amp; airport</h3>
-<p class="meta">🛫 Takeoff from SJU 1:40 PM · 🚗 ~23 min from Bayamón to SJU via PR-22 → PR-26</p>
+<p class="meta">🛫 Takeoff from SJU 1:40 PM · 🚗 ~20 min from Frailes to SJU via PR-177 → PR-1 → PR-17</p>
 <div class="pane solo" data-k="A"><span class="ol">The plan</span><h4>Breakfast, then SJU</h4><p>Breakfast and head to the airport. Nothing else planned.</p></div>
 <span class="loc sj">✈️ Fly home</span></div>
 
@@ -421,42 +422,31 @@ h3.mh{font-size:18px;margin:18px 0 0;color:#1d2a33}
 <p class="wxfoot">🔴 outline = where we'll be that day. Forecasts more than ~7 days out (<span class="lr">LONG-RANGE</span>) are low-confidence and will change. Saved on this phone so it still shows with spotty signal. Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener" style="text-decoration:underline">Open-Meteo.com</a> (CC BY 4.0).</p>
 </section>
 
-<section class="mapsec" id="map"><h2>THE <span>MAP</span></h2><span class="sample tent">TENTATIVE · NOT BOOKINGS</span><p class="sub">Pick a day, then switch on only what you want: that day's route, Option A/B/C spots, stays, or Things to Do. Tap a pin or a line for details.</p>
+<section class="mapsec" id="map"><h2>THE <span>MAP</span></h2><span class="sample tent">TENTATIVE · NOT BOOKINGS</span><p class="sub">Pick a day, then switch on only what you want: that day's route, Option A/B spots, stays, or Things to Do. Tap a pin or a line for details.</p>
 <div class="mapgrid"><div class="mkey" id="mkey" aria-label="Map key and layer filters"></div><div class="mapcol"><div class="mapwrap" id="mapwrap"><div id="trip-map" aria-label="Map of trip routes and spots"></div><button class="map-lock" id="map-lock" type="button"><span>👆 Tap to explore</span></button></div>
 <div class="map-fallback"><b>🗺 Map couldn't load (offline?)</b>Use the Things to Do list below.</div>
-<div class="legend"><span>🏄 Activities</span><span>🍽️ Eats</span><span>🍹 Bars &amp; Clubs</span><span>📸 Sights</span><span>🏠✈️⛵ Stays &amp; bases</span><span><span class="mk-lt" style="background:#00b4b0;margin-right:5px">A</span>Plan pick (Option A/B/C, + = add-on)</span><span><span class="sb" style="margin-right:6px">C1</span>Day 5 Option C stops</span><span><span class="clu" style="display:inline-grid;width:24px;height:24px;font-size:11px;border-width:2px;vertical-align:middle;margin-right:4px">3</span>Group — tap to zoom</span></div>
-<p class="rnote">🚗 Drive lines follow the real roads, color-coded by day (dashed red = Day 5 direct, dotted purple = Day 5 Option C, dashed slate = Day 6). Tap a line for the day, distance &amp; time. Distances/times are approximate (OpenStreetMap/OSRM, no traffic).</p>
+<div class="legend"><span>🍹 Bars &amp; Clubs</span><span>🏖 Beach &amp; Activities</span><span>🍽️ Eats</span><span>📸 Sights</span><span>🏠✈️⛵ Stays &amp; bases</span><span><span class="mk-lt" style="background:#00b4b0;margin-right:5px">A</span>Plan pick (Option A/B/C, + = add-on)</span><span><span class="clu" style="display:inline-grid;width:24px;height:24px;font-size:11px;border-width:2px;vertical-align:middle;margin-right:4px">3</span>Group — tap to zoom</span></div>
+<p class="rnote">🚗 Drive lines follow the real roads, color-coded by day (dashed red = Day 5, dashed slate = Day 6). Tap a line for the day, distance &amp; time. Distances/times are approximate (OpenStreetMap/OSRM, no traffic).</p>
 </div>
 </div>
 </section>
 
-<section class="opts" id="things"><h2>THINGS <span>TO DO</span></h2><span class="sample">SPRING-BREAK MODE</span><p class="sub">Beaches, bars, clubs, casinos, cheap eats + a few must-sees. Verified Oct 2026, but hours change, so double-check day-of. Vote in the group chat.</p>
-<div class="fwrap" id="things-f"><div class="fbar areas2" role="group" aria-label="Area"><button class="chip on" type="button" data-fa="all">All</button><button class="chip" type="button" data-fa="sj">San Juan</button><button class="chip" type="button" data-fa="rin">Rincón</button><button class="chip" type="button" data-fa="agu">Aguadilla</button><button class="chip" type="button" data-fa="drive">🛣 Drive back</button></div><div class="fbar cats2" role="group" aria-label="Category"><button class="chip on" type="button" data-fc="all">All types</button><button class="chip" type="button" data-fc="act">🏄 Activities</button><button class="chip" type="button" data-fc="eat">🍽️ Eats</button><button class="chip" type="button" data-fc="bar">🍹 Bars &amp; Clubs</button><button class="chip" type="button" data-fc="see">📸 Sights</button></div></div>
+<section class="opts" id="things"><h2>THINGS <span>TO DO</span></h2><span class="sample">SPRING-BREAK MODE</span><p class="sub">Beach bars, day drinking, bars, clubs, casinos &amp; late-night eats first — sights at the bottom if we feel like it. Checked Oct 2026, but hours change, so double-check day-of.</p>
+<div class="vhelp"><b>Vote:</b> 👍 / 👎 / ⭐ on anything — everyone who opens the site sees the counts &amp; names. Tap your own vote again to take it back.<div class="vstat" id="vstat">⏳ loading votes…</div></div>
+<div class="fwrap" id="things-f"><div class="fbar areas2" role="group" aria-label="Area"><button class="chip on" type="button" data-fa="all">All</button><button class="chip" type="button" data-fa="sj">San Juan</button><button class="chip" type="button" data-fa="rin">Rincón</button><button class="chip" type="button" data-fa="agu">Aguadilla / Isabela</button></div><div class="fbar cats2" role="group" aria-label="Category"><button class="chip on" type="button" data-fc="all">All types</button><button class="chip" type="button" data-fc="bar">🍹 Bars &amp; Clubs</button><button class="chip" type="button" data-fc="act">🏖 Beach &amp; Activities</button><button class="chip" type="button" data-fc="eat">🍽️ Eats</button><button class="chip" type="button" data-fc="see">📸 Sights (if we feel like it)</button></div></div>
 <p class="tcount" id="tcount"></p><div class="tgrid" id="tgrid"></div></section>
 
-<section class="packsec" id="packing"><h2>PACKING <span>LIST</span></h2><span class="sample">SUGGESTED · EDIT FREELY</span><p class="sub">Checks save on this phone. Shared gear is assigned to one person.</p>
-<div class="who" id="who"><span class="lbl">Packing as:</span><button data-p="JR" style="background:#ff5e62">JR</button><button data-p="F2" style="background:#00a6a2">F2</button><button data-p="F3" style="background:#7b2d8b">F3</button></div>
-<div class="prog"><div class="row"><b id="prog-txt">0 of 0 packed</b><span id="prog-pct">0%</span></div><div class="pbar"><i id="prog-bar"></i></div></div>
-<div class="cats" id="cats"></div>
-<form class="addform" id="addform"><h4>➕ Add an item</h4><input id="add-name" placeholder="e.g. Portable fan" maxlength="60" required aria-label="Item name">
-<div class="two"><select id="add-cat" aria-label="Category"></select><select id="add-own" aria-label="Who brings it"><option value="all">Everyone</option><option value="JR">JR</option><option value="F2">F2</option><option value="F3">F3</option></select></div>
-<button type="submit">Add</button></form>
-<button class="reset" id="reset" type="button">Reset my checks</button>
-</section>
 
-<section id="info"><h2>NEED <span>TO KNOW</span></h2><span class="sample">PLACEHOLDERS</span><p class="sub">Fill in once booked.</p>
-<div class="info">
-<div class="ib"><h4>🏠 Where we're staying</h4><p>Nov 1–3: San Juan house (Río Bayamón, Bayamón, approx.) — TBD<br>Nov 3–5: Rincón stay (Stella, Rincón, approx.) — TBD<br>Nov 5–6: back to the San Juan house — TBD</p></div>
-<div class="ib"><h4>🚗 Getting around</h4><p>Rental car: TBD (needed for Fajardo + Rincón)<br>San Juan: rideshare or drive (Bayamón → Condado / Old SJ ~15–25 min)<br>Flights: land SJU Sun Nov 1 · 8:45 PM<br>Take off SJU Fri Nov 6 · 1:40 PM</p></div>
-<div class="ib"><h4>🚨 Emergency</h4><p>Emergency: 911<br>Group contacts: [add]<br>Stay host #: [add]</p><a class="call" href="tel:911">📞 Call 911</a></div>
-</div></section>
+<section id="info"><h2>NEED <span>TO KNOW</span></h2>
+<div class="gc"><p class="gc1">📵 Phones and addresses are in the GC — <em>this shi a public site.</em></p><p class="gc2">🍺 All you gotta know is u know is <b>BEER.</b></p></div></section>
 <footer>PR Trip 2026 · Tropical Bold · All plans tentative · Routes: © OpenStreetMap contributors via OSRM · Weather: Open-Meteo.com</footer>
-<nav class="bnav"><a href="#itinerary" class="on"><i>🗓</i>Plan</a><a href="#weather"><i>🌦</i>Weather</a><a href="#map"><i>🗺</i>Map</a><a href="#packing"><i>🎒</i>Packing</a><a href="#info"><i>ℹ️</i>Info</a></nav>
+<nav class="bnav"><a href="#itinerary" class="on"><i>🗓</i>Plan</a><a href="#weather"><i>🌦</i>Weather</a><a href="#map"><i>🗺</i>Map</a><a href="#things"><i>🌴</i>Do</a><a href="#info"><i>ℹ️</i>Info</a></nav>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
 <script>
 /* ---------- ITINERARY tabs (phones) ---------- */
+document.querySelectorAll('.day .panes .pane[data-k]').forEach(pa=>{const d=pa.closest('.day');pa.insertAdjacentHTML('beforeend',vbar('opt-'+d.id+'-'+pa.dataset.k));});
 document.querySelectorAll('.panes').forEach(p=>{const panes=[...p.querySelectorAll('.pane')];const t=document.createElement('div');t.className='otabs';t.setAttribute('role','tablist');
  panes.forEach((pa,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent='Option '+pa.dataset.k;if(i===0)b.classList.add('on');
   b.onclick=()=>{panes.forEach((x,j)=>x.classList.toggle('on',j===i));t.querySelectorAll('button').forEach((x,j)=>x.classList.toggle('on',j===i));};t.appendChild(b);});
@@ -464,17 +454,22 @@ document.querySelectorAll('.panes').forEach(p=>{const panes=[...p.querySelectorA
 
 /* ---------- MAP DATA ---------- */
 const SPOTS=[
- {n:'San Juan house · Río Bayamón (approx.)',sh:'Río Bayamón house',e:'🏠',d:'Base · Nov 1–3 & Nov 5–6',t:'Río Bayamón, Bayamón (approx.) — neighborhood-level pin, exact address TBD',ll:[18.419,-66.165],a:'sj'},
+ {n:'San Juan house · Frailes, Guaynabo (approx.)',sh:'Frailes house',e:'🏠',d:'Base · Nov 1–3 & Nov 5–6',t:'Frailes, Guaynabo (approx.) — neighborhood-level pin, exact address in the GC',ll:[18.3745,-66.1046],a:'sj'},
  {n:'SJU Airport',e:'✈️',d:'Day 1 land 8:45 PM · Day 6 takeoff 1:40 PM',t:'Luis Muñoz Marín International',ll:[18.4380,-66.0040],a:'sj'},
  {n:'Puerto del Rey Marina',e:'⛵',d:'Day 2 · Option A boat trip',t:'Fajardo, east coast — all-day boat if weather permits',ll:[18.2872,-65.6370],a:'east'},
  {n:'Rincón stay · Stella (approx.)',sh:'Stella stay, Rincón',e:'🏠',d:'Base · Nov 3–5',t:'Stella, Rincón (approx.) — neighborhood-level pin, exact address TBD',ll:[18.3235,-67.2468],a:'rin'}
 ];
 /* Things to Do — researched Oct 2026 (official sites, Yelp/TripAdvisor, What's Up Rincón, Discover PR, 2025–26 press). Hours change — double-check day-of. */
-const CAT={act:{e:'🏄',n:'Activities',c:'#00a6a2'},eat:{e:'🍽️',n:'Eats',c:'#ff9a6b'},bar:{e:'🍹',n:'Bars & Clubs',c:'#7b2d8b'},see:{e:'📸',n:'Sights',c:'#1a73c9'}};
-const TAREA={sj:'San Juan',rin:'Rincón',agu:'Aguadilla',drive:'Drive back'};
+const CAT={bar:{e:'🍹',n:'Bars & Clubs',c:'#7b2d8b'},act:{e:'🏖',n:'Beach & Activities',c:'#00a6a2'},eat:{e:'🍽️',n:'Eats',c:'#ff9a6b'},see:{e:'📸',n:'Sights',c:'#1a73c9'}};
+const CORD={bar:0,act:1,eat:2,see:3};
+const TAREA={sj:'San Juan',rin:'Rincón',agu:'Aguadilla / Isabela'};
 const THINGS=[
 /* ---- RINCÓN ---- */
-{id:'plaza',a:'rin',c:'see',n:'Plaza de Recreo (town plaza)',town:'Rincón town',ll:[18.3401,-67.2504],d:'Little town square by the Santa Rosa de Lima church, ringed by bars, tacos and cafés. This is home base for bar-hopping.',p:'Free',t:'The Thursday Art Walk (5–10 PM, live music) is the big night, but we\'re here Tue/Wed. Sunday-morning farmers market.'},
+{id:'marketa',a:'rin',c:'bar',n:'La Marketa',town:'8 Calle Progreso, by the plaza',ll:[18.34007,-67.25061],d:'Bar with live music, a rooftop bar, pool table and darts. Busiest on Saturdays but Tue/Wed nights still go.',p:'',t:'Mon & Fri–Sat 11 AM–2 AM, Tue–Thu 11 AM–midnight, Sun 10 AM–midnight. Works both our Rincón nights.'},
+{id:'estacion',a:'rin',c:'bar',n:'La Estación',town:'53 Calle Muñoz Rivera (approx. pin)',ll:[18.3372,-67.2521],d:'The oldest bar in Rincón: cheap drinks, locals and live music.',p:'',t:'Listed Tue 11 AM–midnight, Wed 11 AM–7 PM (closed Sun). So it\'s a Tue-night move, Wed afternoon only.'},
+{id:'billiards',a:'rin',c:'bar',n:'Rincón Billiards',town:'Town center',ll:[18.33982,-67.25009],d:'Pool tables and cocktails a block off the plaza. Good stop on a bar crawl.',p:'',t:'Hours aren\'t posted reliably, so check day-of.'},
+{id:'titos',a:'rin',c:'bar',n:'Tito\'s at the Balneario',town:'Balneario de Rincón (approx. pin)',ll:[18.3412,-67.2561],d:'Beach-bar kiosk at the public beach in town: mojitos with your feet in the sand.',p:'$',t:'Hours not posted; daytime is the safe bet. Good pick for the Day 3 beach day.'},
+{id:'plaza',a:'rin',c:'bar',n:'Plaza bar crawl (Plaza de Recreo)',town:'Rincón town',ll:[18.3401,-67.2504],d:'Little town square by the Santa Rosa de Lima church, ringed by bars, tacos and cafés. Home base for bar-hopping: RBC, La Marketa, Antillano, Rincón Billiards and La Estación are all a short walk.',p:'Free',t:'The Thursday Art Walk (5–10 PM, live music) is the big night, but we\'re here Tue/Wed. Sunday-morning farmers market.'},
 {id:'rbc',a:'rin',c:'bar',n:'Rincón Beer Company',town:'By the plaza',ll:[18.33936,-67.25063],d:'Local craft brewery taproom a few steps from the plaza, recently remodeled. Live music and events.',p:'',t:'Taproom Mon–Fri 4–11 PM, Sat–Sun 12–11 PM (official FAQ).'},
 {id:'antillano',a:'rin',c:'bar',n:'Antillano – Rincón Cultural',town:'Calle Sol, by the plaza',ll:[18.34048,-67.25018],d:'Boricua bar with karaoke, salsa and dancing. Readers voted it best bar for karaoke and dancing in 2025.',p:'',t:'Listed Wed 7 PM–midnight, which works for our Wed night. The Tue listing looks wrong, so check before going.'},
 {id:'vatos',a:'rin',c:'eat',n:'Taquería Vatos Locos',town:'Calle Sol, by the plaza',ll:[18.34002,-67.25000],d:'Birria and fish tacos, 80+ tequilas, and a loud, fun bar. Voted best Mexican and best cheap date of 2025.',p:'',t:'Listed daily 1–11 PM. Taco Tuesday fits our Tue Nov 3 night. Weekends get a 30-min wait.'},
@@ -488,20 +483,34 @@ const THINGS=[
 {id:'steps',a:'rin',c:'act',n:'Steps Beach snorkel (Tres Palmas)',town:'Tres Palmas Marine Reserve',ll:[18.34981,-67.26434],d:'Snorkel a protected reef with coral and tropical fish, right off the beach.',p:'Free',t:'Calm days only. November swells can make it unsafe. Bring water shoes.'},
 {id:'sandy',a:'rin',c:'act',n:'Sandy Beach surf session',town:'Puntas',ll:[18.37112,-67.25539],d:'Mellow, beginner-friendly break. Local surf schools give lessons, and there are beach bars right there.',p:'Free beach',t:'Book a lesson day-of. Skip it if there\'s a big swell.'},
 /* ---- AGUADILLA / ISABELA ---- */
+{id:'kai',a:'agu',c:'bar',n:'Kai Isabela',town:'Playa Jobos, Isabela',ll:[18.51298,-67.0774],d:'Beachfront bar & restaurant on Jobos with DJs and live music. The spot for a day-drinking beach session up north.',p:'',t:'Listed Tue–Thu 11 AM–11 PM, Fri–Sat till 1 AM, Mon till 7 PM. ~45 min from Rincón.'},
+{id:'mojito',a:'agu',c:'bar',n:'Jobos Mojito Beach Bar',town:'PR-466, Playa Jobos',ll:[18.508766,-67.07314],d:'Beach bar right on Jobos: mojitos, music, surfers and a crowd that stays late.',p:'',t:'Listed hours conflict between sources, so check day-of.'},
+{id:'wagon',a:'agu',c:'bar',n:'El Wagon Bar',town:'Food-truck park by Jobos, Isabela',ll:[18.512839,-67.086055],d:'Open-air bar in the Jobos food-truck park, with music and a young surf crowd.',p:'',t:'Listed Wed 4 PM–midnight, which fits Wed Nov 4.'},
+{id:'rompeolas',a:'agu',c:'bar',n:'Rompeolas Bar & Grill',town:'Aguadilla waterfront',ll:[18.435462,-67.156181],d:'Oceanfront outdoor bar for sunset drinks a few minutes from Crash Boat. Bands on weekends.',p:'',t:'Listed Wed 11 AM–11 PM. Natural post-Crash Boat stop.'},
+{id:'griferia',a:'agu',c:'bar',n:'La Grifería (Camacho craft beer)',town:'Paseo Real Marina kiosks, Aguadilla (approx. pin)',ll:[18.4300,-67.1556],d:'Little waterfront taproom pouring Camacho craft beer.',p:'',t:'Listed Wed 3–10 PM.'},
 {id:'crashboat',a:'agu',c:'act',n:'Crash Boat Beach',town:'Aguadilla',ll:[18.45873,-67.16402],d:'Glassy clear water and the old pier everyone jumps off. Kiosks for cheap eats and drinks.',p:'Free beach',t:'This is Day 4 Option A. Only jump when it\'s calm.'},
 {id:'survival',a:'agu',c:'act',n:'Survival Beach hike',town:'Aguadilla',ll:[18.50790,-67.13613],d:'Short jungle trail out to wild cliffs, sea caves and crashing waves.',p:'Free',t:'No lifeguards, so don\'t swim in surf. Wear sneakers.'},
 {id:'shacks',a:'agu',c:'act',n:'Shacks Beach "Blue Hole" snorkel',town:'Isabela',ll:[18.51616,-67.10039],d:'Reef caves and the famous Blue Hole. An epic snorkel on flat days.',p:'Free',t:'Flat days only. Strong currents, shallow coral, sea urchins.'},
 {id:'olalola',a:'agu',c:'bar',n:'Ola Lola\'s Garden Bar',town:'Shacks, Isabela',ll:[18.51249,-67.09774],d:'Tiki and garden bar near Shacks with burgers, rum drinks and trivia nights.',p:'',t:'Mon, Tue, Thu–Sat 2–9 PM. CLOSED Wed & Sun, so it\'s out on Wed Nov 4. Could work Thu on the drive back.'},
 {id:'beerbox',a:'agu',c:'bar',n:'The Beer Box',town:'PR-110, Aguadilla',ll:[18.50597,-67.11012],d:'Craft-beer bar and kitchen. Local brews and smash burgers.',p:'',t:'Mon–Sat 12–11 PM, Sun 12–9 PM.'},
 {id:'bowling',a:'agu',c:'act',n:'Aguadilla Bowling Center & Mini Golf',town:'Aguadilla',ll:[18.40728,-67.15218],d:'Bowling, mini golf and pitchers. A solid rainy-day backup.',p:'',t:'2025 hours: Tue 6–11 PM, Wed 10 AM–11 PM, Thu 4–11 PM.'},
-{id:'marina',a:'agu',c:'see',n:'Paseo Real Marina & El Parterre',town:'Downtown Aguadilla',ll:[18.43140,-67.15525],d:'Waterfront boardwalk in old Aguadilla, with the El Parterre spring pond next door.',p:'Free',t:'Quick sunset stroll after Crash Boat.'},
+{id:'paseoreal',a:'agu',c:'see',n:'Paseo Real Marina & El Parterre',town:'Downtown Aguadilla',ll:[18.43140,-67.15525],d:'Waterfront boardwalk in old Aguadilla, with the El Parterre spring pond next door.',p:'Free',t:'Quick sunset stroll after Crash Boat. La Grifería (craft beer) is in the kiosks here.'},
 {id:'gozalandia',a:'agu',c:'act',n:'Gozalandia Falls',town:'San Sebastián',ll:[18.36288,-66.98424],d:'Two-tier jungle waterfall you can swim in and jump into.',p:'$10 cash parking',t:'About 45 min inland from Rincón. Flow depends on recent rain.'},
 /* ---- SAN JUAN METRO ---- */
+{id:'junglebird',a:'sj',c:'bar',n:'Jungle Bird',town:'254 Calle Canals, La Placita',ll:[18.449977,-66.070162],d:'Tiki bar right at La Placita with tropical rum drinks. The pregame before the Placita street party.',p:'',t:'Listed 5 PM–1 AM, closed Mon. Works Sun Nov 1 and Thu Nov 5.'},
+{id:'penultima',a:'sj',c:'bar',n:'La Penúltima',town:'Ponce de León, La Placita',ll:[18.448604,-66.071459],d:'Laid-back open-air bar a block from La Placita: cheap drinks, good burgers and a crowd that spills out to the street.',p:'',t:'Listed Mon–Thu 12 PM–1 AM, Fri–Sat till 2 AM, closed Sun. Thu Nov 5 works.'},
+{id:'sandbox',a:'sj',c:'bar',n:'Sandbox · Condado Ocean Club',town:'Ashford Ave, Condado',ll:[18.45926,-66.07726],d:'Feet-in-the-sand beach bar at the Condado Ocean Club, right on the water.',p:'$$',t:'Listed Thu–Sun 5–11 PM, so Thu Nov 5 or Sun Nov 1.'},
+{id:'numerouno',a:'sj',c:'bar',n:'Numero Uno Beach House',town:'Calle Santa Ana, Ocean Park',ll:[18.45439,-66.05509],d:'Bar and restaurant on the sand in Ocean Park, one of the best city beaches. Day-drinking with chairs on the beach.',p:'',t:'Bar listed daily 8 AM–8 PM.'},
+{id:'monostereo',a:'sj',c:'bar',n:'Monostereo',town:'Calle San Sebastián, Old San Juan',ll:[18.4673,-66.11732],d:'Multi-floor bar with DJs on San Sebastián, the Old SJ party street (right by La Factoría and El Batey).',p:'',t:'Listed Mon–Wed 6 PM–1 AM, Thu from 2 PM. Check day-of.'},
+{id:'brava',a:'sj',c:'bar',n:'Club Brava',town:'Fairmont El San Juan, Isla Verde',ll:[18.4436,-66.0186],d:'The big hotel nightclub in Isla Verde: DJs, dance floor and a late-night crowd till 5 AM.',p:'Cover',t:'Thu 10 PM–5 AM (18+), Fri–Sat 11 PM–5 AM (21+). Thu Nov 5 works. Dress code: no shorts, flip-flops, tanks, hoodies or jerseys.'},
+{id:'respuesta',a:'sj',c:'bar',n:'La Respuesta',town:'Santurce (Calle del Parque)',ll:[18.443155,-66.067605],d:'Underground club and live-music venue: reggaeton, dembow, house. Where locals go late.',p:'Cover some nights',t:'Event nights vary (usually Wed–Sat) and listed hours conflict, so check their IG day-of.'},
+{id:'dembe',a:'sj',c:'bar',n:'DEMBE Karaoke Bar',town:'Calle Loíza, Santurce (approx. pin)',ll:[18.4511,-66.0557],d:'Calle Loíza bar with karaoke and cheap drinks for a rowdy night.',p:'',t:'Evenings; check hours day-of.'},
+{id:'beachclub',a:'sj',c:'act',n:'El San Juan Beach Club day pass',town:'Fairmont El San Juan, Isla Verde',ll:[18.4431,-66.0176],d:'Resort beach-club day pass: pool, swim-up bar, DJ, loungers on Isla Verde beach.',p:'~$30–100+ (ResortPass)',t:'Book on ResortPass the day before; prices vary by date.'},
 {id:'morro',a:'sj',c:'see',n:'Castillo San Felipe del Morro',town:'Old San Juan',ll:[18.47084,-66.12423],d:'The iconic 1500s fort on the point. The giant lawn out front is kite-flying central.',p:'$10 (16+), covers both forts',t:'Daily 9–5. Cashless. Ticket is good for 24 hr at El Morro + San Cristóbal (NPS).'},
 {id:'cristobal',a:'sj',c:'see',n:'Castillo San Cristóbal',town:'Old San Juan',ll:[18.46737,-66.11070],d:'The bigger fort, with tunnels, sentry boxes and ocean-view walls.',p:'Same $10 ticket',t:'Do it the same day as El Morro.'},
-{id:'oldsj',a:'sj',c:'see',n:'Old SJ streets: Calle Fortaleza & del Cristo',town:'Old San Juan',ll:[18.46500,-66.11790],d:'Blue cobblestones, pastel colonial buildings and street art. The umbrella canopy on Fortaleza goes up some seasons.',p:'Free',t:'Walk it at golden hour, then roll straight into bar-hopping.'},
+{id:'oldsj',a:'sj',c:'see',n:'Old SJ streets (golden-hour walk)',town:'Old San Juan',ll:[18.46500,-66.11790],d:'Blue cobblestones, pastel colonial buildings and street art. The umbrella canopy on Fortaleza goes up some seasons.',p:'Free',t:'Walk it at golden hour, then roll straight into bar-hopping.'},
 {id:'paseo',a:'sj',c:'see',n:'Paseo de la Princesa & San Juan Gate',town:'Old San Juan',ll:[18.46419,-66.11965],d:'Waterfront promenade under the old city walls, ending at the historic city gate.',p:'Free',t:'Nice at night with street vendors.'},
-{id:'factoria',a:'sj',c:'bar',n:'La Factoría',town:'Old San Juan',ll:[18.46724,-66.11740],d:'Unmarked speakeasy that\'s a maze of rooms, with a salsa room in back. #32 on North America\'s 50 Best Bars 2025.',p:'',t:'Opens 11 AM daily, open till 1 AM (2 AM Fri–Sat). Packed late.'},
+{id:'factoria',a:'sj',c:'bar',n:'La Factoría',town:'Old San Juan',ll:[18.46724,-66.11740],d:'Unmarked speakeasy that\'s a maze of rooms, with a salsa room in back. #32 on North America\'s 50 Best Bars 2025.',p:'',t:'Open daily into the night (till 1 AM, 2 AM Fri–Sat), packed late. Live salsa Sun & Mon 10 PM–2 AM (our Sun Nov 1!); El Final DJ room after midnight. Door policy listed as 23+, so anyone 21–22 could get turned away.'},
 {id:'batey',a:'sj',c:'bar',n:'El Batey',town:'Old San Juan',ll:[18.46632,-66.11820],d:'Legendary dive bar covered in graffiti and business cards. Cheap drinks and a jukebox.',p:'',t:'Daily 3 PM–midnight.'},
 {id:'barrachina',a:'sj',c:'eat',n:'Barrachina',town:'Old San Juan',ll:[18.46456,-66.11724],d:'Claims to be the birthplace of the piña colada. Get one in the courtyard.',p:'',t:'11 AM–9 PM (Wed till 5 PM).'},
 {id:'paleta',a:'sj',c:'eat',n:'Señor Paleta',town:'Old San Juan',ll:[18.46414,-66.11651],d:'Gourmet popsicles to cool off while walking Old SJ.',p:'',t:'Daily 10:30 AM–10 PM (11 PM Fri–Sun).'},
@@ -518,40 +527,26 @@ const THINGS=[
 {id:'escambron',a:'sj',c:'act',n:'Balneario El Escambrón',town:'Puerta de Tierra',ll:[18.46705,-66.08996],d:'Calm, reef-protected city beach between Condado and Old SJ. The easiest swim in town.',p:'',t:'Easy stop on the way to Old SJ.'}
 ];
 
-/* Day 5 Option C stops, west → east (verified Oct 2026) */
-const STOPS=[
- {n:'Jobos Beach',c:'act',town:'Isabela',t:'Famous surf beach with beachfront bars & food. Strong currents — swim with care. ~45–60 min. Beach access is free.',ll:[18.5142,-67.0757]},
- {n:'Mirador de Guajataca',c:'see',town:'Quebradillas',t:'Cliff-top lookout right on PR-2 (km 103.7) over Guajataca beach & the old train tunnel. ~20–30 min. Free, small free lot.',ll:[18.4889,-66.9514]},
- {n:'Arecibo Lighthouse & Historical Park',c:'see',town:'Arecibo',t:'1898 lighthouse + small museum/park on Punta Morrillos. ~1–1.5 hr. Adults $14 + tax, parking $3; weekdays 9 AM–6 PM.',ll:[18.4820,-66.6987]},
- {n:'Cueva del Indio',c:'see',town:'Arecibo',t:'Sea cave & arches with Taíno petroglyphs (PR-681 km 7.8). ~1 hr. No admission; private lot ~$10/person cash (≈10–5), or free roadside spots. Closed-toe shoes.',ll:[18.49274,-66.64155]},
- {n:'Mar Chiquita',c:'act',town:'Manatí',t:'Oval cove walled in by limestone — swim only if calm. ~1 hr. Free; no rentals or facilities, bring supplies.',ll:[18.4727,-66.4854]}
-];
-const RG={"r1":{"mi":13.1,"min":23,"g":[[18.43789,-66.0045],[18.43885,-66.00551],[18.43657,-66.01189],[18.43584,-66.01711],[18.43664,-66.01941],[18.43613,-66.02073],[18.4395,-66.02325],[18.44214,-66.02622],[18.44409,-66.02947],[18.44573,-66.03422],[18.44627,-66.03694],[18.44756,-66.05478],[18.44835,-66.05901],[18.44842,-66.06271],[18.45003,-66.06624],[18.45172,-66.06807],[18.45133,-66.06846],[18.44766,-66.06871],[18.44568,-66.06992],[18.44225,-66.0706],[18.44002,-66.07177],[18.43433,-66.07359],[18.42896,-66.07588],[18.42488,-66.0791],[18.42087,-66.08296],[18.4181,-66.08988],[18.41793,-66.092],[18.41878,-66.09585],[18.41736,-66.10321],[18.4175,-66.10575],[18.41825,-66.10795],[18.42087,-66.10993],[18.42194,-66.11161],[18.42277,-66.12457],[18.42257,-66.15129],[18.42128,-66.16068],[18.42114,-66.16431],[18.41882,-66.16396],[18.41777,-66.16342],[18.41755,-66.16459],[18.4179,-66.1646],[18.41807,-66.164],[18.41897,-66.16437],[18.41897,-66.165]]},"r2":{"mi":43.2,"min":66,"g":[[18.41897,-66.165],[18.41897,-66.16437],[18.41807,-66.164],[18.4179,-66.1646],[18.41755,-66.16459],[18.41757,-66.16386],[18.41785,-66.16324],[18.4196,-66.16391],[18.42038,-66.16332],[18.4211,-66.16064],[18.42242,-66.1513],[18.42258,-66.12463],[18.42209,-66.12043],[18.42221,-66.11526],[18.42183,-66.11178],[18.42084,-66.11012],[18.41782,-66.10761],[18.41676,-66.10246],[18.41685,-66.101],[18.41811,-66.09825],[18.41859,-66.09579],[18.41731,-66.09091],[18.41743,-66.09007],[18.4151,-66.08906],[18.40699,-66.08848],[18.39597,-66.08458],[18.38949,-66.08328],[18.38973,-66.08132],[18.38825,-66.07765],[18.38863,-66.07433],[18.39019,-66.07006],[18.39097,-66.06628],[18.38956,-66.0633],[18.39136,-66.06135],[18.39646,-66.05331],[18.39556,-66.05126],[18.39459,-66.03442],[18.39673,-66.02106],[18.39722,-66.00283],[18.39849,-65.99244],[18.39811,-65.98887],[18.39654,-65.98493],[18.39284,-65.98006],[18.38887,-65.97916],[18.38265,-65.97567],[18.37366,-65.97724],[18.37202,-65.97673],[18.37082,-65.97534],[18.369,-65.96865],[18.36498,-65.95895],[18.36388,-65.95459],[18.36298,-65.94584],[18.36275,-65.93837],[18.36165,-65.93199],[18.36152,-65.91866],[18.35936,-65.90607],[18.35947,-65.89656],[18.36055,-65.89251],[18.36184,-65.89031],[18.36344,-65.88855],[18.36998,-65.884],[18.37149,-65.88159],[18.37211,-65.87932],[18.37186,-65.8756],[18.3683,-65.86772],[18.36757,-65.86461],[18.36876,-65.83756],[18.3696,-65.83526],[18.37251,-65.83272],[18.37471,-65.82832],[18.37567,-65.82716],[18.37424,-65.81678],[18.37421,-65.81327],[18.3783,-65.79327],[18.37797,-65.79083],[18.37685,-65.78822],[18.37112,-65.78078],[18.37032,-65.77694],[18.37204,-65.7705],[18.37184,-65.76594],[18.37236,-65.76332],[18.37827,-65.75195],[18.37908,-65.74962],[18.37946,-65.74644],[18.37903,-65.74068],[18.38184,-65.72964],[18.38174,-65.7257],[18.38078,-65.72315],[18.37905,-65.72089],[18.36966,-65.71464],[18.35439,-65.6976],[18.35329,-65.69557],[18.35273,-65.69354],[18.35254,-65.6867],[18.3517,-65.68313],[18.34667,-65.67409],[18.34412,-65.67096],[18.33261,-65.66256],[18.3266,-65.657],[18.31554,-65.6509],[18.31031,-65.64997],[18.29841,-65.64952],[18.29808,-65.6461],[18.2943,-65.63974],[18.29221,-65.63782],[18.2899,-65.63747],[18.29004,-65.63716],[18.28731,-65.63726]]},"r3":{"mi":84.7,"min":123,"g":[[18.41897,-66.165],[18.41897,-66.16437],[18.41807,-66.164],[18.4179,-66.1646],[18.41755,-66.16459],[18.41785,-66.16324],[18.42117,-66.16415],[18.42026,-66.1681],[18.41889,-66.17805],[18.42,-66.18969],[18.41983,-66.19429],[18.41847,-66.19991],[18.41332,-66.21281],[18.41181,-66.2208],[18.41175,-66.22283],[18.41387,-66.22942],[18.41759,-66.23375],[18.41871,-66.23639],[18.41815,-66.2455],[18.41987,-66.26866],[18.42115,-66.27135],[18.42547,-66.27644],[18.4268,-66.2804],[18.42673,-66.28306],[18.42536,-66.28879],[18.42644,-66.29547],[18.42636,-66.29882],[18.4257,-66.30146],[18.42274,-66.30874],[18.42225,-66.31328],[18.42279,-66.32028],[18.42395,-66.32607],[18.4256,-66.3294],[18.43067,-66.33596],[18.43189,-66.33961],[18.43142,-66.34387],[18.42825,-66.34976],[18.42775,-66.35155],[18.42746,-66.36777],[18.42785,-66.37254],[18.4287,-66.37616],[18.43044,-66.38039],[18.43571,-66.38841],[18.43768,-66.39225],[18.44105,-66.40347],[18.44178,-66.40807],[18.4417,-66.41276],[18.43852,-66.42601],[18.4384,-66.43028],[18.43895,-66.43286],[18.44003,-66.43541],[18.44543,-66.44332],[18.44635,-66.44586],[18.4467,-66.44856],[18.44631,-66.45227],[18.4426,-66.46245],[18.44139,-66.46758],[18.44107,-66.47294],[18.44194,-66.48212],[18.44176,-66.48493],[18.43795,-66.49417],[18.43759,-66.49593],[18.43803,-66.49848],[18.44123,-66.50394],[18.4422,-66.51163],[18.44632,-66.51675],[18.44734,-66.5199],[18.44487,-66.53227],[18.44232,-66.53948],[18.44138,-66.54431],[18.44153,-66.5461],[18.44322,-66.55137],[18.4426,-66.55897],[18.44372,-66.56785],[18.44364,-66.57097],[18.44262,-66.57432],[18.43514,-66.5901],[18.43432,-66.59383],[18.43448,-66.59686],[18.43537,-66.59983],[18.44452,-66.61594],[18.44509,-66.61805],[18.44331,-66.62593],[18.44224,-66.62792],[18.43952,-66.63137],[18.43846,-66.63456],[18.43855,-66.6369],[18.43983,-66.64275],[18.44009,-66.65172],[18.43984,-66.65366],[18.43783,-66.65996],[18.43808,-66.67296],[18.43721,-66.67972],[18.43723,-66.68357],[18.43788,-66.6868],[18.44318,-66.7028],[18.44463,-66.70519],[18.44978,-66.71093],[18.4515,-66.71522],[18.45316,-66.72484],[18.45217,-66.74203],[18.45354,-66.74937],[18.45379,-66.76058],[18.45567,-66.76664],[18.4576,-66.76986],[18.46024,-66.77283],[18.46245,-66.77459],[18.46604,-66.77651],[18.47661,-66.77944],[18.47995,-66.77938],[18.48469,-66.77827],[18.48596,-66.77864],[18.48677,-66.7799],[18.488,-66.78849],[18.48838,-66.80862],[18.48805,-66.81125],[18.48227,-66.82636],[18.47989,-66.83518],[18.477,-66.84059],[18.47551,-66.84711],[18.47329,-66.85439],[18.47319,-66.85649],[18.47441,-66.86114],[18.47451,-66.86479],[18.47376,-66.86939],[18.47224,-66.875],[18.46763,-66.88412],[18.46393,-66.88924],[18.46063,-66.89525],[18.45964,-66.89899],[18.4576,-66.91308],[18.45921,-66.92134],[18.46099,-66.9247],[18.46455,-66.92774],[18.46996,-66.93347],[18.47153,-66.9344],[18.47611,-66.93578],[18.48747,-66.94421],[18.48893,-66.94671],[18.48907,-66.95039],[18.4885,-66.95204],[18.48717,-66.95378],[18.48306,-66.95734],[18.48233,-66.96068],[18.48236,-66.96292],[18.48037,-66.96591],[18.47876,-66.97725],[18.47691,-66.98305],[18.47676,-66.98731],[18.47393,-66.99389],[18.47202,-67.00866],[18.47285,-67.01572],[18.47242,-67.01827],[18.46943,-67.02671],[18.46853,-67.03113],[18.46247,-67.05076],[18.45081,-67.09989],[18.44563,-67.11456],[18.43972,-67.12735],[18.44008,-67.13802],[18.44116,-67.14029],[18.44442,-67.14347],[18.44474,-67.14512],[18.44439,-67.14651],[18.44349,-67.14754],[18.44242,-67.14798],[18.43437,-67.148],[18.4311,-67.14839],[18.42772,-67.14968],[18.42315,-67.15218],[18.40966,-67.15282],[18.41036,-67.15455],[18.4057,-67.1547],[18.39951,-67.16017],[18.39174,-67.16471],[18.38919,-67.16774],[18.38617,-67.1747],[18.38199,-67.18219],[18.37938,-67.18498],[18.38056,-67.18992],[18.38172,-67.19134],[18.38089,-67.19173],[18.38285,-67.19851],[18.38318,-67.20101],[18.3831,-67.20321],[18.38235,-67.20611],[18.38265,-67.20883],[18.37804,-67.2233],[18.37534,-67.22619],[18.37399,-67.22711],[18.37171,-67.22781],[18.36933,-67.23036],[18.36741,-67.2303],[18.36377,-67.23657],[18.36057,-67.23798],[18.3581,-67.23951],[18.35678,-67.24083],[18.35369,-67.24002],[18.35237,-67.24173],[18.35235,-67.24309],[18.35117,-67.24421],[18.3503,-67.24438],[18.34876,-67.24612],[18.34622,-67.25032],[18.34495,-67.25019],[18.34455,-67.24973],[18.34353,-67.25086],[18.34175,-67.25104],[18.34013,-67.25001],[18.33837,-67.25169],[18.33672,-67.25245],[18.32978,-67.24883],[18.32522,-67.24516],[18.32396,-67.24684],[18.32371,-67.24658]]},"r4":{"mi":15.6,"min":31,"g":[[18.32371,-67.24658],[18.32396,-67.24684],[18.32522,-67.24516],[18.32978,-67.24883],[18.33672,-67.25245],[18.33837,-67.25169],[18.34013,-67.25001],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34622,-67.25032],[18.34876,-67.24612],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37503,-67.22644],[18.37768,-67.22372],[18.37824,-67.22298],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38285,-67.19851],[18.38006,-67.18898],[18.37938,-67.18498],[18.38247,-67.18137],[18.38641,-67.17423],[18.38899,-67.1681],[18.39041,-67.16602],[18.39265,-67.16403],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44222,-67.14784],[18.44401,-67.14679],[18.44736,-67.14879],[18.45043,-67.15232],[18.45189,-67.15342],[18.45357,-67.15382],[18.45918,-67.1536],[18.45702,-67.16184],[18.45535,-67.16176],[18.45708,-67.1626],[18.45862,-67.16244],[18.45872,-67.16403]]},"r5":{"mi":84.4,"min":122,"g":[[18.32371,-67.24658],[18.32396,-67.24684],[18.32522,-67.24516],[18.32978,-67.24883],[18.33672,-67.25245],[18.33837,-67.25169],[18.34013,-67.25001],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34622,-67.25032],[18.34876,-67.24612],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37399,-67.22711],[18.37534,-67.22619],[18.37804,-67.2233],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38318,-67.20101],[18.38285,-67.19851],[18.37927,-67.1853],[18.38199,-67.18219],[18.38617,-67.1747],[18.38919,-67.16774],[18.39174,-67.16471],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44239,-67.14781],[18.44366,-67.14721],[18.44421,-67.14648],[18.44459,-67.14517],[18.44425,-67.14352],[18.44079,-67.14001],[18.44006,-67.13846],[18.43959,-67.1274],[18.44564,-67.11422],[18.45094,-67.09905],[18.4622,-67.05134],[18.46835,-67.03135],[18.4693,-67.02686],[18.47244,-67.01782],[18.47275,-67.01548],[18.47201,-67.01131],[18.47194,-67.00832],[18.47381,-66.99404],[18.47439,-66.99189],[18.47659,-66.98763],[18.47679,-66.983],[18.47875,-66.9769],[18.48029,-66.96588],[18.4822,-66.96316],[18.48223,-66.96064],[18.48297,-66.95734],[18.48712,-66.95366],[18.48859,-66.9517],[18.48899,-66.95006],[18.48884,-66.94668],[18.48741,-66.94429],[18.47578,-66.93568],[18.47147,-66.9345],[18.46968,-66.93344],[18.46451,-66.92785],[18.46092,-66.92475],[18.45909,-66.92132],[18.45749,-66.91251],[18.45949,-66.89912],[18.46063,-66.89502],[18.46365,-66.88945],[18.46735,-66.88438],[18.47142,-66.87657],[18.47286,-66.8726],[18.47424,-66.86662],[18.47446,-66.86354],[18.47425,-66.86073],[18.47307,-66.85656],[18.47318,-66.8543],[18.4752,-66.84769],[18.47674,-66.84093],[18.47981,-66.83507],[18.48212,-66.82639],[18.48794,-66.81122],[18.4883,-66.80862],[18.48808,-66.79503],[18.48732,-66.78353],[18.48605,-66.78053],[18.48435,-66.77907],[18.47865,-66.77963],[18.4762,-66.77951],[18.46484,-66.77627],[18.46162,-66.77433],[18.45959,-66.77259],[18.45739,-66.77004],[18.45569,-66.7673],[18.45403,-66.76301],[18.45338,-66.75937],[18.45328,-66.74946],[18.45187,-66.74143],[18.45288,-66.72472],[18.45111,-66.71475],[18.44947,-66.71096],[18.44447,-66.70543],[18.44283,-66.70267],[18.43774,-66.68721],[18.43691,-66.68294],[18.43696,-66.6795],[18.43781,-66.673],[18.43756,-66.66007],[18.43983,-66.65189],[18.4396,-66.64304],[18.43828,-66.63688],[18.43822,-66.63438],[18.43928,-66.63126],[18.44215,-66.62759],[18.44312,-66.6257],[18.44493,-66.61824],[18.44438,-66.61604],[18.43526,-66.59999],[18.43437,-66.59721],[18.43415,-66.59387],[18.43514,-66.58965],[18.44245,-66.57428],[18.44336,-66.57155],[18.44356,-66.56808],[18.44281,-66.56396],[18.44242,-66.55865],[18.44309,-66.55184],[18.4413,-66.54589],[18.4412,-66.5444],[18.44214,-66.53951],[18.4447,-66.53223],[18.44719,-66.52036],[18.44693,-66.51839],[18.44623,-66.51692],[18.44208,-66.51181],[18.44108,-66.50401],[18.43788,-66.49855],[18.43742,-66.49594],[18.43782,-66.49405],[18.44158,-66.48497],[18.44176,-66.48199],[18.44091,-66.47277],[18.44122,-66.46747],[18.44238,-66.46261],[18.44608,-66.45247],[18.44654,-66.44826],[18.44615,-66.44578],[18.44526,-66.44337],[18.43991,-66.43554],[18.43884,-66.43306],[18.43821,-66.43017],[18.43835,-66.42606],[18.44153,-66.41277],[18.44161,-66.40816],[18.44087,-66.40345],[18.43782,-66.39304],[18.43554,-66.38845],[18.43003,-66.37996],[18.42844,-66.37587],[18.4276,-66.37208],[18.4273,-66.36781],[18.42759,-66.35114],[18.4283,-66.34912],[18.43107,-66.34403],[18.43167,-66.34012],[18.43124,-66.33786],[18.43038,-66.33599],[18.42529,-66.3294],[18.42381,-66.32646],[18.42253,-66.32027],[18.42198,-66.31274],[18.42271,-66.30791],[18.42545,-66.30135],[18.4261,-66.2988],[18.42616,-66.29532],[18.42508,-66.28895],[18.42645,-66.28312],[18.4265,-66.28023],[18.42533,-66.27671],[18.42102,-66.2716],[18.41977,-66.2689],[18.41779,-66.24665],[18.41816,-66.23652],[18.41677,-66.23317],[18.4136,-66.22939],[18.41243,-66.22658],[18.41151,-66.22269],[18.41309,-66.21277],[18.41823,-66.19992],[18.41965,-66.19394],[18.41979,-66.19013],[18.41865,-66.17852],[18.42014,-66.16483],[18.41979,-66.16421],[18.41777,-66.16342],[18.41755,-66.16459],[18.4179,-66.1646],[18.41807,-66.164],[18.41897,-66.16437],[18.41897,-66.165]]},"r6":{"mi":13.1,"min":23,"g":[[18.41897,-66.165],[18.41897,-66.16437],[18.41807,-66.164],[18.4179,-66.1646],[18.41755,-66.16459],[18.41757,-66.16386],[18.41785,-66.16324],[18.4196,-66.16391],[18.42038,-66.16332],[18.4211,-66.16064],[18.42235,-66.15187],[18.42272,-66.13224],[18.4219,-66.11205],[18.42084,-66.11012],[18.41782,-66.10761],[18.41672,-66.1021],[18.41858,-66.09593],[18.41765,-66.09162],[18.41795,-66.08952],[18.42069,-66.08276],[18.42874,-66.07552],[18.43944,-66.07057],[18.44525,-66.06989],[18.44762,-66.06855],[18.44999,-66.06838],[18.45041,-66.06783],[18.44825,-66.06248],[18.44606,-66.03638],[18.44419,-66.03006],[18.44246,-66.02691],[18.43985,-66.02383],[18.43479,-66.0204],[18.43426,-66.02039],[18.43409,-66.02083],[18.43469,-66.02112],[18.4353,-66.02021],[18.43616,-66.01567],[18.43671,-66.00942],[18.43636,-66.00462],[18.43789,-66.0045]]},"r5c":{"mi":101.0,"min":194,"g":[[18.32371,-67.24658],[18.32396,-67.24684],[18.32522,-67.24516],[18.32978,-67.24883],[18.33672,-67.25245],[18.33837,-67.25169],[18.34013,-67.25001],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34622,-67.25032],[18.34876,-67.24612],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37503,-67.22644],[18.37768,-67.22372],[18.37824,-67.22298],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38285,-67.19851],[18.38006,-67.18898],[18.37938,-67.18498],[18.38247,-67.18137],[18.38641,-67.17423],[18.38899,-67.1681],[18.39041,-67.16602],[18.39265,-67.16403],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44222,-67.14784],[18.44401,-67.14679],[18.44736,-67.14879],[18.45132,-67.1531],[18.45357,-67.15382],[18.47466,-67.15296],[18.47606,-67.15252],[18.4825,-67.14876],[18.48668,-67.14743],[18.49046,-67.14787],[18.4926,-67.14763],[18.4971,-67.13267],[18.49784,-67.13275],[18.4987,-67.12989],[18.49986,-67.13001],[18.50043,-67.12823],[18.50158,-67.12684],[18.50224,-67.12412],[18.50233,-67.12059],[18.5076,-67.1039],[18.50762,-67.10247],[18.50688,-67.10097],[18.50399,-67.09949],[18.50405,-67.09835],[18.50347,-67.09654],[18.50423,-67.09577],[18.50555,-67.09557],[18.50738,-67.09667],[18.50898,-67.09596],[18.51046,-67.0961],[18.51101,-67.09472],[18.51195,-67.09436],[18.51241,-67.09269],[18.51194,-67.09028],[18.51219,-67.0861],[18.5119,-67.08407],[18.51312,-67.08049],[18.5128,-67.07653],[18.51324,-67.07549],[18.51453,-67.07479],[18.51324,-67.07549],[18.51286,-67.07261],[18.51205,-67.07199],[18.5101,-67.07181],[18.50972,-67.07088],[18.51,-67.06486],[18.51152,-67.06287],[18.51294,-67.06216],[18.51378,-67.05763],[18.51327,-67.05637],[18.51164,-67.05562],[18.51127,-67.05505],[18.51084,-67.04698],[18.51185,-67.04494],[18.5122,-67.04029],[18.51178,-67.0391],[18.51035,-67.03748],[18.50954,-67.03422],[18.5094,-67.03113],[18.50864,-67.02884],[18.5069,-67.02644],[18.50576,-67.02404],[18.50478,-67.02323],[18.50224,-67.02334],[18.50223,-67.0241],[18.5006,-67.02411],[18.5006,-67.02245],[18.49892,-67.01878],[18.48583,-66.99387],[18.48487,-66.98803],[18.48246,-66.98819],[18.47973,-66.98933],[18.47569,-66.98948],[18.47674,-66.9869],[18.47694,-66.98228],[18.47875,-66.9769],[18.48029,-66.96588],[18.4822,-66.96316],[18.48223,-66.96064],[18.48297,-66.95734],[18.48712,-66.95366],[18.48859,-66.9517],[18.4891,-66.94983],[18.48894,-66.95135],[18.48673,-66.95428],[18.48405,-66.95668],[18.48459,-66.95646],[18.48391,-66.95588],[18.48425,-66.95612],[18.48635,-66.9545],[18.48859,-66.9517],[18.48899,-66.94979],[18.48864,-66.94604],[18.48741,-66.94429],[18.47607,-66.93586],[18.47147,-66.9345],[18.46968,-66.93344],[18.46451,-66.92785],[18.46119,-66.92506],[18.45909,-66.92132],[18.45754,-66.91331],[18.45949,-66.89912],[18.4604,-66.89563],[18.46335,-66.88994],[18.46777,-66.88361],[18.47142,-66.87657],[18.47286,-66.8726],[18.47424,-66.86662],[18.47446,-66.86354],[18.47425,-66.86073],[18.47307,-66.85656],[18.47318,-66.8543],[18.4752,-66.84769],[18.47674,-66.84093],[18.47981,-66.83507],[18.48212,-66.82639],[18.48781,-66.81167],[18.48825,-66.80953],[18.48771,-66.78635],[18.48711,-66.78272],[18.4851,-66.77841],[18.48521,-66.77414],[18.47736,-66.75687],[18.47258,-66.74108],[18.47203,-66.73716],[18.47227,-66.72351],[18.4719,-66.72294],[18.47046,-66.72228],[18.46685,-66.71798],[18.46596,-66.71587],[18.46867,-66.70778],[18.46941,-66.70789],[18.47108,-66.70323],[18.4747,-66.69781],[18.47595,-66.6971],[18.47717,-66.69761],[18.47769,-66.69915],[18.47868,-66.69881],[18.47993,-66.69955],[18.48079,-66.69704],[18.48163,-66.6974],[18.48079,-66.69704],[18.47993,-66.69955],[18.47868,-66.69881],[18.47769,-66.69915],[18.47717,-66.69761],[18.47768,-66.69519],[18.47881,-66.69248],[18.48047,-66.68391],[18.48419,-66.67867],[18.48659,-66.67074],[18.48688,-66.66959],[18.48673,-66.66494],[18.48821,-66.65577],[18.48833,-66.64584],[18.48862,-66.64461],[18.49113,-66.64064],[18.4918,-66.64076],[18.49113,-66.64064],[18.49143,-66.63949],[18.4912,-66.63288],[18.49186,-66.6283],[18.49157,-66.62625],[18.49182,-66.62423],[18.49096,-66.61977],[18.49027,-66.61816],[18.49042,-66.61479],[18.48985,-66.60777],[18.48823,-66.60298],[18.4879,-66.59971],[18.48658,-66.59583],[18.48538,-66.59384],[18.48358,-66.58511],[18.48421,-66.57874],[18.48374,-66.57486],[18.48485,-66.57316],[18.48576,-66.56877],[18.4851,-66.56634],[18.4852,-66.56517],[18.48611,-66.56344],[18.48745,-66.56226],[18.48846,-66.55905],[18.48731,-66.55536],[18.48148,-66.55602],[18.47707,-66.55154],[18.4704,-66.55042],[18.46808,-66.54811],[18.46373,-66.54889],[18.4627,-66.5427],[18.45867,-66.54322],[18.45803,-66.54161],[18.45303,-66.54242],[18.45093,-66.54151],[18.45071,-66.53864],[18.44709,-66.5383],[18.44613,-66.53936],[18.44316,-66.54118],[18.44259,-66.54277],[18.43864,-66.54327],[18.43578,-66.54217],[18.4332,-66.53337],[18.43211,-66.53176],[18.42994,-66.52983],[18.42913,-66.528],[18.4277,-66.51471],[18.42834,-66.49654],[18.43223,-66.48781],[18.43504,-66.48817],[18.43627,-66.48883],[18.43756,-66.4885],[18.43936,-66.48561],[18.44285,-66.48426],[18.44489,-66.48255],[18.44599,-66.48057],[18.44711,-66.47992],[18.44801,-66.48076],[18.44849,-66.4822],[18.45587,-66.48211],[18.45928,-66.48351],[18.46447,-66.48446],[18.46582,-66.48416],[18.46591,-66.48221],[18.47035,-66.48238],[18.4726,-66.48578],[18.47041,-66.48239],[18.46591,-66.48221],[18.46458,-66.47622],[18.46546,-66.47099],[18.46224,-66.47136],[18.46,-66.47033],[18.45985,-66.467],[18.45894,-66.46662],[18.45503,-66.46705],[18.4524,-66.46861],[18.45059,-66.46713],[18.44968,-66.4669],[18.44913,-66.46613],[18.44822,-66.466],[18.44795,-66.46495],[18.44306,-66.46554],[18.44109,-66.46538],[18.44123,-66.46428],[18.44238,-66.46261],[18.44598,-66.45279],[18.44654,-66.4487],[18.44615,-66.44578],[18.44526,-66.44337],[18.43991,-66.43554],[18.43884,-66.43306],[18.43821,-66.43017],[18.43835,-66.42606],[18.44148,-66.41326],[18.44141,-66.40622],[18.43782,-66.39304],[18.43554,-66.38845],[18.43034,-66.38057],[18.42805,-66.37443],[18.42731,-66.36847],[18.42755,-66.3515],[18.42802,-66.3497],[18.43107,-66.34403],[18.43167,-66.34012],[18.43124,-66.33786],[18.43038,-66.33599],[18.42564,-66.32991],[18.42397,-66.32687],[18.423,-66.3234],[18.42218,-66.31691],[18.42198,-66.31274],[18.4223,-66.30954],[18.42545,-66.30135],[18.42613,-66.29858],[18.42616,-66.29532],[18.42508,-66.28895],[18.42645,-66.28312],[18.4265,-66.28023],[18.42533,-66.27671],[18.42102,-66.2716],[18.41977,-66.2689],[18.41779,-66.24665],[18.41816,-66.23652],[18.41677,-66.23317],[18.4136,-66.22939],[18.41243,-66.22658],[18.41149,-66.22236],[18.41309,-66.21277],[18.41823,-66.19992],[18.41965,-66.19394],[18.41979,-66.19013],[18.41865,-66.17852],[18.42014,-66.16483],[18.41979,-66.16421],[18.41777,-66.16342],[18.41755,-66.16459],[18.4179,-66.1646],[18.41807,-66.164],[18.41897,-66.16437],[18.41897,-66.165]]}};
+const RG={"r1":{"mi":10.3,"min":20,"g":[[18.43789,-66.0045],[18.43884,-66.00558],[18.43657,-66.01189],[18.4356,-66.01965],[18.43437,-66.02168],[18.43324,-66.02236],[18.41362,-66.02797],[18.4099,-66.02995],[18.40897,-66.03096],[18.40853,-66.03279],[18.40805,-66.05666],[18.4007,-66.05636],[18.39648,-66.0554],[18.39516,-66.05554],[18.39151,-66.06148],[18.39018,-66.06297],[18.37633,-66.0726],[18.36764,-66.08099],[18.3702,-66.08546],[18.3727,-66.08672],[18.37484,-66.08901],[18.37585,-66.09283],[18.37919,-66.10081],[18.37531,-66.10267],[18.37548,-66.10418],[18.37458,-66.10425]]},"r2":{"mi":38.6,"min":58,"g":[[18.37458,-66.10425],[18.37548,-66.10418],[18.37531,-66.10267],[18.37903,-66.10081],[18.37561,-66.09259],[18.37456,-66.08886],[18.37263,-66.08689],[18.37019,-66.08564],[18.36698,-66.08071],[18.36657,-66.08048],[18.36625,-66.08079],[18.36681,-66.08115],[18.36994,-66.07849],[18.37519,-66.07336],[18.37683,-66.07063],[18.3804,-66.06958],[18.38956,-66.0633],[18.39136,-66.06135],[18.39644,-66.0534],[18.39556,-66.05126],[18.39459,-66.03442],[18.39663,-66.02227],[18.39734,-66.00084],[18.39849,-65.99244],[18.39811,-65.98887],[18.39725,-65.98633],[18.39602,-65.98409],[18.39284,-65.98006],[18.38887,-65.97916],[18.38265,-65.97567],[18.37366,-65.97724],[18.37202,-65.97673],[18.37082,-65.97534],[18.369,-65.96865],[18.36498,-65.95895],[18.36388,-65.95459],[18.36298,-65.94584],[18.36275,-65.93837],[18.36165,-65.93199],[18.36152,-65.91866],[18.35931,-65.90547],[18.35947,-65.89656],[18.36076,-65.89207],[18.36344,-65.88855],[18.36998,-65.884],[18.37149,-65.88159],[18.37211,-65.87932],[18.37186,-65.8756],[18.3683,-65.86772],[18.36757,-65.86461],[18.36876,-65.83756],[18.3696,-65.83526],[18.37251,-65.83272],[18.37471,-65.82832],[18.37567,-65.82716],[18.37424,-65.81678],[18.37421,-65.81327],[18.3783,-65.79327],[18.37797,-65.79083],[18.37685,-65.78822],[18.37112,-65.78078],[18.37032,-65.77694],[18.37204,-65.7705],[18.37184,-65.76594],[18.37236,-65.76332],[18.37827,-65.75195],[18.37908,-65.74962],[18.37946,-65.74644],[18.37903,-65.74068],[18.38184,-65.72964],[18.3819,-65.72647],[18.38092,-65.72341],[18.37905,-65.72089],[18.36966,-65.71464],[18.3541,-65.69718],[18.35273,-65.69354],[18.35254,-65.6867],[18.3517,-65.68313],[18.34667,-65.67409],[18.34412,-65.67096],[18.33261,-65.66256],[18.3266,-65.657],[18.31554,-65.6509],[18.31031,-65.64997],[18.29841,-65.64952],[18.29808,-65.6461],[18.2943,-65.63974],[18.29221,-65.63782],[18.2899,-65.63747],[18.29004,-65.63716],[18.28731,-65.63726]]},"r3":{"mi":91.8,"min":134,"g":[[18.37458,-66.10425],[18.37548,-66.10418],[18.37618,-66.10692],[18.37743,-66.10682],[18.37755,-66.1081],[18.38241,-66.10756],[18.38861,-66.10489],[18.39285,-66.10244],[18.39437,-66.10258],[18.40737,-66.10796],[18.40981,-66.1067],[18.41061,-66.10569],[18.41073,-66.10446],[18.41124,-66.10419],[18.41287,-66.10549],[18.41467,-66.10566],[18.41528,-66.1087],[18.41583,-66.10941],[18.42127,-66.11009],[18.42267,-66.11073],[18.42224,-66.11383],[18.42277,-66.12457],[18.42262,-66.15061],[18.41889,-66.17805],[18.42,-66.18969],[18.41997,-66.193],[18.41847,-66.19991],[18.41332,-66.21281],[18.41171,-66.22241],[18.41257,-66.22618],[18.41387,-66.22942],[18.41759,-66.23375],[18.41871,-66.23639],[18.41815,-66.2455],[18.41987,-66.26866],[18.42115,-66.27135],[18.42547,-66.27644],[18.4268,-66.2804],[18.42673,-66.28306],[18.42536,-66.28879],[18.42644,-66.29547],[18.42636,-66.29882],[18.4257,-66.30146],[18.42274,-66.30874],[18.42225,-66.31328],[18.42279,-66.32028],[18.42395,-66.32607],[18.4256,-66.3294],[18.43067,-66.33596],[18.43189,-66.33961],[18.43142,-66.34387],[18.42825,-66.34976],[18.42775,-66.35155],[18.42746,-66.36777],[18.42785,-66.37254],[18.4287,-66.37616],[18.43044,-66.38039],[18.43571,-66.38841],[18.43768,-66.39225],[18.44105,-66.40347],[18.44178,-66.40807],[18.4417,-66.41276],[18.43852,-66.42601],[18.4384,-66.43028],[18.43895,-66.43286],[18.44003,-66.43541],[18.44543,-66.44332],[18.44635,-66.44586],[18.44671,-66.44892],[18.44623,-66.45254],[18.4426,-66.46245],[18.44139,-66.46758],[18.44107,-66.47294],[18.44194,-66.48212],[18.44176,-66.48493],[18.43795,-66.49417],[18.43759,-66.49593],[18.43803,-66.49848],[18.44123,-66.50394],[18.4422,-66.51163],[18.44632,-66.51675],[18.44734,-66.5199],[18.44487,-66.53227],[18.44232,-66.53948],[18.44138,-66.54431],[18.44153,-66.5461],[18.44322,-66.55137],[18.4426,-66.55897],[18.44372,-66.56785],[18.44364,-66.57097],[18.44262,-66.57432],[18.43514,-66.5901],[18.43432,-66.59383],[18.43448,-66.59686],[18.43537,-66.59983],[18.44452,-66.61594],[18.44509,-66.61805],[18.44331,-66.62593],[18.44224,-66.62792],[18.43952,-66.63137],[18.43846,-66.63456],[18.43855,-66.6369],[18.43983,-66.64275],[18.44009,-66.65172],[18.43984,-66.65366],[18.43783,-66.65996],[18.43808,-66.67296],[18.43721,-66.67972],[18.43718,-66.68299],[18.43788,-66.6868],[18.44318,-66.7028],[18.44463,-66.70519],[18.44978,-66.71093],[18.4515,-66.71522],[18.45316,-66.72484],[18.45217,-66.74203],[18.45354,-66.74937],[18.45379,-66.76058],[18.45567,-66.76664],[18.45717,-66.76925],[18.45934,-66.77195],[18.46173,-66.77407],[18.46484,-66.77597],[18.46741,-66.777],[18.47661,-66.77944],[18.47952,-66.77944],[18.48429,-66.77833],[18.48545,-66.77839],[18.48665,-66.77947],[18.48743,-66.78325],[18.48821,-66.7956],[18.48819,-66.81066],[18.48188,-66.82751],[18.47989,-66.83518],[18.477,-66.84059],[18.47551,-66.84711],[18.47329,-66.85439],[18.47319,-66.85649],[18.47441,-66.86114],[18.47451,-66.86479],[18.47376,-66.86939],[18.47224,-66.875],[18.46763,-66.88412],[18.46393,-66.88924],[18.46063,-66.89525],[18.45975,-66.89832],[18.45757,-66.91249],[18.45921,-66.92134],[18.46099,-66.9247],[18.46455,-66.92774],[18.46996,-66.93347],[18.47153,-66.9344],[18.47611,-66.93578],[18.48747,-66.94421],[18.48884,-66.94638],[18.48909,-66.95008],[18.48862,-66.95181],[18.48717,-66.95378],[18.48306,-66.95734],[18.48233,-66.96068],[18.48236,-66.96292],[18.48037,-66.96591],[18.47876,-66.97725],[18.47691,-66.98305],[18.47676,-66.98731],[18.47393,-66.99389],[18.47202,-67.00866],[18.47285,-67.01572],[18.47242,-67.01827],[18.46943,-67.02671],[18.46853,-67.03113],[18.46247,-67.05076],[18.45081,-67.09989],[18.44563,-67.11456],[18.43972,-67.12735],[18.44008,-67.13802],[18.44116,-67.14029],[18.44442,-67.14347],[18.44474,-67.14512],[18.44439,-67.14651],[18.44349,-67.14754],[18.44242,-67.14798],[18.43437,-67.148],[18.4311,-67.14839],[18.42772,-67.14968],[18.42315,-67.15218],[18.40966,-67.15282],[18.41036,-67.15455],[18.4057,-67.1547],[18.39951,-67.16017],[18.39174,-67.16471],[18.38919,-67.16774],[18.38617,-67.1747],[18.38199,-67.18219],[18.37938,-67.18498],[18.38056,-67.18992],[18.38172,-67.19134],[18.38089,-67.19173],[18.38285,-67.19851],[18.38318,-67.20101],[18.3831,-67.20321],[18.38235,-67.20611],[18.38265,-67.20883],[18.37804,-67.2233],[18.37534,-67.22619],[18.37399,-67.22711],[18.37171,-67.22781],[18.36933,-67.23036],[18.36741,-67.2303],[18.36377,-67.23657],[18.36057,-67.23798],[18.3581,-67.23951],[18.35678,-67.24083],[18.35369,-67.24002],[18.35237,-67.24173],[18.35235,-67.24309],[18.35117,-67.24421],[18.3503,-67.24438],[18.34876,-67.24612],[18.34622,-67.25032],[18.34495,-67.25019],[18.34455,-67.24973],[18.34353,-67.25086],[18.34175,-67.25104],[18.34013,-67.25001],[18.33837,-67.25169],[18.33672,-67.25245],[18.32978,-67.24883],[18.32522,-67.24516],[18.32396,-67.24684],[18.32371,-67.24658]]},"r4":{"mi":15.6,"min":31,"g":[[18.32371,-67.24658],[18.32396,-67.24684],[18.32522,-67.24516],[18.32978,-67.24883],[18.33672,-67.25245],[18.33837,-67.25169],[18.34013,-67.25001],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34622,-67.25032],[18.34876,-67.24612],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37503,-67.22644],[18.37768,-67.22372],[18.37824,-67.22298],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38285,-67.19851],[18.38006,-67.18898],[18.37938,-67.18498],[18.38247,-67.18137],[18.38641,-67.17423],[18.38899,-67.1681],[18.39041,-67.16602],[18.39265,-67.16403],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44222,-67.14784],[18.44401,-67.14679],[18.44736,-67.14879],[18.45043,-67.15232],[18.45189,-67.15342],[18.45357,-67.15382],[18.45918,-67.1536],[18.45702,-67.16184],[18.45535,-67.16176],[18.45708,-67.1626],[18.45862,-67.16244],[18.45872,-67.16403]]},"r5":{"mi":92.1,"min":133,"g":[[18.32371,-67.24658],[18.32396,-67.24684],[18.32522,-67.24516],[18.32978,-67.24883],[18.33672,-67.25245],[18.33837,-67.25169],[18.34013,-67.25001],[18.34175,-67.25104],[18.34353,-67.25086],[18.34455,-67.24973],[18.34495,-67.25019],[18.34622,-67.25032],[18.34876,-67.24612],[18.3503,-67.24438],[18.35117,-67.24421],[18.35235,-67.24309],[18.35237,-67.24173],[18.35369,-67.24002],[18.35678,-67.24083],[18.3581,-67.23951],[18.36057,-67.23798],[18.36377,-67.23657],[18.36741,-67.2303],[18.36933,-67.23036],[18.37171,-67.22781],[18.37399,-67.22711],[18.37534,-67.22619],[18.37804,-67.2233],[18.38265,-67.20883],[18.38235,-67.20611],[18.3831,-67.20321],[18.38318,-67.20101],[18.38285,-67.19851],[18.37927,-67.1853],[18.38199,-67.18219],[18.38617,-67.1747],[18.38919,-67.16774],[18.39174,-67.16471],[18.39951,-67.16017],[18.40564,-67.1547],[18.4101,-67.15462],[18.40954,-67.15269],[18.4231,-67.15205],[18.42768,-67.14955],[18.43135,-67.14822],[18.44239,-67.14781],[18.44366,-67.14721],[18.44421,-67.14648],[18.44459,-67.14517],[18.44425,-67.14352],[18.44079,-67.14001],[18.44006,-67.13846],[18.43959,-67.1274],[18.44564,-67.11422],[18.45094,-67.09905],[18.4622,-67.05134],[18.46835,-67.03135],[18.4693,-67.02686],[18.47244,-67.01782],[18.47275,-67.01548],[18.47201,-67.01131],[18.47194,-67.00832],[18.47381,-66.99404],[18.47439,-66.99189],[18.47659,-66.98763],[18.47679,-66.983],[18.47875,-66.9769],[18.48029,-66.96588],[18.4822,-66.96316],[18.48223,-66.96064],[18.48297,-66.95734],[18.48712,-66.95366],[18.48859,-66.9517],[18.48899,-66.95006],[18.48884,-66.94668],[18.48741,-66.94429],[18.47578,-66.93568],[18.47147,-66.9345],[18.46968,-66.93344],[18.46451,-66.92785],[18.46092,-66.92475],[18.45909,-66.92132],[18.45749,-66.91251],[18.45949,-66.89912],[18.46063,-66.89502],[18.46365,-66.88945],[18.46735,-66.88438],[18.47142,-66.87657],[18.47286,-66.8726],[18.47424,-66.86662],[18.47446,-66.86354],[18.47425,-66.86073],[18.47307,-66.85656],[18.47318,-66.8543],[18.4752,-66.84769],[18.47674,-66.84093],[18.47981,-66.83507],[18.48212,-66.82639],[18.48794,-66.81122],[18.4883,-66.80862],[18.48808,-66.79503],[18.48732,-66.78353],[18.48605,-66.78053],[18.48435,-66.77907],[18.47865,-66.77963],[18.4762,-66.77951],[18.46484,-66.77627],[18.46162,-66.77433],[18.45959,-66.77259],[18.45739,-66.77004],[18.45569,-66.7673],[18.45403,-66.76301],[18.45338,-66.75937],[18.45328,-66.74946],[18.45187,-66.74143],[18.45288,-66.72472],[18.45111,-66.71475],[18.44947,-66.71096],[18.44447,-66.70543],[18.44283,-66.70267],[18.43774,-66.68721],[18.43691,-66.68294],[18.43696,-66.6795],[18.43781,-66.673],[18.43756,-66.66007],[18.43983,-66.65189],[18.4396,-66.64304],[18.43828,-66.63688],[18.43822,-66.63438],[18.43928,-66.63126],[18.44215,-66.62759],[18.44312,-66.6257],[18.44493,-66.61824],[18.44438,-66.61604],[18.43526,-66.59999],[18.43437,-66.59721],[18.43415,-66.59387],[18.43514,-66.58965],[18.44245,-66.57428],[18.44336,-66.57155],[18.44356,-66.56808],[18.44281,-66.56396],[18.44242,-66.55865],[18.44309,-66.55184],[18.4413,-66.54589],[18.4412,-66.5444],[18.44214,-66.53951],[18.4447,-66.53223],[18.44719,-66.52036],[18.44693,-66.51839],[18.44623,-66.51692],[18.44208,-66.51181],[18.44108,-66.50401],[18.43788,-66.49855],[18.43742,-66.49594],[18.43782,-66.49405],[18.44158,-66.48497],[18.44176,-66.48199],[18.44091,-66.47277],[18.44122,-66.46747],[18.44238,-66.46261],[18.44608,-66.45247],[18.44654,-66.44826],[18.44615,-66.44578],[18.44526,-66.44337],[18.43991,-66.43554],[18.43884,-66.43306],[18.43821,-66.43017],[18.43835,-66.42606],[18.44153,-66.41277],[18.44161,-66.40816],[18.44087,-66.40345],[18.43782,-66.39304],[18.43554,-66.38845],[18.43003,-66.37996],[18.42844,-66.37587],[18.4276,-66.37208],[18.4273,-66.36781],[18.42759,-66.35114],[18.4283,-66.34912],[18.43107,-66.34403],[18.43167,-66.34012],[18.43124,-66.33786],[18.43038,-66.33599],[18.42529,-66.3294],[18.42381,-66.32646],[18.42253,-66.32027],[18.42198,-66.31274],[18.42271,-66.30791],[18.42545,-66.30135],[18.4261,-66.2988],[18.42616,-66.29532],[18.42508,-66.28895],[18.42645,-66.28312],[18.4265,-66.28023],[18.42533,-66.27671],[18.42102,-66.2716],[18.41977,-66.2689],[18.41779,-66.24665],[18.41816,-66.23652],[18.41677,-66.23317],[18.4136,-66.22939],[18.41243,-66.22658],[18.41149,-66.22236],[18.41309,-66.21277],[18.41823,-66.19992],[18.41973,-66.19319],[18.41979,-66.19013],[18.41867,-66.17806],[18.4225,-66.1498],[18.42272,-66.13224],[18.42195,-66.11235],[18.421,-66.11031],[18.41782,-66.10761],[18.41624,-66.10197],[18.41134,-66.10545],[18.40911,-66.10748],[18.40816,-66.10893],[18.40656,-66.10784],[18.39339,-66.10252],[18.39197,-66.10287],[18.38866,-66.105],[18.38263,-66.10782],[18.37269,-66.10894],[18.37214,-66.10646],[18.37275,-66.10644],[18.37269,-66.10437],[18.37458,-66.10425]]},"r6":{"mi":10.6,"min":20,"g":[[18.37458,-66.10425],[18.37548,-66.10418],[18.37531,-66.10267],[18.37903,-66.10081],[18.37561,-66.09259],[18.37456,-66.08886],[18.37263,-66.08689],[18.37019,-66.08564],[18.36698,-66.08071],[18.36626,-66.08074],[18.36681,-66.08115],[18.36994,-66.07849],[18.37519,-66.07336],[18.37683,-66.07063],[18.3804,-66.06958],[18.38956,-66.0633],[18.39136,-66.06135],[18.39641,-66.05349],[18.3956,-66.05149],[18.39515,-66.04655],[18.39456,-66.03682],[18.39495,-66.03116],[18.39824,-66.03142],[18.40221,-66.03091],[18.4083,-66.03093],[18.4142,-66.02761],[18.43393,-66.02191],[18.4353,-66.02021],[18.43616,-66.01567],[18.43671,-66.00942],[18.43636,-66.00462],[18.43789,-66.0045]]}};
 const ROUTES=[
- {k:'r1',n:'1',name:'SJU → San Juan house',day:'Day 1 · Sun Nov 1',c:'#00a6a2',hw:['PR-26','PR-22'],f:.55},
- {k:'r2',n:'2',name:'San Juan house → Puerto del Rey marina',day:'Day 2 · Mon Nov 2 (boat, Option A)',c:'#1a73c9',hw:['PR-22','PR-3','PR-66'],f:.5},
- {k:'r3',n:'3',name:'San Juan → Rincón',day:'Day 3 · Tue Nov 3',c:'#ff9a6b',hw:['PR-22','PR-2','PR-115'],f:.3},
+ {k:'r1',n:'1',name:'SJU → San Juan house',day:'Day 1 · Sun Nov 1',c:'#00a6a2',hw:['PR-17','PR-1','PR-177'],f:.55},
+ {k:'r2',n:'2',name:'San Juan house → Puerto del Rey marina',day:'Day 2 · Mon Nov 2 (boat, Option A)',c:'#1a73c9',hw:['PR-177','PR-1','PR-3','PR-66'],f:.5},
+ {k:'r3',n:'3',name:'San Juan → Rincón',day:'Day 3 · Tue Nov 3',c:'#ff9a6b',hw:['PR-20','PR-22','PR-2','PR-115'],f:.3},
  {k:'r4',n:'4',name:'Rincón → Crash Boat Beach',day:'Day 4 · Wed Nov 4 (Option A)',c:'#ffb347',hw:['PR-115','PR-2','PR-458'],f:.5},
- {k:'r5',n:'5',name:'Rincón → San Juan',day:'Day 5 · Thu Nov 5 (direct, Options A/B)',c:'#ff5e62',hw:['PR-115','PR-2','PR-22'],f:.72,dash:'14 9'},
- {k:'r5c',n:'5C',name:'Rincón → San Juan via the Option C stops',day:'Day 5 · Thu Nov 5 (Option C, driving only + stop time)',c:'#7b2d8b',hw:['PR-115','PR-2','PR-466','PR-681','PR-22'],f:.42,dash:'2 10',w:5},
- {k:'r6',n:'6',name:'San Juan house → SJU',day:'Day 6 · Fri Nov 6',c:'#334155',hw:['PR-22','PR-26'],f:.25,dash:'10 7'}
+ {k:'r5',n:'5',name:'Rincón → San Juan',day:'Day 5 · Thu Nov 5',c:'#ff5e62',hw:['PR-115','PR-2','PR-22','PR-20'],f:.72,dash:'14 9'},
+ {k:'r6',n:'6',name:'San Juan house → SJU',day:'Day 6 · Fri Nov 6',c:'#334155',hw:['PR-177','PR-1','PR-17'],f:.25,dash:'10 7'}
 ];
 const fmtMin=m=>m<60?`~${m} min`:`~${Math.floor(m/60)} hr${m%60?' '+(m%60)+' min':''}`;
 
-/* stop list in Day 5 Option C */
-const stopUl=document.getElementById('stoplist');
-STOPS.forEach((s,i)=>{s.id='C'+(i+1);const li=document.createElement('li');li.innerHTML=`<span class="sb">${s.id}</span><span><b>${s.n}</b> · ${s.town}<br>${s.t}</span>`;stopUl.appendChild(li);});
-
-/* drive-back items = C1–C5 stops + food */
-STOPS.forEach(s=>{THINGS.push({id:s.id,a:'drive',c:s.c,n:s.id+' · '+s.n,town:s.town+' · Day 5 Option C',ll:s.ll,d:s.t,p:'',t:'On the PR-2/PR-22 drive back — pick 2–3.',stop:s});});
-THINGS.push({id:'salitre',a:'drive',c:'eat',n:'Salitre Mesón Costero',town:'Arecibo (PR-681) · near C4',ll:[18.48452,-66.67878],d:'Oceanfront seafood spot right on the water by Cueva del Indio — mofongo and a cold one with waves crashing below.',p:'',t:'Thu 11:30 AM–8 PM; CLOSED Tue (official site). Great lunch stop for Option C.'});
 const TBYID={};THINGS.forEach(x=>TBYID[x.id]=x);
 const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const popHtml=x=>`<div class="pop"><small style="color:${CAT[x.c].c}">${CAT[x.c].e} ${CAT[x.c].n} · ${esc(x.town)}</small><b>${esc(x.n)}</b><p>${esc(x.d)}</p>${x.p?`<span class="pr">💲 ${esc(x.p)}</span>`:''}<p class="tp">💡 ${esc(x.t)}</p></div>`;
 /* cards */
 const tgrid=document.getElementById('tgrid');
-THINGS.forEach(x=>{const el=document.createElement('article');el.className='tc';el.style.setProperty('--cc',CAT[x.c].c);el.dataset.a=x.a;el.dataset.c=x.c;el.id='t-'+x.id;
- el.innerHTML=`<div class="th"><span class="te">${x.stop?`<span class="sb">${x.stop.id}</span>`:CAT[x.c].e}</span><div><h4>${esc(x.stop?x.stop.n:x.n)}</h4><div class="tm"><b>${TAREA[x.a]}</b> · ${esc(x.town)} · ${CAT[x.c].n}${x.p?`<span class="pr">${esc(x.p)}</span>`:''}</div></div></div><p>${esc(x.d)}</p><p class="tp">💡 ${esc(x.t)}</p><button class="sm" type="button">📍 Show on map</button>`;
+THINGS.sort((a,b)=>CORD[a.c]-CORD[b.c]);
+const tsec=document.createElement('div');tsec.className='tsec';tsec.innerHTML='📸 Sights <span>— if we feel like it</span>';
+THINGS.forEach(x=>{if(x.c==='see'&&!tsec.parentNode)tgrid.appendChild(tsec);const el=document.createElement('article');el.className='tc';el.style.setProperty('--cc',CAT[x.c].c);el.dataset.a=x.a;el.dataset.c=x.c;el.id='t-'+x.id;
+ el.innerHTML=`<div class="th"><span class="te">${CAT[x.c].e}</span><div><h4>${esc(x.n)}</h4><div class="tm"><b>${TAREA[x.a]}</b> · ${esc(x.town)} · ${CAT[x.c].n}${x.p?`<span class="pr">${esc(x.p)}</span>`:''}</div></div></div><p>${esc(x.d)}</p><p class="tp">💡 ${esc(x.t)}</p><div class="tfoot"><button class="sm" type="button">📍 Show on map</button>${vbar(x.id)}</div>`;
  el.querySelector('.sm').onclick=()=>showThing(x.id);x.card=el;tgrid.appendChild(el);});
 document.querySelectorAll('.tl[data-t]').forEach(b=>b.onclick=()=>{const d=b.closest('.day');showThing(b.dataset.t,d?+d.id.replace('day',''):0);});
 
@@ -565,20 +560,18 @@ SPOTS.forEach((s,i)=>s.id=['house','sju','marina','rin'][i]);
 const SBYID={};SPOTS.forEach(s=>SBYID[s.id]=s);
 /* Day 2 Option B rain ideas (ideas only, not planned) */
 const IDEAS=[
- {id:'bacardi',c:'see',n:'Casa Bacardí distillery tour',town:'Cataño, across the bay (approx. pin)',ll:[18.4590,-66.1405],d:'Day 2 rain idea only, not planned or booked.',p:'',t:'Check tour times & book ahead if we go.'},
- {id:'mapr',c:'see',n:'Museo de Arte de Puerto Rico',town:'Santurce',ll:[18.44844,-66.06618],d:'Day 2 rain idea only, not planned or booked.',p:'',t:'Check hours before going.'},
- {id:'plazaam',c:'act',n:'Plaza Las Américas mall',town:'Hato Rey',ll:[18.42210,-66.07408],d:'Day 2 rain idea only: food court, shopping, movies.',p:'',t:'Just an option if it pours.'}
+ {id:'bacardi',c:'see',n:'Casa Bacardí distillery tour',town:'Cataño, across the bay (approx. pin)',ll:[18.4590,-66.1405],d:'Day 2 rain idea: rum tour with free cocktails. Not planned or booked.',p:'',t:'Check tour times & book ahead if we go.'}
 ];
 const IBYID={};IDEAS.forEach(x=>IBYID[x.id]=x);
 const itm=id=>TBYID[id]||SBYID[id]||IBYID[id];
 const OPTC={A:'#00b4b0',B:'#ff5e62',C:'#7b2d8b','+':'#1d2a33'};
-const SJN=['placita','787','factoria','batey','concha','metro'];
+const SJN=['placita','junglebird','penultima','787','sandbox','brava','monostereo','factoria','concha'];
 const DAYS=[
- {n:1,dt:'Sun Nov 1',iso:'2026-11-01',h:'Land in San Juan',c:'#00a6a2',r:['r1'],o:{A:['concha','placita','alcapurria']},add:[],st:['sju','house'],ar:['sj']},
- {n:2,dt:'Mon Nov 2',iso:'2026-11-02',h:'Boat day (weather permitting)',c:'#1a73c9',r:['r2'],o:{A:['marina'],B:['bacardi','mapr','plazaam']},add:[],st:['house'],ar:['sj']},
- {n:3,dt:'Tue Nov 3',iso:'2026-11-03',h:'Drive early to Rincón',c:'#ff9a6b',tx:'#1d2a33',r:['r3'],o:{A:['sandy','steps','lighthouse'],B:['plaza','vatos','rbc']},add:['lighthouse','vatos','rbc','beachhouse'],st:['house','rin'],ar:['rin','agu']},
- {n:4,dt:'Wed Nov 4',iso:'2026-11-04',h:'Crash Boat or more Rincón',c:'#ffb347',tx:'#1d2a33',r:['r4'],o:{A:['crashboat'],B:['sandy','plaza']},add:['survival','shacks','gozalandia','caddys','tamboo','octopus','antillano'],st:['rin'],ar:['rin','agu']},
- {n:5,dt:'Thu Nov 5',iso:'2026-11-05',h:'Back to San Juan',c:'#ff5e62',r:['r5','r5c'],o:{A:SJN,B:SJN,C:['C1','C2','C3','C4','C5','salitre']},add:[],st:['rin','house'],ar:['drive','sj']},
+ {n:1,dt:'Sun Nov 1',iso:'2026-11-01',h:'Land in San Juan',c:'#00a6a2',r:['r1'],o:{A:['junglebird','placita','factoria','concha','alcapurria']},add:[],st:['sju','house'],ar:['sj']},
+ {n:2,dt:'Mon Nov 2',iso:'2026-11-02',h:'Boat day (weather permitting)',c:'#1a73c9',r:['r2'],o:{A:['marina'],B:['bacardi','factoria','batey','monostereo','sandbox']},add:[],st:['house'],ar:['sj']},
+ {n:3,dt:'Tue Nov 3',iso:'2026-11-03',h:'Drive early to Rincón',c:'#ff9a6b',tx:'#1d2a33',r:['r3'],o:{A:['sandy','titos','steps'],B:['plaza','rbc','marketa','billiards','estacion']},add:['lighthouse','vatos','rbc','estacion','beachhouse','titos'],st:['house','rin'],ar:['rin','agu']},
+ {n:4,dt:'Wed Nov 4',iso:'2026-11-04',h:'Crash Boat or more Rincón',c:'#ffb347',tx:'#1d2a33',r:['r4'],o:{A:['crashboat','rompeolas'],B:['sandy','marketa','antillano']},add:['survival','shacks','gozalandia','rompeolas','griferia','kai','wagon','caddys','tamboo','octopus','antillano','marketa'],st:['rin'],ar:['rin','agu']},
+ {n:5,dt:'Thu Nov 5',iso:'2026-11-05',h:'Back to San Juan',c:'#ff5e62',r:['r5'],o:{A:SJN,B:SJN},add:[],st:['rin','house'],ar:['sj']},
  {n:6,dt:'Fri Nov 6',iso:'2026-11-06',h:'Breakfast & airport',c:'#334155',r:['r6'],o:{},add:[],st:['house','sju'],ar:['sj']}
 ];
 const RBYK={};ROUTES.forEach(r=>RBYK[r.k]=r);
@@ -618,12 +611,12 @@ function renderKey(){
  h+=`<div class="mk-panel" id="mk-panel"${K.open?'':' hidden'}>`;
  if(all){
   h+=tgl('r',s.r,'#1d2a33',`<span style="display:flex;flex-direction:column;gap:2px">${[ROUTES[0],ROUTES[2],ROUTES[4]].map(rsw).join('')}</span>`,'All routes',`${ROUTES.length} drive lines, colored by day`);
-  h+=tgl('plan',s.plan,'#00b4b0',`<span class="mk-lt" style="background:#00b4b0">A</span>`,'Plan spots','Every day\'s A/B/C picks + add-ons');
-  h+=tgl('st',s.st,'#1d2a33','🏠','Stays &amp; airport','Río Bayamón house, Stella (Rincón), SJU');
+  h+=tgl('plan',s.plan,'#00b4b0',`<span class="mk-lt" style="background:#00b4b0">A</span>`,'Plan spots','Every day\'s A/B picks + add-ons');
+  h+=tgl('st',s.st,'#1d2a33','🏠','Stays &amp; airport','Frailes house, Stella (Rincón), SJU');
   h+=tgl('t',s.t,'#ff5e62','🌴','Things to Do',`${THINGS.filter(x=>K.cats[x.c]&&!(s.plan&&v.plan.has(x.id))).length} spots island-wide`,true);
  }else{
   const rs=D.r.map(k=>RBYK[k]);
-  h+=tgl('r',s.r,D.c,`<span style="display:flex;flex-direction:column;gap:2px">${rs.map(rsw).join('')}</span>`,rs.length>1?'Routes':'Route',rs.length>1?'Direct (A/B) + via C stops':`${rs[0].mi} mi · ${fmtMin(rs[0].min)}`);
+  h+=tgl('r',s.r,D.c,`<span style="display:flex;flex-direction:column;gap:2px">${rs.map(rsw).join('')}</span>`,rs.length>1?'Routes':'Route',rs.length>1?'Drive lines':`${rs[0].mi} mi · ${fmtMin(rs[0].min)}`);
   ['A','B','C'].forEach(k=>{const ids=D.o[k]||[];if(!ids.length)return;h+=tgl(k,s[k],OPTC[k],`<span class="mk-lt" style="background:${OPTC[k]}">${k}</span>`,`Option ${k}`,`${esc(paneTitle(D.n,k))} · ${ids.length} pin${ids.length===1?'':'s'}`);});
   if(D.add.length)h+=tgl('add',s.add,OPTC['+'],`<span class="mk-lt" style="background:#1d2a33">+</span>`,'Add-ons',`Extras &amp; nights out · ${D.add.length}`);
   const sts=D.st.map(id=>SBYID[id]);
@@ -687,9 +680,11 @@ function showThing(id,dn){const x=TBYID[id];if(!x)return;
  map.closePopup();renderKey();v=renderMap(false);
  document.getElementById('mapwrap').scrollIntoView({behavior:'smooth',block:'center'});unlock();
  const pe=v.plan.get(id),pm=pe&&planMarker(pe);
+ const go=()=>{
  if(pm){map.setView(x.ll,15,{animate:false});setTimeout(()=>pm.openPopup(),60);}
  else if(clusterOn&&!x.stop){map.setView(x.ll,16,{animate:false});setTimeout(()=>tLayer.zoomToShowLayer(x.m,()=>x.m.openPopup()),60);}
- else{map.setView(x.ll,15,{animate:false});setTimeout(()=>x.m.openPopup(),60);}}
+ else{map.setView(x.ll,15,{animate:false});setTimeout(()=>x.m.openPopup(),60);}};
+ if(map._animatingZoom||tLayer._inZoomAnimation){map.once('zoomend',()=>setTimeout(go,80));}else go();}
 function unlock(){ if(!map)return; document.getElementById('map-lock').classList.add('hide'); map.dragging.enable(); map.touchZoom.enable(); map.scrollWheelZoom.enable();}
 function initMap(){
  if(typeof L==='undefined'){document.getElementById('mapwrap').classList.add('no-map');return;}
@@ -730,7 +725,7 @@ const vis=x=>(F.a==='all'||F.a===x.a)&&(F.c==='all'||F.c===x.c);
 function applyF(){
  document.querySelectorAll('[data-fa]').forEach(b=>b.classList.toggle('on',b.dataset.fa===F.a));
  document.querySelectorAll('[data-fc]').forEach(b=>b.classList.toggle('on',b.dataset.fc===F.c));
- let n=0;THINGS.forEach(x=>{const v=vis(x);if(v)n++;if(x.card)x.card.classList.toggle('hidden',!v);});
+ let n=0,ns=0;THINGS.forEach(x=>{const v=vis(x);if(v){n++;if(x.c==='see')ns++;}if(x.card)x.card.classList.toggle('hidden',!v);});tsec.style.display=ns&&F.c!=='see'?'':'none';
  const tc=document.getElementById('tcount');if(tc)tc.textContent=n+' spot'+(n===1?'':'s')+(F.a!=='all'?' · '+TAREA[F.a]:'')+(F.c!=='all'?' · '+CAT[F.c].n:'');}
 document.querySelectorAll('[data-fa]').forEach(b=>b.onclick=()=>{F.a=b.dataset.fa;applyF();});
 document.querySelectorAll('[data-fc]').forEach(b=>b.onclick=()=>{F.c=b.dataset.fc;applyF();});
@@ -800,57 +795,78 @@ async function fetchWx(){
 fetchWx();
 
 
-/* ---------- PACKING ---------- */
-const PCOL={JR:'#ff5e62',F2:'#00a6a2',F3:'#7b2d8b'};
-const CATS=[['beach','🏖 Beach'],['clothes','👕 Clothes'],['toiletries','🧴 Toiletries'],['docs','📱 Docs & Tech'],['adventure','💦 Adventure']];
-const BASE=[
- ['beach','Swimsuits ×2','all'],['beach','Reef-safe sunscreen','all','Protects the Steps Beach reef'],['beach','Sunglasses + hat','all'],['beach','Quick-dry towel','all'],['beach','Beach speaker (shared)','F2'],
- ['clothes','Light tees / tanks','all'],['clothes','Going-out fit (La Placita)','all'],['clothes','Light rain jacket','all','Nov can be showery'],['clothes','Sandals / flip-flops','all'],
- ['toiletries','Toothbrush & toiletries','all'],['toiletries','Bug spray','all'],['toiletries','Aloe / after-sun (shared)','JR'],['toiletries','Meds + basic first aid (shared)','F3'],
- ['docs','ID / driver\'s license','all','Needed for the rental car'],['docs','Phone charger + power bank','all'],['docs','Cash for kiosks & parking','all','Gozalandia parking is cash'],['docs','Hotel / Airbnb confirmation','all'],
- ['adventure','Water shoes','all','For Gozalandia rocks'],['adventure','Snorkel mask','all','Steps Beach'],['adventure','Dry bag (shared)','F2'],['adventure','GoPro / waterproof case (shared)','JR'],
- ['toiletries','Motion-sickness meds (boat day)','all','Day 2 boat trip']
-];
-const KEY='prtrip2026.packing.v1';
-let st=JSON.parse(localStorage.getItem(KEY)||'null')||{me:'JR',checks:{},custom:[],assign:{}};
-const save=()=>localStorage.setItem(KEY,JSON.stringify(st));
-const allItems=()=>[...BASE.map((b,i)=>({id:'b'+i,cat:b[0],name:b[1],own:b[2],tip:b[3]||''})),...st.custom];
-const ownerOf=it=>st.assign[it.id]||it.own;
-const catSel=document.getElementById('add-cat'); CATS.forEach(([k,l])=>catSel.add(new Option(l,k)));
-function render(){
- document.querySelectorAll('#who button').forEach(b=>b.classList.toggle('on',b.dataset.p===st.me));
- const me=st.me, vis=allItems();
- const wrap=document.getElementById('cats'); wrap.innerHTML=''; let tot=0,done=0;
- CATS.forEach(([k,l])=>{const items=vis.filter(i=>i.cat===k); if(!items.length)return;
-  const box=document.createElement('div');box.className='cat';
-  const mine=items.filter(i=>{const o=ownerOf(i);return o==='all'||o===me;});
-  const md=mine.filter(i=>st.checks[me+':'+i.id]).length; tot+=mine.length; done+=md;
-  box.innerHTML=`<h3>${l}<span>${md}/${mine.length}</span></h3>`;
-  items.forEach(it=>{const o=ownerOf(it), mineIt=o==='all'||o===me;
-   const row=document.createElement('label');row.className='it';
-   const ck=document.createElement('input');ck.type='checkbox';ck.checked=!!st.checks[(mineIt?me:o)+':'+it.id];ck.disabled=!mineIt;
-   ck.onchange=()=>{st.checks[me+':'+it.id]=ck.checked;save();render();};
-   const t=document.createElement('span');t.className='t';t.textContent=it.name;if(it.tip){const tp=document.createElement('span');tp.className='tip';tp.textContent=it.tip;t.appendChild(tp);}
-   if(!mineIt){t.style.opacity=.6;const tp=document.createElement('span');tp.className='tip';tp.style.color='#6b7780';tp.textContent=o+' is bringing this';t.appendChild(tp);}
-   const ob=document.createElement('button');ob.type='button';ob.className='own'+(o==='all'?' all':'');ob.textContent=o==='all'?'All':o;if(o!=='all')ob.style.background=PCOL[o];
-   ob.title='Tap to reassign';ob.onclick=e=>{e.preventDefault();const seq=['all','JR','F2','F3'];st.assign[it.id]=seq[(seq.indexOf(o)+1)%4];save();render();};
-   row.append(ck,t,ob);
-   if(it.id.startsWith('c')){const d=document.createElement('button');d.type='button';d.className='del';d.textContent='×';d.title='Remove';d.onclick=e=>{e.preventDefault();st.custom=st.custom.filter(x=>x.id!==it.id);delete st.assign[it.id];save();render();};row.appendChild(d);}
-   box.appendChild(row);});
-  wrap.appendChild(box);});
- const pct=tot?Math.round(done/tot*100):0;
- document.getElementById('prog-txt').textContent=`${me}: ${done} of ${tot} packed`;document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('prog-bar').style.width=pct+'%';
+/* ---------- SHARED VOTES 👍 👎 ⭐ ----------
+   Backend: textdb.dev (free, no account, no key). Every viewer gets a random id (localStorage)
+   and writes ONLY their own doc: <ns>-u-<uid> = {name,votes:{itemId:{t:'up'|'down'|'',s:0|1}},ts}.
+   <ns>-idx = {u:[uid,...]} lists who has voted. Readers merge all docs. No secrets live here. */
+const VQ=new URLSearchParams(location.search).get('votens');
+const VNS='prtrip26-q7m3k9x2'+(VQ?'-t-'+VQ.replace(/[^a-z0-9-]/gi,'').slice(0,32):'');
+const VAPI='https://textdb.dev/api/data/';
+const VK='prtrip2026.votes.v1'+(VQ?'.'+VQ:'');
+const VUID=/^[a-z0-9]{8,24}$/;
+let VS={};try{VS=JSON.parse(localStorage.getItem(VK)||'{}')||{};}catch(e){VS={};}
+if(!VUID.test(VS.uid||''))VS.uid=(Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-5)).replace(/[^a-z0-9]/g,'x');
+VS.me=VS.me||{};VS.others=VS.others||{};if(typeof VS.name!=='string')VS.name='';
+const vSave=()=>{try{localStorage.setItem(VK,JSON.stringify(VS));}catch(e){}};vSave();
+let vOnline=null,vBusy=false,vTimer=null;
+const vClean=v=>{const o={};if(v&&typeof v==='object')Object.keys(v).slice(0,400).forEach(k=>{if(!/^[a-z0-9-]{1,40}$/i.test(k))return;const e=v[k]||{};const t=e.t==='up'||e.t==='down'?e.t:'';const st=e.s?1:0;if(t||st)o[k]={t,s:st};});return o;};
+async function vReq(id,body){const c=new AbortController();const to=setTimeout(()=>c.abort(),10000);
+ try{const r=await fetch(VAPI+VNS+'-'+id,body===undefined?{cache:'no-store',signal:c.signal}:{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(body),signal:c.signal});
+  if(!r.ok)throw new Error('HTTP '+r.status);if(body!==undefined)return true;const t=await r.text();if(!t.trim())return null;try{return JSON.parse(t);}catch(e){return null;}}
+ finally{clearTimeout(to);}}
+const vIdx=d=>(d&&Array.isArray(d.u)?d.u:[]).filter(u=>typeof u==='string'&&VUID.test(u));
+async function vJoin(){for(let i=0;i<4;i++){const cur=vIdx(await vReq('idx'));if(cur.includes(VS.uid)){VS.joined=1;return cur;}
+  await vReq('idx',{u:[...new Set([...cur,VS.uid])].slice(-200)});await new Promise(r=>setTimeout(r,300+Math.random()*700));
+  const chk=vIdx(await vReq('idx'));if(chk.includes(VS.uid)){VS.joined=1;return chk;}}
+ throw new Error('join failed');}
+async function vPush(){VS.dirty=1;vSave();
+ await vReq('u-'+VS.uid,{name:VS.name.slice(0,20),votes:vClean(VS.me),ts:Date.now()});VS.dirty=0;vSave();}
+async function vSync(){if(vBusy)return;vBusy=true;
+ try{if(VS.dirty)await vPush();
+  let users=vIdx(await vReq('idx'));
+  const has=Object.keys(vClean(VS.me)).length>0;
+  if(has&&!users.includes(VS.uid))users=await vJoin();
+  const others=users.filter(u=>u!==VS.uid).slice(-100);
+  const docs=await Promise.all(others.map(u=>vReq('u-'+u).catch(()=>undefined)));
+  const o={};others.forEach((u,i)=>{const d=docs[i];if(d===undefined){if(VS.others[u])o[u]=VS.others[u];}else if(d&&typeof d==='object')o[u]={n:String(d.name||'').slice(0,20),v:vClean(d.votes)};});
+  VS.others=o;VS.last=Date.now();vOnline=true;}
+ catch(e){vOnline=false;}
+ vBusy=false;vSave();vRender();}
+function vQueue(){clearTimeout(vTimer);vTimer=setTimeout(async()=>{try{await vPush();if(!VS.joined)await vJoin();vOnline=true;}catch(e){vOnline=false;}vSave();vRender();},500);}
+function vbar(id){return `<div class="vb" data-vid="${id}"><button type="button" class="vbt" data-v="up" aria-pressed="false" aria-label="Thumbs up">👍<b>0</b></button><button type="button" class="vbt" data-v="down" aria-pressed="false" aria-label="Thumbs down">👎<b>0</b></button><button type="button" class="vbt" data-v="star" aria-pressed="false" aria-label="Star">⭐<b>0</b></button><span class="vwho"></span></div>`;}
+function vRender(){
+ const tally={};const add=(id,who,e,self)=>{const T=tally[id]||(tally[id]={up:[],down:[],star:[]});if(e.t)T[e.t].push({who,self});if(e.s)T.star.push({who,self});};
+ Object.values(VS.others).forEach(u=>Object.entries(u.v||{}).forEach(([id,e])=>add(id,u.n||'Someone',e,false)));
+ const mine=vClean(VS.me);Object.entries(mine).forEach(([id,e])=>add(id,VS.name||'You',e,true));
+ document.querySelectorAll('.vb[data-vid]').forEach(b=>{const id=b.dataset.vid,T=tally[id]||{up:[],down:[],star:[]},m=mine[id]||{};
+  b.querySelectorAll('.vbt').forEach(btn=>{const k=btn.dataset.v;btn.querySelector('b').textContent=T[k].length;
+   const on=k==='star'?!!m.s:m.t===k;btn.setAttribute('aria-pressed',on);btn.classList.toggle('on',on);});
+  const nm=a=>a.map(p=>esc(p.self?(VS.name?VS.name+' (you)':'you'):p.who)).join(', ');
+  const parts=[];if(T.up.length)parts.push('👍 '+nm(T.up));if(T.down.length)parts.push('👎 '+nm(T.down));if(T.star.length)parts.push('⭐ '+nm(T.star));
+  b.querySelector('.vwho').innerHTML=parts.join(' · ');});
+ const st=document.getElementById('vstat');if(st){
+  const who=`Voting as <b>${esc(VS.name||'anonymous')}</b> <button type="button" class="vname-btn">${VS.name?'change name':'add your name'}</button>`;
+  st.className='vstat'+(vOnline===false?' off':'');
+  st.innerHTML=(vOnline===false?`⚠️ <b>Votes offline</b> — showing saved votes + yours; they'll sync when the connection's back. `:vOnline?`🟢 Live · ${(()=>{const n=Object.values(VS.others).filter(u=>Object.keys(u.v||{}).length).length+(Object.keys(vClean(VS.me)).length?1:0);return n?n+(n===1?' person':' people')+' voted · ':'';})()}`:'⏳ Loading votes… ')+who;}
 }
-document.querySelectorAll('#who button').forEach(b=>b.onclick=()=>{st.me=b.dataset.p;save();render();});
-document.getElementById('addform').onsubmit=e=>{e.preventDefault();const n=document.getElementById('add-name');if(!n.value.trim())return;
- st.custom.push({id:'c'+Date.now(),cat:catSel.value,name:n.value.trim(),own:document.getElementById('add-own').value});n.value='';save();render();};
-document.getElementById('reset').onclick=()=>{Object.keys(st.checks).forEach(k=>{if(k.startsWith(st.me+':'))delete st.checks[k];});save();render();};
-render();
-
+function vAsk(force){if(!force&&(VS.name||VS.asked))return;VS.asked=1;vSave();
+ const d=document.createElement('div');d.className='vsheet';d.innerHTML=`<form><b>Who's voting? 🍻</b><span>First name so the crew knows whose 👍 it is (shows on the public site). Optional.</span><input name="n" maxlength="20" autocomplete="given-name" placeholder="First name" value="${esc(VS.name)}"><div><button type="button" class="skip">Skip</button><button type="submit">Save</button></div></form>`;
+ document.body.appendChild(d);const f=d.querySelector('form');setTimeout(()=>f.n.focus(),50);
+ f.onsubmit=e=>{e.preventDefault();VS.name=f.n.value.replace(/[<>]/g,'').trim().slice(0,20);vSave();d.remove();vRender();vQueue();};
+ d.querySelector('.skip').onclick=()=>{d.remove();};}
+document.addEventListener('click',e=>{const nb=e.target.closest('.vname-btn');if(nb){vAsk(true);return;}
+ const btn=e.target.closest('.vbt');if(!btn)return;const id=btn.closest('.vb').dataset.vid,k=btn.dataset.v;
+ const m=VS.me[id]||{t:'',s:0};if(k==='star')m.s=m.s?0:1;else m.t=m.t===k?'':k;
+ if(m.t||m.s)VS.me[id]=m;else delete VS.me[id];vSave();vRender();vQueue();vAsk(false);});
+vRender();vSync();
+setInterval(()=>{if(document.visibilityState==='visible')vSync();},20000);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')vSync();});
+window.addEventListener('focus',()=>vSync());
+window.__votes={sync:vSync,state:()=>VS,ns:VNS};
 
 /* ---------- NAV highlight ---------- */
 const navLinks=[...document.querySelectorAll('.bnav a')];
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id==='things'?'map':e.target.id;navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));}}),{rootMargin:'-40% 0px -55% 0px'});
-['itinerary','weather','map','things','packing','info'].forEach(id=>io.observe(document.getElementById(id)));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));}}),{rootMargin:'-40% 0px -55% 0px'});
+['itinerary','weather','map','things','info'].forEach(id=>io.observe(document.getElementById(id)));
 </script>
 </body></html>
